@@ -1,3 +1,3 @@
-# hello-world
+# CIDI-SDN
 
-Hola soy Deo
+Este repositorio fue creado para diseñar la estructura basica de directorios para organizar las investigaciones.
