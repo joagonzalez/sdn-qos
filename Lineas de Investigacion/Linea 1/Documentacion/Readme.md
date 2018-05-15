@@ -1,3 +1,5 @@
+# Documentación
+
 En esta carpeta alojaremos toda la documentación producida para el proyecto.
 
 La separaremos de la siguiente forma:
