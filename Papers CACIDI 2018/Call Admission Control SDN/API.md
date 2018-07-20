@@ -5,7 +5,7 @@
 - https://wiki.asterisk.org/wiki/pages/viewpage.action?pageId=29395573
 
 
-- ARI consists of three different pieces that are - for all intents and purposes - interrelated and used together. They are:
+ARI consists of three different pieces that are - for all intents and purposes - interrelated and used together. They are:
 
         A RESTful interface that a client uses to control resources in Asterisk.
         A WebSocket that conveys events in JSON about the resources in Asterisk to the client.
