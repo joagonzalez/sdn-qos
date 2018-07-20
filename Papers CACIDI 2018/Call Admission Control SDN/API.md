@@ -1,3 +1,15 @@
+# Controlador Faucet SDN
+
+Faucet is an OpenFlow controller for multi-table OpenFlow 1.3 switches (including optional table features), that implements layer 2 switching, VLANs, ACLs, and layer 3 IPv4 and IPv6 routing, static and via BGP. The Openflow switch is deployed as a drop in replacement for a L2/L3 switch in the network to enable extra SDN based functionality. (fork del proyecto RYU).
+
+Además, Faucet esta implementado en Python.
+
+- https://faucet.nz/
+- docs.faucet.nz (documentación)
+- https://faucet-sdn.blogspot.com/
+
+Otra cosa interesante de Faucet, es que utiliza Graphana para graficar datos recolectados por OpenFlow de forma nativa.
+
 ### Asteriks posee tres APIs para interactuar: ARI, AGI y AMI
 
 # Asterisk REST Interface (ARI)
