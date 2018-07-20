@@ -9,14 +9,15 @@ Implementar mecanismo de Call Admission Control (CAC) utilizando northbound APIs
 ## Herramientas
 
 - GNS3 (https://gns3.com/) - Virtualizador redes
-- Mininet (http://mininet.org/) - Network emulator con soporte de Open Flow basado en contenedores y OVS
+- Mininet 2.2.2 Ubuntu 14 LTS (http://mininet.org/) - Network emulator con soporte de Open Flow basado en contenedores y OVS
 - Open Virtual Switch (https://www.openvswitch.org/) - Software de switch virtual
 - Onos (https://onosproject.org/) - Controlador SDN
-- Faucet (https://faucet.nz/) - Controlador SDN
+- Faucet 1.8.9 (https://faucet.nz/) - Controlador SDN
 - POSTman (https://www.getpostman.com/) - Desarrollo y monitoreo
 - Mahimahi (http://mahimahi.mit.edu/) - Desarrollo y monitoreo
 - Python/Java para desarrollo de API y aplicación en controlador
-
+- Asterisk 13.14.1
+- Debian 9.5 Stable
 ## Casos de uso
 
 Se tratan en detalle dos casos de uso por ser los más representativos en el uso de CAC y los mas implementados por proveedores de servicios. SDN jugaria un rol fundamental en este escenario para implementar CAC de forma dinámica bajo demanda de las aplicaciones SIP que utilizan la red. Por otro lado, con este mismo mecanismo podrían implementarse tags/configuraciones sobre colas QoS que permitan priorizar flujos en tiempo real, este es una posibilidad no existente en redes no SDN.
