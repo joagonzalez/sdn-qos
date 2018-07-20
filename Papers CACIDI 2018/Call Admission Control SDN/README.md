@@ -23,7 +23,7 @@ Se tratan en detalle dos casos de uso por ser los más representativos en el uso
 
 - MPLS: Se implementa Call Admission Control en un escenarios de conectividad MPLS. Multiples sitios distribuidos en distintas regiones conectados sobre una red MPLS en donde CAC debe ejecutar restricciones basandose en información de subredes origen/destino asociadas a cada sitio. Por otro lado, el vinculo que utilizará un sitio para comunicarse con el resto será compartido.
 
-
+- WAN: Se implementa CAC en un escenario de conectividad punto a punto o enlaces WAN entre sitios. En este caso las distintas locaciones tendrán BW específico para conectarse a cada uno de los sitios por lo que las políticas deberan contemplar estas diferenencias.
 
 ## Bibliografía
 
