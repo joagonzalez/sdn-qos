@@ -1,3 +1,3 @@
 # CIDI-SDN
 
-Este repositorio fue creado para diseñar la estructura basica de directorios para organizar las investigaciones.
+Este repositorio fue creado para diseñar la estructura básica de directorios para organizar las investigaciones.
