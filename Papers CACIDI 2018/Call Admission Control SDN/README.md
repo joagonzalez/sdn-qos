@@ -36,5 +36,3 @@ Se puede encontrar y agregar/modificar en Papers de Referencia.
 [2] Using Software-Defined Networking for Real Time Internet Applications
 
 [3] https://github.com/yanlisa/reproducibility/wiki/Reproducing-Network-Research
-
-a
