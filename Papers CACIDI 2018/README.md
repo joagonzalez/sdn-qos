@@ -4,4 +4,3 @@ Papers que presentará el grupo de investigación sobre redes definidas por soft
 
 - Call Admission Control
 - Dynamic routing
-- probando
