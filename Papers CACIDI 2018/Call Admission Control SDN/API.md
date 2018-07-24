@@ -63,9 +63,9 @@ ARI consists of three different pieces that are - for all intents and purposes -
         print "%s: %s" % (key, value)
  
                 def stasis_end_cb(channel, ev):
-    """Handler for StasisEnd event"""
+                 """Handler for StasisEnd event"""
  
-    print "%s has left the application" % channel.json.get('name')
+                   print "%s has left the application" % channel.json.get('name')
  
                 client.on_channel_event('StasisStart', stasis_start_cb)
                 client.on_channel_event('StasisEnd', stasis_end_cb)
