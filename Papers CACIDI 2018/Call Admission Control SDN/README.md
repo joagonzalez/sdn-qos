@@ -18,6 +18,7 @@ Implementar mecanismo de Call Admission Control (CAC) utilizando northbound APIs
 - Python/Java para desarrollo de API y aplicación en controlador
 - Asterisk 13.14.1
 - Debian 9.5 Stable
+
 ## Casos de uso
 
 Se tratan en detalle dos casos de uso por ser los más representativos en el uso de CAC y los mas implementados por proveedores de servicios. SDN jugaria un rol fundamental en este escenario para implementar CAC de forma dinámica bajo demanda de las aplicaciones SIP que utilizan la red. Por otro lado, con este mismo mecanismo podrían implementarse tags/configuraciones sobre colas QoS que permitan priorizar flujos en tiempo real, este es una posibilidad no existente en redes no SDN.
