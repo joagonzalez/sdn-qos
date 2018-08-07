@@ -12,7 +12,7 @@ Otra cosa interesante de Faucet, es que utiliza Graphana para graficar datos rec
 
 ### Asteriks posee tres APIs para interactuar: ARI, AGI y AMI
 
-# Asterisk REST Interface (ARI)
+# Asterisk RESTful Interface (ARI)
 
 - https://wiki.asterisk.org/wiki/pages/viewpage.action?pageId=29395573
 
@@ -29,6 +29,10 @@ ARI consists of three different pieces that are - for all intents and purposes -
         channels = ari.get('channels')
         for channel in channels:
         ari.delete('channels', channel['id'])
+
+##ARI Data Models Documentation
+
+- https://wiki.asterisk.org/wiki/display/AST/Asterisk+12+REST+Data+Models
 
 ## Introduction to ARI and Channels
 
