@@ -5,7 +5,7 @@
 - Laboratorio funcional Asterisk+ARI+Faucet+Mininet(OVS) - Viernes 17/08
 - Cuerpo principal paper - 24/08
 - Resultados y conclusiones- 31/08
-
+ 
 ## Fechas importantes
 - August 31, 2018 	Abstract submission deadline
 - September 15th, 2018 	Full Paper Submission deadline
