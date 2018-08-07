@@ -12,3 +12,4 @@
 - October 15th, 2018 	Notification of acceptance date
 - October 31, 2018 	Final submission deadline
 
+
