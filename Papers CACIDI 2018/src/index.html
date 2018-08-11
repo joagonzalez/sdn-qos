@@ -1,0 +1,22 @@
+<DOCTYPE !html>
+  <html>
+
+  <head>
+    <title>Buffer de python</title>
+  </head>
+
+  <body>
+    <div id="buffer-data"></div>
+  </body>
+  <script type="text/javascript">
+    (function () {
+      const websocketPythonAPi = new Websocket('ws://localhost:9183');
+
+      websocketPythonAPi.onopen = () => {
+        'aca empezas a uferear';
+      }
+    });
+  </script>
+  </body>
+
+  </html>
