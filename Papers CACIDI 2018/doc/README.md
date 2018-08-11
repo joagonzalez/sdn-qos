@@ -2,7 +2,7 @@
 
 ## Objetivo:
 
-Implementar mecanismo de Call Admission Control (CAC) utilizando northbound APIs y OpenFlow sobre plataforma SIP. Tomar indicadores de BW, Jitter y Packet Loss como parámetros para medir performance y realizar comparaciones sobre una arquitectura no SDN. El desarrollo contemplara modelo de APIs, controlador y comunicación southbound interface con OpenFlow (1.3, 1.5 y 1.6) 
+Implementar mecanismo de Call Admission Control (CAC) utilizando northbound APIs y OpenFlow sobre plataforma SIP. Tomar indicadores de BW, Jitter y Packet Loss como parámetros para medir performance y realizar comparaciones sobre una arquitectura no SDN. El desarrollo contemplara modelo de APIs, controlador y comunicación southbound interface con OpenFlow. (1.3, 1.5 y 1.6) 
 
 - https://www.opennetworking.org/wp-content/uploads/2014/10/openflow-switch-v1.5.1.pdf
 
