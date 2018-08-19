@@ -1,4 +1,15 @@
 ## Abstract
 
-Call Admission Control (CAC) es un mecanismo que permite establecer un límite en la cantidad de sesiones concurrentes que se establecen en una aplicación VoIP basada en SIP. Esta funcionalidad no se encuentra estandariada y, en consecuencia, su implementacion encuentra dificultades en ambientes con múltiples proveedores. El modelo propuesto por Software Defined Networking desacopla el plano de control del plano de datos de la red, definiendo interfaces abiertas que hacen a la red programable. Este trabajo describe especifiaciones, diseño e implementación de una aplicación de Call Admission Control que permite sacar provecho del modelo propuesto por SDN. Además, describmos el modelo de arquitura de la aplicación asi como resultados obtenidos a partir de su implementación en ambientes de simulación.
+### Tema
+Call Admission Control (CAC) es un mecanismo que permite establecer un límite en la cantidad de sesiones concurrentes que se establecen en una aplicación VoIP basada en SIP. Dicho mecanismo no se encuentra estandarizado y su implementación tiene dificultades en ambientes con múltiples vendors.
+El modelo propuesto por Software Defined Networking (SDN) desacopla el plano de control del plano de datos de la red, definiendo interfaces abiertas que hacen a la red programable y adaptable a los cambios requeridos por las aplicaciones.
+
+### Objetivos
+El objetivo de este trabajo es describir las especificaciones, diseño e implementación de una aplicación de CAC que permite sacar provecho de las ventajas del modelo propuesto por SDN. Asimismo, simular el funcionamiento del prototipo y evaluar su performance a partir de métricas pre-establecidas.
+
+### Metodología
+Para ello, se describe el modelo de arquitectura de la aplicación desarrollada y se realizan simulaciones utilizando Mininet para la conformación de la topología de red, Faucet como controlador SDN y Asterisk como aplicación VoIP basada en SIP junto con su API  RESTfull. Se establecieron métricas de red representativas a medir sobre switches OpenFlow para la evaluación de la aplicación CAC.
+
+### Discusión
+Este trabajo se propone discutir, a través del desarrollo e implementación de distintas funcionalidades de red, las ventajas del marco de trabajo propuesto por las redes definidas por software. Se espera contribuir con un modelo de CAC vendor agnóstico gracias a la utilización de interfaces abiertas brindadas por controladores y aplicaciones como Asterisk utilizadas en conjunto con el protocolo OpenFlow.
 
