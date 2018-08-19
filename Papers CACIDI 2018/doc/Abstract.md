@@ -11,5 +11,5 @@ El objetivo de este trabajo es describir las especificaciones, diseño e impleme
 Para ello, se describe el modelo de arquitectura de la aplicación desarrollada y se realizan simulaciones utilizando Mininet para la conformación de la topología de red, Faucet como controlador SDN y Asterisk como aplicación VoIP basada en SIP junto con su API  RESTfull. 
 
 ### Discusión
-Este trabajo se propone discutir, a través del desarrollo e implementación de distintas funcionalidades de red, las ventajas del marco de trabajo propuesto por las redes definidas por software. Se espera contribuir con un modelo de CAC vendor agnóstico gracias a la utilización de interfaces abiertas brindadas por controladores y aplicaciones como Asterisk utilizadas en conjunto con el protocolo OpenFlow.
+Este trabajo se propone discutir, a través del desarrollo e implementación de funcionalidades de red, las ventajas del marco de trabajo propuesto por las redes definidas por software. Se espera contribuir con un modelo de CAC vendor agnóstico gracias a la utilización de interfaces abiertas brindadas por controladores y aplicaciones como Asterisk utilizadas en conjunto con el protocolo OpenFlow.
 
