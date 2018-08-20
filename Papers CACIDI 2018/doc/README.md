@@ -18,6 +18,8 @@ Implementar mecanismo de Call Admission Control (CAC) utilizando northbound APIs
 - Python/Java para desarrollo de API y aplicación en controlador
 - Asterisk 13.14.1
 - Debian 9.5 Stable
+- Asterisk RESTful Interface (ARI) https://wiki.asterisk.org/wiki/pages/viewpage.action?pageId=29395573
+- aripy modulo de Python para uso de ARI https://github.com/asterisk/ari-py 
 
 ## Casos de uso
 
