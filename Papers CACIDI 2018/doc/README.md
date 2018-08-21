@@ -41,3 +41,5 @@ Se puede encontrar y agregar/modificar en Papers de Referencia.
 [3] https://github.com/yanlisa/reproducibility/wiki/Reproducing-Network-Research
 
 [4] https://community.asterisk.org/t/ari-and-making-a-call-between-2-extensions-through-ari-client/66199/3 - Caso de control de canales entre dos extensiones tipo usuario
+
+[5] https://wiki.asterisk.org/wiki/display/AST/ARI+and+Bridges%3A+Basic+Mixing+Bridges - Mixing bridges and P2P call handling
