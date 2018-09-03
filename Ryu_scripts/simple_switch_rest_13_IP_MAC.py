@@ -15,7 +15,7 @@
 
 import json
 
-from ryu.app import simple_switch_13
+from ryu.app import simple_switch_13_IP_MAC
 from ryu.controller import ofp_event
 from ryu.controller.handler import CONFIG_DISPATCHER
 from ryu.controller.handler import set_ev_cls
@@ -29,12 +29,12 @@ simple_switch_instance_name = 'simple_switch_api_app'
 url = '/simpleswitch/iptoporttable/{dpid}'
 
 
-class SimpleSwitchRest13(simple_switch_13.SimpleSwitch13):
+class SimpleSwitchRest13IpMac(simple_switch_13_IP_MAC.SimpleSwitch13IpMac):
 
     _CONTEXTS = {'wsgi': WSGIApplication}
 
     def __init__(self, *args, **kwargs):
-        super(SimpleSwitchRest13, self).__init__(*args, **kwargs)
+        super(SimpleSwitchRest13IpMac, self).__init__(*args, **kwargs)
         self.switches = {}
         wsgi = kwargs['wsgi']
         wsgi.register(SimpleSwitchController,
@@ -42,7 +42,7 @@ class SimpleSwitchRest13(simple_switch_13.SimpleSwitch13):
 
     @set_ev_cls(ofp_event.EventOFPSwitchFeatures, CONFIG_DISPATCHER)
     def switch_features_handler(self, ev):
-        super(SimpleSwitchRest13, self).switch_features_handler(ev)
+        super(SimpleSwitchRest13IpMac, self).switch_features_handler(ev)
         datapath = ev.msg.datapath
         self.switches[datapath.id] = datapath
         self.mac_to_port.setdefault(datapath.id, {})
