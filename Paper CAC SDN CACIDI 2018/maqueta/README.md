@@ -63,7 +63,9 @@ La API va a vivir en google cloud y va a llamar al API REST de Ryu por la public
 | asterisk   | us-east1-b | custom (1 vCPU, 2.00 GiB) | 10.142.0.2  | 35.211.219.55 | RUNNING | asterisk |
 | client1    | us-east1-b | f1-micro                  | 10.142.0.4  | 35.196.43.158 | RUNNING | ubuntu   |
 | controller | us-east1-b | custom (2 vCPU, 2.00 GiB) | 10.142.0.3  | 35.196.178.40 | RUNNING | ubuntu   |
-| OVS        | unsam(prom)| custom (1 vCPU, 1.00 GiB) |             |               | RUNNING | ubuntu   |
+| OVS        | unsam(prom)| custom (1 vCPU, 1.00 GiB) |             |               | RUNNING | ovs      |
+
+password momentanea ovs: sdn2018
 
 ## Comandos utiles
 
