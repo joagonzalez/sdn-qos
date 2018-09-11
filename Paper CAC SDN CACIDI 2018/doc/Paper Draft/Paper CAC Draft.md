@@ -88,6 +88,13 @@ Para comprobar  que las 4 llamadas que se encuentran en curso tienen garantizado
 Sección VI - Conclusiones
 
 
+-----------------------------------------------------------
+
+## TODOS
+
+- Armar gráfico/explicacion arquitectura nivel sofware de aplicacion CAC
+- Hablar de pruebas simple_switch OpenFlow1.5 para utilizar nuevas metricas y features agregadas en estas versiones
+- Hablar de objetivo final respecto de graficos que se esperan realizar y resultados que se esperan obtener con este modelo de trabajo
 
 
 
