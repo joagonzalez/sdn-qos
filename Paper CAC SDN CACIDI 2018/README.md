@@ -7,10 +7,10 @@ $ ryu-manager ryu.app.simple_switch_13 ryu.app.simple_switch_rest_13 ryu.app.res
 $ sudo mn --topo single,5 --mac --switch ovsk --controller remote
 Falta comandos para configurar en kernel space 
 
-## Iniciar backend
+## Iniciar Backend
 cac/backend$ python run.py
 
-# Dependencias con pip y apt-get
+### Dependencias con pip y apt-get
 apt-get install pycurl
 sudo pip install git+https://github.com/dpallot/simple-websocket-server
 
@@ -21,13 +21,18 @@ cac/mocks$ npm start (localhost:8001)
 ## Iniciar Front End
 cac/frontend$ npm start (localhost:3000)
 
-# Instalar dependencias
+### Instalar dependencias
 cac/frontend$ npm install
 
 ## TODOS
+
+### Fase 1
+- Terminar de programar metodos de clases para interaccion basica de la plataforma (app stasis Ari y queries Ryu)
 - poner las configuraciones en un config.settings file
 - Armar grafico con ws y API connections con puertos para cada modulo
 - Diagrama de clases con metodos 
+
+### Fase 2
 - Dockerizar la app en un container y las instancias del ari + ryu para soporte multiplataforma
 - Buscar libreria de Grafos
 - Armar frontend en React -> Reemplazar a futuro con Flask (Pablo B. idea)
