@@ -19,6 +19,7 @@ class Application:
     try:
       self.ariController.run()
       self.listen = True
+      print('Start Stasis Application')
       logging.info('Start Stasis Application')
     except Exception as error:
       self.listen = False
