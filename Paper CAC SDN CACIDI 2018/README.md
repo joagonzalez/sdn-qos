@@ -1,6 +1,33 @@
-# Paper CACIDI 2018
+# CAC Application
 
-Papers que presentará el grupo de investigación sobre redes definidas por software del CIDI.
+## Initialize RYU Controller
+$ ryu-manager ryu.app.simple_switch_13 ryu.app.simple_switch_rest_13 ryu.app.rest_conf_switch
 
-- Call Admission Control
-- Dynamic routing
+## Emulate Switches with mininet
+$ sudo mn --topo single,5 --mac --switch ovsk --controller remote
+Falta comandos para configurar en kernel space 
+
+## Iniciar backend
+cac/backend$ python run.py
+
+# Dependencias con pip y apt-get
+apt-get install pycurl
+sudo pip install git+https://github.com/dpallot/simple-websocket-server
+
+## Iniciar Mocks Ryu (deprecado, ir directo contra Ryu)
+cac/mocks$ npm install
+cac/mocks$ npm start (localhost:8001)
+
+## Iniciar Front End
+cac/frontend$ npm start (localhost:3000)
+
+# Instalar dependencias
+cac/frontend$ npm install
+
+## TODOS
+- poner las configuraciones en un config.settings file
+- Armar grafico con ws y API connections con puertos para cada modulo
+- Diagrama de clases con metodos 
+- Dockerizar la app en un container y las instancias del ari + ryu para soporte multiplataforma
+- Buscar libreria de Grafos
+- Armar frontend en React -> Reemplazar a futuro con Flask (Pablo B. idea)
