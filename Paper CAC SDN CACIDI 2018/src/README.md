@@ -5,7 +5,7 @@ $ ryu-manager ryu.app.simple_switch_13 ryu.app.simple_switch_rest_13 ryu.app.res
 
 ## Emulate Switches with mininet
 $ sudo mn --topo single,5 --mac --switch ovsk --controller remote
-Falta comandos para configurar en kernel space 
+(falta comandos para configurar en kernel space)
 
 ## Iniciar Backend
 cac/backend$ python run.py
