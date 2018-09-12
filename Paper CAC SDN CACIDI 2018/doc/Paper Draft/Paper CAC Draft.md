@@ -87,6 +87,16 @@ Para comprobar  que las 4 llamadas que se encuentran en curso tienen garantizado
 
 Sección VI - Conclusiones
 
+El motivo del presente trabajo era encontrar una modelización de macanismo CAC que trabaje sobre entornos de red SDN, facilitando la interoperabilidad y la programabilidad de la red frente a requerimientos de calidad de servicio que ejercen las llamadas basadas en tecnologías VOIP.
+
+Nuestra contribución es la especificación de un modelo para el desarrollo de aplicaciones CAC en entornos SDN,  basada en el uso de interfaces API y herramientas de código abierto. 
+Cabe destacar, que si bien aún no existe un marco formal de estandarización para la interacción de mecanismos CAC con IP PBXs de diferentes fabricantes, el modelo presentado brinda una posible solución a este problema, la cual puede lograrse con herramientas de uso accesible y libre, como las utilizadas en el prototipo desarrollado.
+
+El uso de entornos SDN ofrece múltiples ventajas desde el punto de vista de la red, por ejemplo la posibilidad de que el mecanismo CAC opere con IP PBXs desarrolladas por diferentes fabricantes; así como también, la programabilidad de los elementos de red para reaccionar en forma dinámica a los requerimientos de QoS de las llamadas que se establezcan. 
+
+En nuestra primer evaluación, hemos encontrado resultados favorables que nos alientan a pensar, adicionalmente, en el uso del modelo presentado para el desarrollo de nuevas aplicaciones sobre entornos SDN, ya sea para expandir las funcionalidades del prototipo ensayado ó para trabajar sobre nuevos escenarios.
+
+
 
 -----------------------------------------------------------
 
