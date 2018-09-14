@@ -12,7 +12,6 @@ class WsHandler(WebSocket):
   def handleMessage(self):
     if self.data in commands.iterkeys():
       commandResponse = commands[self.data]()
-      print(commandResponse)
       response = json.dumps(commandResponse)
       self.sendMessage(response)
     

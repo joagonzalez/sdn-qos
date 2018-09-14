@@ -7,6 +7,11 @@ class RyuController:
 
   def queryForGetNodes(self):
     ''' this do queries '''
-    return self.apiService.get(
-      endpoint='/stats/desc/1'
+    return self.apiService.post(
+      endpoint='/stats/flow/1',
+      data={
+        "match": {
+          "in_port": 1
+        }
+      }
     )

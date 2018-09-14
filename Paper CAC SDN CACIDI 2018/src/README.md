@@ -3,6 +3,9 @@
 ## Initialize RYU Controller
 $ ryu-manager ryu.app.simple_switch_13 ryu.app.simple_switch_rest_13 ryu.app.rest_conf_switch
 
+### Initialize Ryu Controller test
+$ ryu-manager ryu.app.simple_switch_13 ryu.app.ofctl_rest
+
 ## Emulate Switches with mininet
 $ sudo mn --topo single,5 --mac --switch ovsk --controller remote
 (falta comandos para configurar en kernel space)

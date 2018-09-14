@@ -1,4 +1,5 @@
 import pycurl
+import json
 from StringIO import StringIO
 try:
     # python 3
@@ -22,17 +23,17 @@ class ApiService:
   def perform(self):
     self.request.perform()
     self.request.close()
+    return self.response.getvalue()
   
   def get(self, endpoint=''):
     self.initRequest(endpoint)
-    self.perform()
-    return self.response
+    return self.perform()
 
   def post(self, endpoint='', data={}):
-    data = urlencode(data)
+    data = json.dumps(data)
     self.initRequest(endpoint)
+    self.request.setopt(self.http.HTTPHEADER, ['Accept:application/json'])
     self.request.setopt(self.http.POST, True)
     self.request.setopt(self.http.POSTFIELDS, data)
     self.request.setopt(self.http.VERBOSE, True)
-    self.perform()
-    return self.response.getvalue()
+    return self.perform()

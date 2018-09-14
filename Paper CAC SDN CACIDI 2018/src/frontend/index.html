@@ -22,13 +22,25 @@
         <main id="application">
             <div id="metrics-report"></div>
             <button id="getMetrics">Get Metrics</button>
+            <button id="setQoSRules">Set QoS Rules</button>
+            <button id="setQoSQueue">Set QoS Queue</button>
         </main>
         <script>
             var ws = new WebSocket("ws://127.0.0.1:8000/");
             const getMetricsButton = document.getElementById('getMetrics');
+            const setQoSRulesButton = document.getElementById('setQoSRules');
+            const setQoSQueueButton = document.getElementById('setQoSQueue');
             const metricsContainer = document.getElementById('metrics-report');
             getMetricsButton.addEventListener('click', e => {
                 sendMessage( 'getMetrics' )
+            });
+
+            setQoSRulesButton.addEventListener('click', e => {
+                sendMessage( 'setQoSRules' )
+            });
+        
+            setQoSQueueButton.addEventListener('click', e => {
+                sendMessage( 'setQoSQueue' )
             });
 
             ws.onmessage = function (event) {

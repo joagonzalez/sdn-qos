@@ -6,7 +6,7 @@ from threading import Thread
 class AriController:
   def __init__(self, ryuApi):
     ''' Stasis Program '''
-    self.base_url = 'http://10.10.10.106:8088/'
+    self.base_url = 'http://192.168.163:8088/'
     self.username = 'asterisk'
     self.password = 'asterisk'
     self.bridges = []
@@ -27,7 +27,10 @@ class AriController:
       sys.exit()
   
   def doSomething(self):
-    return self.ryuApi.queryForGetNodes()
+    response = self.ryuApi.queryForGetNodes()
+    print('respuesta del Ryu::queryForGetNodes')
+    print(response)
+    return response
 
   def onStartCallback(self, channel, event):
     ''' initialize channels and events. Aca va la logica de los scripts que viste en los exapmles '''
