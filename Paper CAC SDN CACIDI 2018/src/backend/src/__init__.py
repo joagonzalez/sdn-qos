@@ -11,4 +11,5 @@ def run():
   if Cac.listen:
     FacadeApp = FacadeWsService()
     FacadeApp.register_command(Cac.getMetrics, 'getMetrics')
+    FacadeApp.register_command(Cac.getPorts, 'getPorts')
     FacadeApp.run()

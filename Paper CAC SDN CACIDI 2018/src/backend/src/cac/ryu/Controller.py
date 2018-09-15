@@ -15,3 +15,11 @@ class RyuController:
         }
       }
     )
+  
+  def queryForGetPorts(self):
+    ''' query that maps IP from asterisk endpoints
+        with phyisical ports and MAC of OpenVSwitches
+    '''
+    return self.apiService.get(
+      endpoint = '/simpleswitch/iptoporttable/0000000000000001'
+    )
