@@ -1,3 +1,6 @@
+from threading import Thread
+import time
+
 from SimpleWebSocketServer import SimpleWebSocketServer
 from .WsHandler import WsHandler
 
@@ -8,6 +11,15 @@ class FacadeWsService:
   def register_command(self, command, name=''):
     WsHandler.register_command(command, name)
 
-  def run(self):
+  def run(self, Client):
+    nodeHandler = Thread(
+      target=self.startServer
+    )
+    nodeHandler.daemon=True
+    nodeHandler.start()
+    time.sleep(1)
+    Client.connect()
+
+  def startServer(self):
     self.server = SimpleWebSocketServer('', 8000, WsHandler)
     self.server.serveforever()

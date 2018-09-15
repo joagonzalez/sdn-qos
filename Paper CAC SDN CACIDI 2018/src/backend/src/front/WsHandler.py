@@ -13,9 +13,14 @@ class WsHandler(WebSocket):
     if self.data in commands.iterkeys():
       commandResponse = commands[self.data]()
       response = json.dumps(commandResponse)
-      self.sendMessage(response)
+    else:
+      response = json.dumps(self.data)
     
-    self.sendMessage(self.data)
+    for client in self.server.connections.itervalues():
+      try:
+        client.sendMessage(response)
+      except Exception as n:
+        print n
 
   def handleConnected(self):
     clients.append(self)

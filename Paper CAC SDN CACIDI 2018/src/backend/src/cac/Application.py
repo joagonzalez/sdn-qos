@@ -6,12 +6,13 @@ from .ari.Controller import AriController
 
 class Application:
   ''' Start listen in ari and exposes the ws-front-service to webapp '''
-  def __init__(self):
+  def __init__(self, frontClient):
     ''' constructor '''
     self.listen = False
     self.args = sys.argv[1:]
+    self.frontClient = frontClient
     self.ryuController = RyuController()
-    self.ariController = AriController(self.ryuController)
+    self.ariController = AriController(self.ryuController, self.frontClient)
 
   def run(self):
     ''' Run Application.

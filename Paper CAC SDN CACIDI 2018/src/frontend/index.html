@@ -53,7 +53,8 @@
                     reader = new FileReader();
                     reader.addEventListener('loadend', (e) => {
                         const text = e.target.result;
-                        metricsContainer.innerHTML = text;
+                        const lastContent = metricsContainer.innerHTML;
+                        metricsContainer.innerHTML = lastContent + text;
                     });
                     reader.readAsText(event.data);
                 }

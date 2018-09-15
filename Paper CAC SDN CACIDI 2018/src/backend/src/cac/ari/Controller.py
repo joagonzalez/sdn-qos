@@ -4,7 +4,7 @@ import ari
 from threading import Thread
 
 class AriController:
-  def __init__(self, ryuApi):
+  def __init__(self, ryuApi, frontClient):
     ''' Stasis Program '''
     self.base_url = 'http://192.168.0.163:8088/'
     self.username = 'asterisk'
@@ -12,14 +12,14 @@ class AriController:
     self.bridges = []
     self.client = None
     self.ryuApi = ryuApi
+    self.frontClient = frontClient
     self.setup()
 
   def connect(self):
     print('iniciando conexion')
     try:
-      return ari.connect(self.base_url, self.username, self.password)
-      print('conectando')
       logging.info('Connecting ari service successful')
+      return ari.connect(self.base_url, self.username, self.password)
     except Exception as error:
       print('error')
       print(error)
@@ -38,16 +38,12 @@ class AriController:
     print(response)
     return response
 
-  def onStartCallback(self, channel, event):
+  def onStartCallback(self, channel_obj, event):
     ''' initialize channels and events. Aca va la logica de los scripts que viste en los exapmles '''
     print('onStartCallback')
-    print(channel)
-    print(event)
-    currentChannel = channel.get('channel')
-    print "Channel %s has entered the application" % currentChannel.json.get('name')
- 
-    for key, value in channel.json.items():
-        print "%s: %s" % (key, value)
+    channel = channel_obj.get('channel')
+    print "Channel %s has entered the application" % channel.json.get('name')
+    self.frontClient.broadcast("newChannel", channel.json.items())
 
   def onEndCallback(self, channel, event):
     ''' Hangout bridges, channels and stop listening. Clean stuff '''
