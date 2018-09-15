@@ -6,7 +6,7 @@ from threading import Thread
 class AriController:
   def __init__(self, ryuApi):
     ''' Stasis Program '''
-    self.base_url = 'http://192.168.163:8088/'
+    self.base_url = 'http://192.168.0.163:8088/'
     self.username = 'asterisk'
     self.password = 'asterisk'
     self.bridges = []

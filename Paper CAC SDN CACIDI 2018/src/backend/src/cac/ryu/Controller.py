@@ -3,7 +3,7 @@ from ..api.service import ApiService
 class RyuController:
   def __init__(self):
     ''' This will make queries to the OF service '''
-    self.apiService = ApiService(baseurl='http://localhost:8080')
+    self.apiService = ApiService(baseurl='http://192.168.0.187:8080')
 
   def queryForGetNodes(self):
     ''' this do queries '''
