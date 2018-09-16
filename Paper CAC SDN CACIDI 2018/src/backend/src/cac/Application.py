@@ -18,7 +18,7 @@ class Application:
     ''' Run Application.
         If Ari connects successfuly, Application state switches to listening Mode On '''
     try:
-      # self.ariController.run()
+      self.ariController.run()
       self.listen = True
       logging.info('Start Stasis Application')
     except Exception as error:

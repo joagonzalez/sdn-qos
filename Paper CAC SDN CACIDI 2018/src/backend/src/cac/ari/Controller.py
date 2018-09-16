@@ -19,7 +19,7 @@ class AriController:
     self.client = None
     self.ryuApi = ryuApi
     self.frontClient = frontClient
-    # self.setup()
+    self.setup()
 
   def setup(self):
     ''' Setup Stasis Program. Create connection to ari and bind the listen events for the application '''
