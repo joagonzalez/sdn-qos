@@ -31,8 +31,10 @@ cac/frontend$ npm install
 cac/frontend$ npm start (localhost:3000)
 
 ## TODOS
-- poner las configuraciones en un config.settings file
-- Hacer unit test e integration tests
+- poner las configuraciones en un config.settings file (OK)
+- armar logger file 
+- poner baner
+- Hacer unit test e integration tests corriendose en un makeFile
 - Dockerizar la app en un container y las instancias del ari + ryu para soporte multiplataforma
 - Buscar libreria de Grafos
 - Armar frontend en React

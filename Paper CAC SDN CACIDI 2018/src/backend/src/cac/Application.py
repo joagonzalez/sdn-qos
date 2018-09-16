@@ -18,14 +18,17 @@ class Application:
     ''' Run Application.
         If Ari connects successfuly, Application state switches to listening Mode On '''
     try:
-      self.ariController.run()
+      # self.ariController.run()
       self.listen = True
-      print('Start Stasis Application')
       logging.info('Start Stasis Application')
     except Exception as error:
       self.listen = False
       logging.error(error)
 
+  # @TODO:
+  # Estos metodos que se exponen, no tienen que estar aca. Deberia haber un
+  # ApplicationBase que sea el init y run y que se extienda y solo esten los metodos 
+  # publicos, y el AppBase quede protegido
   def getMetrics(self):
     ''' public method that exposes requests to the internal api to the webapp '''
     return self.ariController.doSomething()

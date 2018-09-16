@@ -3,6 +3,7 @@ import time
 
 from SimpleWebSocketServer import SimpleWebSocketServer
 from .WsHandler import WsHandler
+from ..config.settings import config
 
 class FacadeWsService:
   def __init__(self):
@@ -21,5 +22,9 @@ class FacadeWsService:
     Client.connect()
 
   def startServer(self):
-    self.server = SimpleWebSocketServer('', 8000, WsHandler)
+    self.server = SimpleWebSocketServer(
+      config['frontService']['host'],
+      config['frontService']['listen'],
+      WsHandler
+    )
     self.server.serveforever()

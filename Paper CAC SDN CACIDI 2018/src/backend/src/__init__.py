@@ -1,5 +1,6 @@
 __version__ = '0.1'
 
+from .config import logger
 from .cac.Application import Application
 from .front.Facade import FacadeWsService
 from .front.Client import Client

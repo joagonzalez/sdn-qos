@@ -1,7 +1,6 @@
 import json
 from SimpleWebSocketServer import WebSocket
 
-clients = []
 commands = {}
 class WsHandler(WebSocket):
 
@@ -23,10 +22,8 @@ class WsHandler(WebSocket):
         print n
 
   def handleConnected(self):
-    clients.append(self)
     print(self.address, 'connected')
 
   def handleClose(self):
-    clients.remove(self)
     print(self.address, 'closed')
 
