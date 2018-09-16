@@ -12,7 +12,7 @@ class Client:
     self.connected = False
 
   def connect(self):
-    websocket.enableTrace(True)
+    # websocket.enableTrace(True)
     self.connection = websocket.WebSocketApp("ws://127.0.0.1:8000/",
                                     on_message = self.on_message,
                                     on_error = self.on_error,
