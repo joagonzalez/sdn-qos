@@ -6,6 +6,15 @@ $ ryu-manager son rest_qos qos_simple_switch_13 y rest_conf_switch
 ## Emulate Switches with mininet
 $ sudo mn --topo single,5 --mac --switch ovsk --controller remote
 
+## Modify OVS parameters OpenFlow13 and QoS support
+ovs-vsctl set Bridge s1 protocols=OpenFlow13
+ovs-vsctl set-manager ptcp:6632
+
+## Modify simple_switch_13 in order to support multi tables in OpenFlow13
+
+sed '/OFPFlowMod(/,/)/s/)/, table_id=1)/' ryu/ryu/app/simple_switch_13.py > ryu/ryu/app/qos_simple_switch_13.py
+cd ryu/; python ./setup.py install
+
 ## Iniciar backend
 # Dependencias con pip / te recomiendo instalar pyenv con python3.6
 apt-get install pycurl

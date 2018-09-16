@@ -28,3 +28,9 @@ class Application:
   def getMetrics(self):
     ''' public method that exposes requests to the internal api to the webapp '''
     return self.ariController.doSomething()
+  
+  def getPorts(self):
+    ''' public method that map IP endpoints with physical OpenVSwitch ports
+    '''
+    return self.ariController.doGetPorts()
+    

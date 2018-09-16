@@ -32,6 +32,12 @@ class AriController:
     print(response)
     return response
 
+  def doGetPorts(self):
+    response = self.ryuApi.queryForGetPorts()
+    print('respuesta del Ryu::queryForGetPorts')
+    print(response)
+    return response
+
   def onStartCallback(self, channel, event):
     ''' initialize channels and events. Aca va la logica de los scripts que viste en los exapmles '''
     print('onStartCallback')
