@@ -5,13 +5,13 @@ config = {
     'password': 'asterisk',
   },
   'ryu': {
-    'baseurl': 'http://localhost:8080',
+    'baseurl': 'http://192.168.0.187:8080',
   },
   'frontService': {
     'host': '',
     'listen': 8000
   },
   'client': {
-    'baseurl': 'ws://127.0.0.1:8000',
+    'baseurl': 'ws://192.168.0.187:8000',
   }
 }
