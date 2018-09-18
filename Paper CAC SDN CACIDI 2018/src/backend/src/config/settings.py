@@ -1,6 +1,6 @@
 config = {
   'ari': {
-    'host': 'http://localhost:8088',
+    'host': 'http://192.168.0.188:8088',
     'username': 'asterisk',
     'password': 'asterisk',
   },
@@ -10,7 +10,7 @@ config = {
   'frontService': {
     'host': '',
     'listen': 8000
-  }
+  },
   'client': {
     'baseurl': 'ws://127.0.0.1:8000',
   }

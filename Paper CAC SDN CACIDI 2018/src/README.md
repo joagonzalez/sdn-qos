@@ -3,6 +3,9 @@
 ## Initialize RYU Controller
 $ ryu-manager ryu.app.simple_switch_13 ryu.app.simple_switch_rest_13 ryu.app.rest_conf_switch
 
+### Initialize Ryu Controller QoS test
+$ ryu-manager ryu.app.qos_simple_switch_13_CAC ryu.app.simple_switch_rest_13_CAC ryu.app.rest_conf_switch ryu.app.rest_qos
+
 ### Initialize Ryu Controller test
 $ ryu-manager ryu.app.simple_switch_13 ryu.app.ofctl_rest
 

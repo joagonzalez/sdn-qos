@@ -1,6 +1,7 @@
 from json import dumps
 import websocket
-from ...config.settings import config
+
+from ..config.settings import config
 
 try:
     import thread
