@@ -11,4 +11,7 @@ config = {
     'host': '',
     'listen': 8000
   }
+  'client': {
+    'baseurl': 'ws://127.0.0.1:8000',
+  }
 }

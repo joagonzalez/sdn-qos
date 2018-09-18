@@ -1,5 +1,7 @@
 from json import dumps
 import websocket
+from ...config.settings import config
+
 try:
     import thread
 except ImportError:
@@ -13,7 +15,7 @@ class Client:
 
   def connect(self):
     # websocket.enableTrace(True)
-    self.connection = websocket.WebSocketApp("ws://127.0.0.1:8000/",
+    self.connection = websocket.WebSocketApp(config['client']['baseurl'],
                                     on_message = self.on_message,
                                     on_error = self.on_error,
                                     on_close = self.on_close)

@@ -2,7 +2,6 @@ import sys
 import logging
 import ari
 from threading import Thread
-
 from ...config.settings import config
 
 connectedChannels = {}
