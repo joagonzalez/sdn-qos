@@ -88,6 +88,4 @@ class AriController:
 
   def doGetPorts(self):
     ''' esto deberia moverse al Facade que expone el metodo '''
-    response = self.ryuApi.queryForGetPorts()
-    return response
-
+    return self.ryuApi.queryForGetPorts()

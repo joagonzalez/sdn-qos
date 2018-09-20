@@ -18,6 +18,7 @@ class ApiService:
   def initRequest(self, endpoint=''):
     self.request = self.http.Curl()
     self.request.setopt(self.http.URL, self.base_url + endpoint)
+    self.response.truncate(0)
     self.request.setopt(self.http.WRITEFUNCTION, self.response.write)
 
   def perform(self):

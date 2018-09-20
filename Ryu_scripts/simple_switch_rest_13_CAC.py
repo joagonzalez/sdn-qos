@@ -95,13 +95,14 @@ class SimpleSwitchController(ControllerBase):
             return Response(status=404)
 
         #Adding ip_to_port and mac_to_port as output of query
-        ip_table = simple_switch.ipv4_to_port.get(dpid, {})
+        # ip_table = simple_switch.ipv4_to_port.get(dpid, {})
         mac_table = simple_switch.mac_to_port.get(dpid, {})
 
-        body1 = json.dumps(ip_table)
-        body2 = json.dumps(mac_table)
-        body = body1 + body2
-        return Response(content_type='application/json', body=body)
+        bodyResponse = {
+            #"ip_table": ip_table,
+            "mac_table": mac_table
+        }
+        return Response(content_type='application/json', body=json.dumps(bodyResponse))
 
     @route('simpleswitch', url, methods=['PUT'],
            requirements={'dpid': dpid_lib.DPID_PATTERN})
