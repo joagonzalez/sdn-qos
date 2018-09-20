@@ -11,9 +11,9 @@ class WsHandler(WebSocket):
   def handleMessage(self):
     if self.data in commands.iterkeys():
       commandResponse = commands[self.data]()
-      response = json.dumps(commandResponse)
+      response = commandResponse
     else:
-      response = json.dumps(self.data)
+      response = self.data
     
     for client in self.server.connections.itervalues():
       try:
