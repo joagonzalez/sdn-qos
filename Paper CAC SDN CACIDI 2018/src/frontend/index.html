@@ -44,11 +44,11 @@
                     <div class="counters">
                         <div class="counter col-md-4">
                             <label>Calls</label>
-                            <input type="text" class="form-control" value="0" />
+                            <input id="total-channel-calls" type="text" class="form-control" value="0" />
                         </div>
                         <div class="counter col-md-4">
                             <label>Calls Threshold</label>
-                            <input type="text" class="form-control" value="0" />
+                            <input id="cacThreshold" type="text" class="form-control" value="0" />
                         </div>
                         <div class="counter col-md-4">
                             <label>Calls Dropped CAC</label>
@@ -73,7 +73,7 @@
 
     </body>
     <script>
-        var ws = new WebSocket("ws://192.168.0.187:8000/");
+        var ws = new WebSocket("ws://localhost:8000/");
         const getMetricsButton = document.getElementById('getMetrics');
         const getPortsButton = document.getElementById('getPorts');
         const setQoSRulesButton = document.getElementById('setQoSRules');
@@ -81,8 +81,8 @@
 
         const metricsContainer = document.getElementById('metrics-report');
         const qosStatusTable = document.getElementById('qos-status');
-
-
+        const inputCalls = document.getElementById('total-channel-calls');
+        const inputcacThreshold = document.getElementById('cacThreshold');
 
         getMetricsButton.addEventListener('click', e => {
             sendMessage( 'getMetrics' )
@@ -106,6 +106,10 @@
             fromCell.innerHTML = newChannel.currentNewChannel[1][1];
             toCell.innerHTML = newChannel.currentNewChannel[7][1].exten;
             QoSCell.innerHTML = "";
+        }
+
+        const totalChannelsFormater = (total) => {
+            inputCalls.value = total
         }
 
         ws.onmessage = function (event) {
@@ -133,10 +137,15 @@
                 const jsonResponse = text;
                 if (jsonResponse.notificationType === "newChannel") {
                     newChannelFormatter(jsonResponse.data);
+                    totalChannelsFormater(jsonResponse.data.totalChannels)
+                } else if (jsonResponse.notificationType === "closeChannel") {
+                    totalChannelsFormater(jsonResponse.data.totalChannels)
+                } else if (jsonResponse.notificationType === "cacTrigger") {
+                    inputcacThreshold.value = Number(inputcacThreshold.value) + Number(jsonResponse.data.data)
                 }
 
                 const lastContent = metricsContainer.innerHTML;
-                metricsContainer.innerHTML = lastContent + text;
+                metricsContainer.innerHTML = lastContent + event.data;
             }
         };
 

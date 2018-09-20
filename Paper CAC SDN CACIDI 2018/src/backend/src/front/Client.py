@@ -41,7 +41,7 @@ class Client:
       "notificationType": notificationType,
       "data": data
     }
-    self.connection.send(message)
+    self.connection.send(dumps(message))
 
   def disconnect(self):
     self.connection.close()
