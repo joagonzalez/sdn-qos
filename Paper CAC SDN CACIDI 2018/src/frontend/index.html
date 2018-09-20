@@ -79,7 +79,6 @@
         const setQoSRulesButton = document.getElementById('setQoSRules');
         const setQoSQueueButton = document.getElementById('setQoSQueue');
 
-
         const metricsContainer = document.getElementById('metrics-report');
         const qosStatusTable = document.getElementById('qos-status');
 
@@ -115,13 +114,17 @@
                 reader = new FileReader();
                 reader.addEventListener('loadend', (e) => {
                     const text = e.target.result;
-                    const jsonResponse = JSON.parse( JSON.parse(text) );
-                    if (jsonResponse.notificationType === "newChannel") {
-                        newChannelFormatter(jstonResponse.data);
+                    try {
+                        console.log('text', text);
+                        const jsonResponse = JSON.parse(text);
+                        console.log('text', jsonResponse);
+                        if (jsonResponse.notificationType === "newChannel") {
+                            newChannelFormatter(jstonResponse.data);
+                        }
+                    } finally {
+                        const lastContent = metricsContainer.innerHTML;
+                        metricsContainer.innerHTML = lastContent + text;
                     }
-
-                    const lastContent = metricsContainer.innerHTML;
-                    metricsContainer.innerHTML = lastContent + text;
                 });
                 reader.readAsText(event.data);
             } else {
