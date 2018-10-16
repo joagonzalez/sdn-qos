@@ -1,4 +1,4 @@
-FROM ubuntu:lastest
+FROM ubuntu:latest
 
 RUN apt-get install pycurl python-pip
 RUN pip install git+https://github.com/dpallot/simple-websocket-server
