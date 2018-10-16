@@ -1,0 +1,17 @@
+services:
+  asterisk:
+    ports:
+        - 1
+        - 65500
+  ryu:
+    ports:
+      - 6633 # open flow port
+      - 8080 # rest api
+  mininet: # definir ports..
+    ports:
+        - 1
+        - 65500
+  cac:
+    ports:
+      - 8000 # websocket
+      - 3000 # frontend
