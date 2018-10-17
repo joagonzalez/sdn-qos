@@ -17,16 +17,15 @@ RUN apt-get update && \
     rm /opt/ryu.zip && \
     cd /opt/ryu && \
     pip install -r tools/pip-requires && \
-    python ./setup.py install RUN pip install -r /opt/ryu/tools/pip-requires --upgrade 
+    python ./setup.py install
 
-# A donde va? a opt/ryu o a ryu/app.. donde estamos?
-# RUN pwd
+RUN pip install -r /opt/ryu/tools/pip-requires --upgrade 
+
 # ADD applications/qos_simple_switch_13_CAC.py opt/ryu/ryu/app/qos_simple_switch_13_CAC.py
-ADD applications/qos_simple_switch_13_CAC.py ryu/app/qos_simple_switch_13_CAC.py
-ADD applications/qos_simple_switch_rest_13_CAC.py ryu/app/qos_simple_switch_rest_13_CAC.py
+ADD applications/qos_simple_switch_13_CAC.py opt/ryu/ryu/app/qos_simple_switch_13_CAC.py
+ADD applications/qos_simple_switch_rest_13_CAC.py opt/ryu/ryu/app/qos_simple_switch_rest_13_CAC.py
 
-#RUN pwd ver si estamos en el path correcto pa ejecutar esto
-RUN python ./setup.py install
+RUN cd /opt/ryu && python ./setup.py install
 
 WORKDIR /opt/ryu/
 

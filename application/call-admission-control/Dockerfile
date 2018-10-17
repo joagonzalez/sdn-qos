@@ -1,19 +1,25 @@
 FROM ubuntu:latest
 
-RUN apt-get install pycurl python-pip
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    apt-utils \
+    git \
+    python-setuptools \
+    python-pip \
+    python-pycurl
+
 RUN pip install git+https://github.com/dpallot/simple-websocket-server
 
+WORKDIR /app
+
 # SETUP BACKEND
-RUN mkdir /app/backend
 COPY ./src/backend /app/backend
 
 # SETUP FRONTEND
-RUN mkdir /app/frontend
 COPY ./src/frontend /app/frontend
 
+FROM node:8
 # INSTALL FRONTEND DEPENDENCIES
 RUN npm install --prefix /app/frontend
-
-WORKDIR /app
 
 CMD ["bash", "./bin/sdn-qos.sh"]
