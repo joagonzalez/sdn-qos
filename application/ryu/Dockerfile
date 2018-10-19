@@ -22,8 +22,9 @@ RUN apt-get update && \
 RUN pip install -r /opt/ryu/tools/pip-requires --upgrade 
 
 # ADD applications/qos_simple_switch_13_CAC.py opt/ryu/ryu/app/qos_simple_switch_13_CAC.py
-ADD applications/qos_simple_switch_13_CAC.py opt/ryu/ryu/app/qos_simple_switch_13_CAC.py
-ADD applications/qos_simple_switch_rest_13_CAC.py opt/ryu/ryu/app/qos_simple_switch_rest_13_CAC.py
+COPY applications/qos_simple_switch_13_CAC.py opt/ryu/ryu/app/qos_simple_switch_13_CAC.py
+COPY applications/qos_simple_switch_rest_13_CAC.py opt/ryu/ryu/app/qos_simple_switch_rest_13_CAC.py
+COPY applications/simple_switch_13_CAC.py opt/ryu/ryu/app/simple_switch_13_CAC.py
 
 RUN cd /opt/ryu && python ./setup.py install
 

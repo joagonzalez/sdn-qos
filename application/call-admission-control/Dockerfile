@@ -9,17 +9,31 @@ RUN apt-get update && \
     python-pycurl
 
 RUN pip install git+https://github.com/dpallot/simple-websocket-server
-
-WORKDIR /app
+RUN mkdir /app
+RUN mkdir /app/src/
+RUN mkdir /app/src/backend
+RUN mkdir /app/src/frontend
+RUN mkdir /app/bin/
 
 # SETUP BACKEND
-COPY ./src/backend /app/backend
-
+COPY src/backend /app/backend
+RUN ls -lh  /app/backend
 # SETUP FRONTEND
-COPY ./src/frontend /app/frontend
+COPY src/frontend /app/frontend
+RUN ls -lh /app/frontend
+# SETUP EJECUTABLE
+COPY bin/ /app/bin
+RUN ls -lh /app/bin
+
+# PERMISOS SCRIPT
+RUN chmod 777 /app/bin/sdn-qos.sh
 
 FROM node:8
 # INSTALL FRONTEND DEPENDENCIES
 RUN npm install --prefix /app/frontend
 
-CMD ["bash", "./bin/sdn-qos.sh"]
+
+WORKDIR /app
+
+#CMD ["sh", "/app/bin/sdn-qos.sh"]
+CMD bash -C '/app/bin/sdn-qos.sh';'bash'
