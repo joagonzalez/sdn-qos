@@ -43,16 +43,16 @@
                 <div class="col-md-6">
                     <div class="counters">
                         <div class="counter col-md-4">
-                            <label>Calls</label>
+                            <label>Concurrent Calls</label>
                             <input id="total-channel-calls" type="text" class="form-control" value="0" />
                         </div>
                         <div class="counter col-md-4">
-                            <label>Calls Threshold</label>
+                            <label>Calls Dropped CAC</label>
                             <input id="cacThreshold" type="text" class="form-control" value="0" />
                         </div>
                         <div class="counter col-md-4">
-                            <label>Calls Dropped CAC</label>
-                            <input type="text" class="form-control" value="0" />
+                            <label>Call Threshhold</label>
+                            <input type="text" class="form-control" value="2" />
                         </div>
                     </div>
                 </div>
@@ -73,7 +73,7 @@
 
     </body>
     <script>
-        var ws = new WebSocket("ws://192.168.1.118:8000/");
+        var ws = new WebSocket("ws://10.10.10.109:8000/");
         const getMetricsButton = document.getElementById('getMetrics');
         const getPortsButton = document.getElementById('getPorts');
         const setQoSRulesButton = document.getElementById('setQoSRules');
