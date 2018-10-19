@@ -1,14 +1,16 @@
-Sección I - Introducción: CAC y SDN
+## Using Software-Defined Networking for Call Admission Control and VoIP applications
 
-El presente trabajo trata acerca del uso de aplicaciones no estandarizadas denominadas Call Admission Control (CAC). Estas aplicaciones implementan mecanismos de control y prevención de congestión en redes del tipo VOIP.[1]
+### Sección I - Introducción: CAC y SDN
 
-Mecanismos típicos de CAC son, por ejemplo, denegar el establecimiento de una llamada cuando no existen recursos de procesamiento en los equipos de la red, ó cuando el tráfico ó cantidad de llamadas excede un límite máximo preestablecido. Debido a que no existe un único mecanismo, y ninguno de ellos se encuentra estandarizado, no existe un criterio uniforme a la hora de lograr una interacción entre dominios de proveedores de servicio diferentes.
+Call Admission Control (CAC) es un mecanismo que permite establecer un límite en la cantidad de sesiones concurrentes que se establecen en una red VoIP [1]. Esta funcionalidad brinda un mecanismo de control y prevención de congestión indispensable en redes que soportan tráfico real-time, en donde la calidad de las comunicaciones debe estar garantizada.
 
-El estado del arte en la práctica sobre redes VOIP, indica que los mecanismos CAC son implementados mayormente en la IP PBX, utilizando criterios e interfaces propietarias de quien desarrolla la solución. Esto no favorece para nada la idea de lograr tener un mecanismo CAC uniforme entre dominios con IP PBX’s pertenecientes a distintos fabricantes.
+Mecanismos típicos de CAC son, por ejemplo, denegar el establecimiento de una llamada cuando no existen recursos de procesamiento en los dispositivos de la red, o cuando el tráfico o cantidad de llamadas exceden un límite máximo preestablecido. Debido a que no existe un único mecanismo, y ninguno de ellos se encuentra estandarizado con excepción de un framework de referencia [12], no existe un criterio uniforme a la hora de lograr una interacción entre dominios de proveedores de servicio diferentes.
 
-En este paper se propone abordar la problemática mencionada aprovechando las ventajas que brinda la tecnología de Software-Defined Networking, proponiendo un modelo de arquitectura con interfaces abiertas y programables (API's) para el desarrollo de un mecanismo CAC que actúe de manera uniforme con IP PBX’s pertenecientes a distintos fabricantes.
+El estado del arte en la práctica sobre redes VOIP, indica que los mecanismos CAC son implementaciones que residen mayormente en la IP PBX, utilizando criterios e interfaces propietarias de quienes desarrollan la solución. Esto no favorece el objetivo de estandarizar un mecanismo que trabaje entre dominios con IP PBX’s pertenecientes a distintos fabricantes.
 
-La arquitectura SDN de la Figura 1 plantea un modelo donde se separa el plano de control (Controlador SDN) del plano de conmutación de la red [2], especificando interfaces abiertas y programables (API’s) para el plano de control tanto en el sentido Northbound como Southbound. Esto permite el desarrollo de aplicaciones que pueden interactuar con el plano de control manejando los elementos de conmutación mediante una capa de abstracción que favorece la programabilidad de la red.
+En este paper se propone abordar la problemática mencionada aprovechando las ventajas que brinda la tecnología de Software-Defined Networking, proponiendo un modelo de arquitectura con interfaces abiertas y programables (API's) para el desarrollo de un mecanismo CAC que actúe de manera uniforme con IP PBX’s pertenecientes a distintos fabricantes. 
+
+La arquitectura SDN de la Figura 1 plantea un modelo donde se separa el plano de control (Controlador SDN) del plano de conmutación de la red [2], especificando interfaces abiertas y programables (API’s) para el plano de control tanto en el sentido Northbound como Southbound. Esto permite el desarrollo de aplicaciones que pueden interactuar con el plano de control manejando los elementos de conmutación mediante una capa de abstracción que favorece la programabilidad de la red. 
 
 [Acá va la figura 1 de Arquitectura SDN]
 
@@ -16,12 +18,14 @@ Si bien en la actualidad no hay un estándar definido para las interfaces API, e
 
 Lo que resta del paper está organizado de la siguiente manera. En la sección II, describimos los requisitos de funcionamiento asociados al mecanismo CAC y definimos las especificaciones de las interfaces Northbound y Southbound que deberá tener la aplicación a desarrollar. En la sección III abordamos el diseño y desarrollo de una aplicación que implementa las funcionalidades especificadas. En la sección IV, se describe el desarrollo de un prototipo funcional el cual se utiliza para realizar las pruebas y obtener los resultados experimentales descriptos en la sección V. Finalmente, en la sección VI se finaliza con las conclusiones y observaciones referentes a la modelización de CAC en entornos SDN.
 
-Sección II - Especificación de la aplicación CAC
+### Sección II - Especificación de la aplicación CAC
 
 Típicamente, una implementación de CAC se puede separar en dos funciones básicas, una que permita, o no, el inicio de una llamada en base a una política preestablecida, y otra que garantice la calidad de las llamadas que ya se encuentran en curso. 
 
 La figura 2 muestra la estructura de una implementación CAC desde el punto de vista de una arquitectura cliente-servidor. La figura muestra un proceso servidor que atenderá los intentos de inicio de sesión de los diferentes clientes, y ante el cual el proceso servidor deberá permitir o denegar las mismas, comparando el número de sesiones activas con el máximo preestablecido en las políticas del dominio. Posteriormente, en caso de que se permita el inicio de sesión, el proceso servidor deberá realizar un cambio de estado en los elementos de red que permita establecer el tráfico de datos entre los clientes origen y destino, garantizando la calidad de servicio (QoS). En caso de que no se permita el inicio de sesión, el proceso servidor deberá realizar el aviso correspondiente hacia los clientes.
  
+ ### NOTA:  Desarrollar diferencias entre esquema CAC tradicional (usado con colas QoS) con CAC SDN en donde se implementa la calidad del servicio (colas) en forma dinámica/tiempo real - Ver si va aca o en Seccion I
+
 [Acá poner figura 2 Cliente-Servidor]
 
 El diseño del flujo de trabajo para el proceso servidor, debe contemplar la respuesta hacia los clientes en tiempo real, por lo que el intercambio de mensajes entre ellos debe ser tratado en los elementos de red de manera prioritaria.  
@@ -29,26 +33,27 @@ El diseño del flujo de trabajo para el proceso servidor, debe contemplar la res
 Implementar este tipo de comunicación en redes convencionales, y garantizar el grado de QoS necesario para las llamadas, puede convertirse en un desafío para los desarrolladores que no posean conocimientos en networking, debido a la falta de abstracción que suele haber en las interfaces que poseen los elementos de red. El uso de SDN  debe permitir al desarrollador abstraerse del conocimiento detallado de los elementos de red, permitiéndole programar de manera sencilla su comportamiento para obtener los resultados que se buscan.
 
 Como resultado de estas consideraciones, se listan las principales funcionalidades que debe cumplir la aplicación CAC a desarrollar:
+
 1 -  Debe ser capaz de comunicarse a través de una interfaz abierta y bien definida que permita el intercambio de mensajes y eventos con la IP PBX. 
 2 - Debe ser capaz de recibir y manejar los mensajes asociados a los siguientes eventos que ocurran en la IP PBX:
->> Establecimiento de una llamada
->> Cambios en los parámetros asociados a una llamada ya establecida
->> Finalización de una llamada
+ - Establecimiento de una llamada
+ - Cambios en los parámetros asociados a una llamada ya establecida
+ - Finalización de una llamada
 3 - Debe denegar o permitir el establecimiento de una llamada en base a un máximo predefinido por el administrador del dominio
 4 - Debe interpretar los requerimientos de QoS necesarios para las llamadas que puedan iniciarse y traducirlos a mensajes que actúen sobre los elementos de red a través del controlador SDN
 5 - Debe poseer una interfaz que permita la interacción con el administrador del dominio
 
-Sección III - Diseño de la aplicación CAC 
+### Sección III - Diseño de la aplicación CAC 
 
-En la figura 3 se muestra el diseño de la arquitectura básica para la implementación de la funcionalidad CAC en el entorno SDN, la cual incluye los siguientes componentes:
+En la figura 3 se muestra el diseño de la arquitectura básica para la implementación de la funcionalidad CAC en  entornos SDN, la cual incluye los siguientes componentes:
 
 [Acá agregar figura 3 Arquitectura Básica]
 
-Proceso Servidor CAC: aplicación servidor que implementa la lógica especificada, capturando los eventos que envía la PBX a través de la Northbound API y enviando la información necesaria hacia el controlador SDN a través de la Southbound API, para que se realicen las acciones necesarias sobre los elementos de red.
+Proceso Servidor CAC: aplicación servidor que implementa la lógica especificada, capturando los eventos que envía la IP PBX a través de la Northbound API y enviando la información necesaria hacia el controlador SDN a través de la Southbound API, para que se realicen las acciones necesarias sobre los elementos de red.
 
 Server: Un server físico o máquina virtual con capacidad para correr un proceso servidor CAC. El proceso servidor CAC podría estar distribuído en múltiples servers para mitigar problemas de escalabilidad. 
 
-Clientes SIP: una aplicación cliente que utiliza señalización SIP contra la PBX para el establecimiento de llamadas VOIP.
+Clientes SIP: una aplicación cliente que utiliza señalización SIP contra la IP PBX para el establecimiento de llamadas VOIP.
 
 Elementos de red: switches SDN programables a través de un controlador SDN mediante OpenFlow.
 
@@ -62,7 +67,7 @@ Módulo CAC: Integrado dentro del proceso servidor CAC, implementa la comunicaci
 
 IP PBX: Es la que establece la comunicación con los clientes SIP y maneja las sesiones. Además, envía los eventos e información necesaria hacia el módulo CAC para que se realice el control correspondiente.
 
-Sección IV - Implementación del prototipo
+### Sección IV - Implementación del prototipo
 
 Para poder evaluar la implementación de CAC en el entorno SDN, se desarrolló un prototipo montado sobre un escenario completamente virtual basado en Mininet[3]. Dado que el objetivo primordial era comprobar el funcionamiento del modelo sin hacer foco en métricas referidas a performance, el escenario virtual montado sobre Mininet brinda un marco ideal para evaluaciones rápidas y de bajo costo.
 El desarrollo del prototipo se basó pricipalmente en el uso de herramientas de software de código abierto, de uso modular y portable, y con características que favorecen la escalabilidad.
@@ -90,7 +95,7 @@ En la figura 5, se muestra el prototipo desarrollado:
 [Acá iría figura 5 con la maqueta especificada con el tipo de PBX, controlador, switch openflow, etc]
 
 
-Sección V - Pruebas, evaluación y resultados obtenidos
+### Sección V - Pruebas, evaluación y resultados obtenidos
 
 Las pruebas realizadas consistieron en ingresar mediante la interfaz de usuario el número máximo de llamadas simultánes en 3. Luego se generaron 3 llamadas, usando los clientes SIP basados en Linphone, desde el Host 1 al Host 2. En este punto, se pudo comprobar que todas las llamadas se establecieron con éxito, pero al intentar el inicio de una cuarta llamada, el mecanismo de CAC la rechaza dando aviso a los clientes SIP acerca de la imposibilidad de establecerla.
 Para comprobar  que las 3 llamadas que se encuentran en curso tienen garantizado el QoS, se genera un escenario de congestión inyectando adicionalmente tráfico best-effort mediante Iperf desde el Host 1 al Host 2. En la figura 6 se puede visualizar cómo el tráfico de voz resulta de mayor prioridad y no existe prácticamente pérdida de paquetes, mientras que para el tráfico best-effort sucede lo contrario, demostrando que las reglas de flujo actúan correctamente enviando el tráfico RTP de media a las colas de alta prioridad asociadas a los puertos de salida, logrando de esta manera el traffic shaping deseado.  
@@ -98,7 +103,7 @@ Para comprobar  que las 3 llamadas que se encuentran en curso tienen garantizado
 [Acá iría la figura 6 con gráfica de resultados]
 
 
-Sección VI - Conclusiones
+### Sección VI - Conclusiones
 
 El motivo del presente trabajo era encontrar una modelización de macanismo CAC que trabaje sobre entornos de red SDN, facilitando la interoperabilidad con la IP PBX y la programabilidad de la red frente a requerimientos de calidad de servicio que ejercen las llamadas basadas en tecnologías VOIP.
 
@@ -132,9 +137,7 @@ References:
 
 [11] "Linphone. http://www.linphone.org/," 2018.
 
-
-
-
+[12] https://www.ietf.org/rfc/rfc2753.txt
 
 
 
