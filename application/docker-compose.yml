@@ -1,17 +1,32 @@
+version: "3"
 services:
   asterisk:
+    image: asterisk-ari
+    build:
+      context: asterisk/
+      dockerfile: Dockerfile
     ports:
-      - 1
-      - 65500
+      - "8088:8088"
   ryu:
+    image: ryu-controller
+    build:
+      context: ryu/
+      dockerfile: Dockerfile
     ports:
-      - 6633 # open flow port
-      - 8080 # rest api
-  mininet:
-    ports: # definir ports..
-      - 1
-      - 65500
-  cac:
+      - "8080:8080"
+  call-admission-control-backend:
+    image: cac-backend
+    build:
+      context: call-admission-control/src/backend/
+      dockerfile: Dockerfile
     ports:
-      - 8000 # websocket
-      - 3000 # frontend
+      - "8000:8000"
+  call-admission-control-frontend:
+    image: cac-frontend
+    build:
+      context: call-admission-control/src/frontend/
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+  network:
+    
