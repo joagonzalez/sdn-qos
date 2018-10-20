@@ -1,17 +1,17 @@
 config = {
   'ari': {
-    'host': 'http://192.168.1.112:8088',
+    'host': 'http://0.0.0.0:8088',
     'username': 'asterisk',
     'password': 'asterisk',
   },
   'ryu': {
-    'baseurl': 'http://192.168.1.118:8080',
+    'baseurl': 'http://0.0.0.0:8080',
   },
   'frontService': {
-    'host': '',
+    'host': '0.0.0.0',
     'listen': 8000
   },
   'client': {
-    'baseurl': 'ws://192.168.1.118:8000',
+    'baseurl': 'ws://0.0.0.0:8000',
   }
 }

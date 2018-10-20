@@ -1,32 +1,39 @@
-version: "3"
+version: '3'
 services:
-  asterisk:
-    image: asterisk-ari
-    build:
-      context: asterisk/
-      dockerfile: Dockerfile
-    ports:
-      - "8088:8088"
   ryu:
     image: ryu-controller
     build:
       context: ryu/
       dockerfile: Dockerfile
     ports:
-      - "8080:8080"
-  call-admission-control-backend:
-    image: cac-backend
+      - '8080:8080/tcp'
+  asterisk:
+    image: asterisk-ari
     build:
-      context: call-admission-control/src/backend/
+      context: asterisk/
       dockerfile: Dockerfile
     ports:
-      - "8000:8000"
+      - '8088:8088/tcp'
+    depends_on:
+      - ryu
   call-admission-control-frontend:
     image: cac-frontend
     build:
       context: call-admission-control/src/frontend/
       dockerfile: Dockerfile
     ports:
-      - "3000:3000"
-  network:
-    
+      - '3000:3000/tcp'
+  call-admission-control-backend:
+    image: cac-backend
+    build:
+      context: call-admission-control/src/backend/
+      dockerfile: Dockerfile
+    ports:
+      - '8000:8000/tcp'
+    depends_on:
+      - asterisk
+      - ryu
+      - call-admission-control-frontend
+networks:
+  default:
+    driver: overlay
