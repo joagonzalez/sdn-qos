@@ -71,6 +71,12 @@ cac/frontend$ npm start (localhost:3000)
    CacApplication(BaseApplication) y lo mismo para el AriController, va a tener el BaseController y despues
    vamos a tener StasisCacApplicationQoSController(BaseAriController) que el baseAri es el que va a conectar al
    ari y además va tener las interfaces para comunicarse con Ryu y Ari respectivamente. Tambien el frontClient para hacer broadcast, etc y poder tener diferentes StasisApps, que se extienden de BaseAriController
+ - Definir los modelos de datos en interfaces.. o clases de Datos especificos y manejar eso.
  - Crear una Clase de Commands y una clase que coordine el run.py en ves de meterlo en un metodo, o ponerlo en el BaseApplication def start(): y/o algo asi
   Referencias:
   "Command and Query Responsibility Segregation Architecture - Leer":https://martinfowler.com/bliki/CQRS.html
+  - Hay que renombrar muchas clases.. (naming convention y demas)
+  - Reforzar SRP
+  - Ver bien OpenClose
+  - Ver interfaces y Modelos (Interface Seggregation)
+  - Ver bien que se inyecta y que se compone (Composition (dependencia externa), Composite (dependencia local))

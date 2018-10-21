@@ -12,7 +12,7 @@ def run():
   Cac.run()
 
   if Cac.listen:
-    FacadeApp = FacadeWsService()
+    FacadeApp = FacadeWsService() # Renombrar el nombre de FAcade por dió!
     FacadeApp.register_command(Cac.getMetrics, 'getMetrics')
     FacadeApp.register_command(Cac.getPorts, 'getPorts')
     FacadeApp.run(frontClient)
