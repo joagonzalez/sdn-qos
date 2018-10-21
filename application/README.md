@@ -63,3 +63,14 @@ cac/frontend$ npm start (localhost:3000)
 - Cosas interesantes
   - wait-for-it.sh = es un script que se utiliza dentro de los containers para escuchar que exista un proceso dentro de la red de los containers. cac-backend utiliza esto ya que necesita esperar que el ryu y el asterisk esten realmente ya en linea, permitiendo asi, el orden en tiempo y forma del flujo de los procesos como deben ser iniciados por sus respectivas dependencias.
 
+## Ehancements/Refactors Source Code
+ - Crear adaptadores para Public APIs (ari, ryu)
+ - Crear BaseApplication y BaseController (Ari) para abstraer el concepto de aplicación y controller
+   y crear Implementaciones especificas para soportar multiples aplicaciones o templates que su funcion sea
+   solo exponer una interfaz publica. Por ejemplo, BaseApplication, va a tener el setup y el run pero los metodos publicos que se definan para registrarse como comandos, van a estar en por ejemplo..
+   CacApplication(BaseApplication) y lo mismo para el AriController, va a tener el BaseController y despues
+   vamos a tener StasisCacApplicationQoSController(BaseAriController) que el baseAri es el que va a conectar al
+   ari y además va tener las interfaces para comunicarse con Ryu y Ari respectivamente. Tambien el frontClient para hacer broadcast, etc y poder tener diferentes StasisApps, que se extienden de BaseAriController
+ - Crear una Clase de Commands y una clase que coordine el run.py en ves de meterlo en un metodo, o ponerlo en el BaseApplication def start(): y/o algo asi
+  Referencias:
+  "Command and Query Responsibility Segregation Architecture - Leer":https://martinfowler.com/bliki/CQRS.html
