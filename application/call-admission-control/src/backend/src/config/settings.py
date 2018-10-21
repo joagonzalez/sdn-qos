@@ -1,6 +1,6 @@
 config = {
   'ari': {
-    'host': 'http://0.0.0.0:8088',
+    'host': 'http://0.0.0.0:8088/',
     'username': 'asterisk',
     'password': 'asterisk',
   },

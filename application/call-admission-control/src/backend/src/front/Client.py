@@ -15,7 +15,7 @@ class Client:
     self.connected = False
 
   def connect(self):
-    # websocket.enableTrace(True)
+    websocket.enableTrace(True)
     self.connection = websocket.WebSocketApp(config['client']['baseurl'],
                                     on_message = self.on_message,
                                     on_error = self.on_error,

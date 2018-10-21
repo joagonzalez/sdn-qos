@@ -16,14 +16,14 @@ services:
       - '8088:8088/tcp'
     depends_on:
       - ryu
-  call-admission-control-frontend:
+  call_admission_control_frontend:
     image: cac-frontend
     build:
       context: call-admission-control/src/frontend/
       dockerfile: Dockerfile
     ports:
       - '3000:3000/tcp'
-  call-admission-control-backend:
+  call_admission_control_backend:
     image: cac-backend
     build:
       context: call-admission-control/src/backend/
@@ -31,9 +31,6 @@ services:
     ports:
       - '8000:8000/tcp'
     depends_on:
+      - call_admission_control_frontend
       - asterisk
       - ryu
-      - call-admission-control-frontend
-networks:
-  default:
-    driver: overlay
