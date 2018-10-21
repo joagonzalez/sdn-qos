@@ -44,3 +44,22 @@ cac/frontend$ npm start (localhost:3000)
 - Dockerizar la app en un container y las instancias del ari + ryu para soporte multiplataforma
 - Buscar libreria de Grafos
 - Armar frontend en React
+- Armar un jenkins y automatizar todo el deploy en 1 solo script
+- Poner base de datos para grabar cosas interesantes (un postgres o un mongodb livianito.. o un sqlite porque no)
+- Falta investigar mininet
+
+## CAC - Docker - Infraestructura Automatizada
+- 1 Dockerfile por servicio
+- 1 docker-compose.yml para orquestar los servicios en modo Swarm con una network default en bridge mode.
+- Comandos:
+  - docker-compose -f docker-compose.yml up (corre todas las instancias. Si no existen las imagenes, las buildea)
+  - docker-compose down
+  - docker stack deploy (deploya los servicios en un stack consumible por docker service)
+  - docker container ls (muestra los running containers)
+  - docker image ls (muestra las imagenes actuales)
+  - docker network ls (muestra las interfaces creadas por docker)
+  - docker build -t imageName /abs/path/to/dockerfile (buildea una imagen desde un Dockerfile)
+
+- Cosas interesantes
+  - wait-for-it.sh = es un script que se utiliza dentro de los containers para escuchar que exista un proceso dentro de la red de los containers. cac-backend utiliza esto ya que necesita esperar que el ryu y el asterisk esten realmente ya en linea, permitiendo asi, el orden en tiempo y forma del flujo de los procesos como deben ser iniciados por sus respectivas dependencias.
+

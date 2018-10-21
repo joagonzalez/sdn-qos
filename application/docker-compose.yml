@@ -42,3 +42,21 @@ services:
       - call_admission_control_frontend
       - asterisk
       - ryu
+  mininet:
+    image: cac-mininet-opf-topologies
+    build:
+      context: mininet/
+    tty: true
+    privileged: true
+    ports:
+      - '6633:6633'
+      - '6653:6653'
+      - '6640:6640'
+    depends_on:
+      - ryu
+    environment:
+     - DISPLAY
+    volumes:
+     - /tmp/.X11-unix:/tmp/.X11-unix
+     - /lib/modules:/lib/modules
+
