@@ -1,11 +1,8 @@
 from ..api.service import ApiService
 from ...config.settings import config
+from .BaseController import BaseController
 
-class RyuController:
-  def __init__(self):
-    ''' This will make queries to the OF service '''
-    self.apiService = ApiService(baseurl=config['ryu']['baseurl'])
-
+class RyuController(BaseController):
   def queryForGetNodes(self):
     ''' los endpoints podrian estar registrados en un archivo Routes.. dentro de la carpeta Ryu? '''
     ''' this do queries '''
