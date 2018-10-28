@@ -75,6 +75,7 @@ cac/frontend$ npm start (localhost:3000)
  - Crear una Clase de Commands y una clase que coordine el run.py en ves de meterlo en un metodo, o ponerlo en el BaseApplication def start(): y/o algo asi
   Referencias:
   "Command and Query Responsibility Segregation Architecture - Leer":https://martinfowler.com/bliki/CQRS.html
+  "CQRS - MS":https://docs.microsoft.com/en-us/azure/architecture/guide/architecture-styles/cqrs
   - Hay que renombrar muchas clases.. (naming convention y demas)
   - Reforzar SRP
   - Ver bien OpenClose
