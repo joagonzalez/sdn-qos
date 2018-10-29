@@ -17,6 +17,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     vim \
     x11-xserver-utils \
     xterm \
+    linphone-nogtk \
  && rm -rf /var/lib/apt/lists/* \
  && chmod +x /mininet-setup.sh
 
