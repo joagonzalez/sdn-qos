@@ -43,13 +43,23 @@ def runMinimalTopo():
     # a remote controller.
     net = Mininet(
         topo=topo,
-        controller=lambda name: RemoteController( name, ip='127.0.0.1' ),
+        controller=lambda name: RemoteController( name, ip='ryu', port=6653 ),
         switch=OVSSwitch,
         autoSetMacs=True )
 
     # Actually start the network
     net.start()
 
+    # hosth1 = net.get('h1')
+    # hosth2 = net.get('h2')
+    switch1 = net.get('s1')
+    switch1.cmdPrint('ovs-vsctl set-manager ptcp:6632')
+    switch1.cmdPrint('ovs-vsctl set Bridge s1 protocols=OpenFlow13')
+    switch1.cmdPrint('ovs-vsctl show')
+    switch1.cmdPrint('ovs-ofctl -O OpenFlow13 show s1')
+    net.pingAll()
+    # hosth1.cmdPrint('ping ' + hosth2.IP())
+    
     # Drop the user in to a CLI so user can run commands.
     CLI( net )
 

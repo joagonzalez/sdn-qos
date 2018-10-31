@@ -7,8 +7,12 @@ services:
       dockerfile: Dockerfile
     ports:
       - '8080:8080'
+      - '6633:6633'
+      - '6653:6653'
     expose:
       - '8080'
+      - '6633'
+      - '6653'
   asterisk:
     image: asterisk-ari
     build:
@@ -43,20 +47,16 @@ services:
       - asterisk
       - ryu
   mininet:
-    image: cac-mininet-opf-topologies
+    image: cac-mininet
+    ports:
+      - '6632:6632'
+    expose:
+      - '6632'
     build:
       context: mininet/
+      dockerfile: Dockerfile
     tty: true
     privileged: true
-    ports:
-      - '6633:6633'
-      - '6653:6653'
-      - '6640:6640'
     depends_on:
       - ryu
-    environment:
-     - DISPLAY
-    volumes:
-     - /tmp/.X11-unix:/tmp/.X11-unix
-     - /lib/modules:/lib/modules
 
