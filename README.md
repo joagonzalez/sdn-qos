@@ -12,7 +12,8 @@ Implementar mecanismo de Call Admission Control (CAC) utilizando northbound APIs
 - Mininet 2.2.2 Ubuntu 14 LTS (http://mininet.org/) - Network emulator con soporte de Open Flow basado en contenedores y OVS
 - Open Virtual Switch (https://www.openvswitch.org/) - Software de switch virtual
 - Onos (https://onosproject.org/) - Controlador SDN
-- Ryu/Faucet 1.8.9 (https://faucet.nz/) - Controlador SDN
+- Faucet 1.8.9 (https://faucet.nz/) - Controlador SDN
+- Ryu (https://github.com/osrg/ryu, https://osrg.github.io/ryu/) - Controlador
 - POSTman (https://www.getpostman.com/) - Desarrollo y monitoreo
 - Mahimahi (http://mahimahi.mit.edu/) - Desarrollo y monitoreo
 - Python/Java para desarrollo de API y aplicación en controlador
