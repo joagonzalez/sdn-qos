@@ -12,7 +12,7 @@ Implementar mecanismo de Call Admission Control (CAC) utilizando northbound APIs
 - Mininet 2.2.2 Ubuntu 14 LTS (http://mininet.org/) - Network emulator con soporte de Open Flow basado en contenedores y OVS
 - Open Virtual Switch (https://www.openvswitch.org/) - Software de switch virtual
 - Onos (https://onosproject.org/) - Controlador SDN
-- Faucet 1.8.9 (https://faucet.nz/) - Controlador SDN
+- Ryu/Faucet 1.8.9 (https://faucet.nz/) - Controlador SDN
 - POSTman (https://www.getpostman.com/) - Desarrollo y monitoreo
 - Mahimahi (http://mahimahi.mit.edu/) - Desarrollo y monitoreo
 - Python/Java para desarrollo de API y aplicación en controlador
@@ -31,9 +31,14 @@ Se tratan en detalle dos casos de uso por ser los más representativos en el uso
 
 Se puede encontrar y agregar/modificar en Papers de Referencia.
 
+### Publicaciones base
 
-[1] Dynamic QoS on SIP Sessions Using OpenFlow
+- Using Software-Defined Networking for Real Time Internet Applications
+- DetServ Network Models for Real-Time
+- MonitoringOpenFlow
+- Quality of Service (QoS) in Software Defined Networking (SDN) A survey
+- https://github.com/yanlisa/reproducibility/wiki/Reproducing-Network-Research
 
-[2] Using Software-Defined Networking for Real Time Internet Applications
+### Publicaciones propias
 
-[3] https://github.com/yanlisa/reproducibility/wiki/Reproducing-Network-Research
+- Using Software Defined Networking for Call Admission Control and VoIP Applications
