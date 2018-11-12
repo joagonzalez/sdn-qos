@@ -38,7 +38,9 @@ Se puede encontrar y agregar/modificar en Papers de Referencia.
 - DetServ Network Models for Real-Time
 - MonitoringOpenFlow
 - Quality of Service (QoS) in Software Defined Networking (SDN) A survey
-- https://github.com/yanlisa/reproducibility/wiki/Reproducing-Network-Research
+- Floware Balanced Flow Monitoring in SDN 
+
+https://github.com/yanlisa/reproducibility/wiki/Reproducing-Network-Research
 
 ### Publicaciones propias
 
