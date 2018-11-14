@@ -40,8 +40,18 @@ Se puede encontrar y agregar/modificar en Papers de Referencia.
 - Quality of Service (QoS) in Software Defined Networking (SDN) A survey
 - Floware Balanced Flow Monitoring in SDN 
 
-https://github.com/yanlisa/reproducibility/wiki/Reproducing-Network-Research
-
 ### Publicaciones propias
 
 - Using Software Defined Networking for Call Admission Control and VoIP Applications
+
+### Informacion interesante
+
+- https://github.com/yanlisa/reproducibility/wiki/Reproducing-Network-Research
+
+- https://mik.bme.hu/~zfaigl/QoS/doc/README.html - ver JPERF y casos de uso Per flow QoS 
+
+- https://sdn-lab.com/2014/12/31/topology-discovery-with-ryu/ - topology discovery Ryu
+
+- http://forums.northboundnetworks.com/index.php?topic=322.0
+
+- https://github.com/Ehsan70/RyuApps - RyuApps no oficiales
