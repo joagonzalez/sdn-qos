@@ -39,6 +39,9 @@ Se puede encontrar y agregar/modificar en Papers de Referencia.
 - MonitoringOpenFlow
 - Quality of Service (QoS) in Software Defined Networking (SDN) A survey
 - Floware Balanced Flow Monitoring in SDN 
+- Implementation and verification of QoS Priority over SDN with Ryu
+- TCD-SCSS-DISSERTATION-2017-040- End to end Quality of Service in SDN
+- Container Network Functions - Bringing NFV to the Network Edge (Glasgow Group)
 
 https://github.com/yanlisa/reproducibility/wiki/Reproducing-Network-Research
 
