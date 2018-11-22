@@ -42,6 +42,7 @@ Se puede encontrar y agregar/modificar en Papers de Referencia.
 - Implementation and verification of QoS Priority over SDN with Ryu
 - TCD-SCSS-DISSERTATION-2017-040- End to end Quality of Service in SDN
 - Container Network Functions - Bringing NFV to the Network Edge (Glasgow Group)
+- Architecture Model for Dynamic Quality of Service and Resource Management using Meters of OpenFlow13 (IMPORTANTE)
 
 ### Publicaciones propias
 
