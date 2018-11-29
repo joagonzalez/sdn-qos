@@ -30,4 +30,15 @@ RUN cd /opt/ryu && python ./setup.py install
 
 WORKDIR /opt/ryu/
 
-CMD [ "./bin/ryu-manager", "ryu.app.qos_simple_switch_13_CAC", "ryu.app.qos_simple_switch_rest_13_CAC", "ryu.app.rest_conf_switch", "ryu.app.rest_qos" ]
+# "--observe-links", # esto bindea los links en el topology
+CMD [
+  "./bin/ryu-manager", 
+  "--observe-links",
+  "ryu.app.rest_topology",
+  "ryu.app.ws_topology",
+  "ryu.app.ofctl_rest",
+  "ryu.app.qos_simple_switch_13_CAC",
+  "ryu.app.qos_simple_switch_rest_13_CAC",
+  "ryu.app.rest_conf_switch",
+  "ryu.app.rest_qos"
+]
