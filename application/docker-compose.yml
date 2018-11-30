@@ -74,7 +74,18 @@ services:
     privileged: true
     depends_on:
       - ryu
-
+  simulation:
+    image: cac-simulation-caller
+    networks:
+      app_net:
+        ipv4_address: 172.18.0.15
+    build:
+      context: simulation/
+      dockerfile: Dockerfile
+    tty: true
+    privileged: true
+    depends_on:
+      - asterisk
 networks:
   app_net:
     driver: bridge

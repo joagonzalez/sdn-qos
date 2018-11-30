@@ -1,5 +1,27 @@
 # CAC Application
 
+## Build Docker image
+$ sudo docker build -t ryu .
+
+## Initialize docker compose
+$ sudo docker-compose -f docker-compose.yml up
+
+## Initialize docker swarm
+$ sudo docker swarm init --advertise-addr x.x.x.x:2377 --listen-addr x.x.x.x
+Listen: manager traffic
+Adv address: other docker traffic
+$ docker swarm join-token manager/worker
+
+## Docker useful commands
+docker run/stop -d/-it --name <name> <container-id>
+docker ps 
+docker containers ls
+docker images
+docker info
+docker version
+docker rm <container-id>
+docker rmi <image-name>
+
 ## Initialize RYU Controller
 $ ryu.app.simple_switch_13 ryu.app.simple_switch_rest_13 ryu.app.rest_conf_switch
 
@@ -9,6 +31,9 @@ $ ryu-manager ryu.app.qos_simple_switch_13_CAC ryu.app.qos_simple_switch_rest_13
 ### Initialize Ryu Controller test
 $ ryu-manager ryu.app.simple_switch_13 ryu.app.ofctl_rest
 
+### Initializa Ryu Controller Graph View
+$ PYTHONPATH=. ./bin/ryu run --observe-links ryu/app/gui_topology/gui_topology.py                
+
 ## Emulate Switches with mininet
 $ sudo mn --topo single,5 --mac --switch ovsk --controller remote
 
@@ -16,8 +41,17 @@ $ sudo mn --topo single,5 --mac --switch ovsk --controller remote
 ovs-vsctl set Bridge s1 protocols=OpenFlow13
 ovs-vsctl set-manager ptcp:6632
 
-## Modify simple_switch_13 in order to support multi tables in OpenFlow13
+# OVS usefull commands
+ovs-vsctil add-br <name-bridge>
+ovs-vsctil del-br <name-bridge>
+ovs-vsctl show
+ovs-vsctl add-port <name-bridge> <name-interface>
+ip tuntap add mode tap <name-port>
+ovs-appctl fdb/show <name-bridge>
+ovs-ofctl show <name-bridge>
+ovs-ofctl -O OpenFlow13 dump-flows <name-bridge>
 
+## Modify simple_switch_13 in order to support multi tables in OpenFlow13
 sed '/OFPFlowMod(/,/)/s/)/, table_id=1)/' ryu/ryu/app/simple_switch_13.py > ryu/ryu/app/qos_simple_switch_13.py
 cd ryu/; python ./setup.py install
 
