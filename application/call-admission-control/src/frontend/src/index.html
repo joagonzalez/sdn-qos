@@ -4,6 +4,7 @@
         <title>Cac Application - QoS</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="./ryu.topology.css">
         <link
             rel="stylesheet"
             href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -65,15 +66,22 @@
                     <button id="setQoSRules">Set QoS Rules</button>
                     <button id="setQoSQueue">Set QoS Queue</button>
                 </div>
-                <div class="col-md-6 charts">
+                <div class="col-md-12 charts">
                     <h5>Charts</h5>
+                    <div class="col-md-6">
+                        <h5>Topology Viewer</h5>
+                        <div class="topologyViewer" />
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Chart</h5>
+                        <div id="highcharts" />
+                    </div>
                 </div>
             </section>
         </main>
-
     </body>
     <script>
-        var ws = new WebSocket("ws://0.0.0.0:8000");
+        var ws = new WebSocket("ws://172.18.0.13:8000"); // cac-backend
         const getMetricsButton = document.getElementById('getMetrics');
         const getPortsButton = document.getElementById('getPorts');
         const setQoSRulesButton = document.getElementById('setQoSRules');
@@ -161,6 +169,8 @@
             console.log('WebSocket Error ', error);
         };
     </script>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="./ryu.topology.js" charset="utf-8"></script>
 </html>
 
 

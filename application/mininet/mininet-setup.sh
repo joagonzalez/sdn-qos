@@ -4,4 +4,4 @@
 
 service openvswitch-switch start
 
-python /minimal.py
+mn --controller remote,ip=172.18.0.10 --topo=tree,3

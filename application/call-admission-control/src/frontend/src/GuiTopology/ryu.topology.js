@@ -11,14 +11,10 @@ var CONF = {
     }
 };
 
-var ws = new WebSocket("ws://localhost:8080/v1.0/topology/ws");
-ws.onmessage = function(event) {
-    console.log('event', event);
+var wsRyu = new WebSocket("ws://172.18.0.10:8080/v1.0/topology/ws");
+wsRyu.onmessage = function(event) {
     var data = JSON.parse(event.data);
-    console.log('data', data);
-
     var result = rpc[data.method](data.params);
-
     var ret = {"id": data.id, "jsonrpc": "2.0", "result": result};
     this.send(JSON.stringify(ret));
 }
@@ -61,7 +57,7 @@ function _tick() {
 elem.drag = elem.force.drag().on("dragstart", _dragstart);
 function _dragstart(d) {
     var dpid = dpid_to_int(d.dpid)
-    d3.json("/stats/flow/" + dpid, function(e, data) {
+    d3.json("http://172.18.0.10:8080/stats/flow/" + dpid, function(e, data) {
         flows = data[dpid];
         console.log(flows);
         elem.console.selectAll("ul").remove();
@@ -75,7 +71,6 @@ function _dragstart(d) {
 elem.node = elem.svg.selectAll(".node");
 elem.link = elem.svg.selectAll(".link");
 elem.port = elem.svg.selectAll(".port");
-console.log('element', elem);
 elem.update = function () {
     this.force
         .nodes(topo.nodes)
@@ -126,19 +121,16 @@ var topo = {
     links: [],
     node_index: {}, // dpid -> index of nodes array
     initialize: function (data) {
-        console.log('data from Ryu API: ', data);
         this.add_nodes(data.switches);
         this.add_links(data.links);
     },
     add_nodes: function (nodes) {
-        console.log('nodes?', nodes);
         for (var i = 0; i < nodes.length; i++) {
             this.nodes.push(nodes[i]);
         }
         this.refresh_node_index();
     },
     add_links: function (links) {
-        console.log('links?', links);
         for (var i = 0; i < links.length; i++) {
             if (!is_valid_link(links[i])) continue;
             console.log("add link: " + JSON.stringify(links[i]));
@@ -276,9 +268,9 @@ var rpc = {
 }
 
 function initialize_topology() {
-    d3.xhr("http://localhost:8080/v1.0/topology/switches", function(error, switches) {
-        d3.json("http://localhost:8080/v1.0/topology/links", function(error, links) {
-            topo.initialize({switches: JSON.parse(switches.response), links: links});
+    d3.json("http://172.18.0.10:8080/v1.0/topology/switches", function(error, switches) {
+        d3.json("http://172.18.0.10:8080/v1.0/topology/links", function(error, links) {
+            topo.initialize({switches: switches, links: links});
             elem.update();
         });
     });

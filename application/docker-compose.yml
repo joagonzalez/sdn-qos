@@ -13,6 +13,9 @@ services:
       - '8080'
       - '6633'
       - '6653'
+    networks:
+      app_net:
+        ipv4_address: 172.18.0.10
   asterisk:
     image: asterisk-ari
     build:
@@ -24,6 +27,9 @@ services:
       - '8088:8088'
     depends_on:
       - ryu
+    networks:
+      app_net:
+        ipv4_address: 172.18.0.11
   call_admission_control_frontend:
     image: cac-frontend
     build:
@@ -33,6 +39,9 @@ services:
       - '3000'
     ports:
       - '3000:3000'
+    networks:
+      app_net:
+        ipv4_address: 172.18.0.12
   call_admission_control_backend:
     image: cac-backend
     build:
@@ -46,12 +55,18 @@ services:
       - call_admission_control_frontend
       - asterisk
       - ryu
+    networks:
+      app_net:
+        ipv4_address: 172.18.0.13
   mininet:
     image: cac-mininet
     ports:
       - '6632:6632'
     expose:
       - '6632'
+    networks:
+      app_net:
+        ipv4_address: 172.18.0.14
     build:
       context: mininet/
       dockerfile: Dockerfile
@@ -60,3 +75,10 @@ services:
     depends_on:
       - ryu
 
+networks:
+  app_net:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.18.0.0/24
