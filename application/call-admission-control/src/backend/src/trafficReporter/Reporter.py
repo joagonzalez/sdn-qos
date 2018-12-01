@@ -39,7 +39,7 @@ class TrafficReporter:
     info('Listen incoming traffic on port 9999')
     self.sock.listen( 1 )
     conn, addr = self.sock.accept() # pylint: disable=W0612
-    info('Connection stablished with ' + addr[0] + ':' + str(addr[1])
+    info('Connection stablished with ' + addr[0] + ':' + str(addr[1]))
     while True:
       data = conn.recv(self.buffer_size).decode() # pylint: disable=E1101
       if data is not None:
