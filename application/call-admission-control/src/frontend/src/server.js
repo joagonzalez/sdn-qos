@@ -11,7 +11,7 @@ app.use(function(req, res, next) {
     next();
   });
 
-app.use('/', express.static('GuiTopology', { index: false }));
+app.use('/', express.static('public', { index: false }));
 
 app.get('*', (req, res, next) => {
     res.sendFile(path.join(__dirname, '/index.html'));
