@@ -42,6 +42,8 @@ class TrafficReporter:
     info('Connection stablished with ' + addr[0] + ':' + str(addr[1]))
     while True:
       data = conn.recv(self.buffer_size).decode() # pylint: disable=E1101
+      # create sip and rtp object json
+      # trafficJson = { { sip: traffic }, { rtp: traffic } }
       if data is not None:
         self.frontClient.broadcast("hostTraffic", {
           "hostTraffic": dumps(data)

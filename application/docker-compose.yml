@@ -76,7 +76,6 @@ services:
     privileged: true
     depends_on:
       - ryu
-      - call_admission_control_backend
   simulation:
     image: cac-simulation-caller
     networks:
@@ -88,6 +87,8 @@ services:
     tty: true
     privileged: true
     depends_on:
+      - asterisk
+      - ryu
       - call_admission_control_backend
 networks:
   app_net:

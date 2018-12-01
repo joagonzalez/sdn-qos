@@ -26,6 +26,12 @@
             display: block;
             overflow-y: scroll;
         }
+        #trafficReport {
+            min-width: 310px;
+            max-width: 800px;
+            height: 400px;
+            margin: 0 auto
+        }
     </style>
     <body>
         <main id="application" class="container">
@@ -75,6 +81,7 @@
                     <div class="col-md-6">
                         <h5>Chart</h5>
                         <div id="highcharts" />
+                        <div id="trafficReport"></div>
                     </div>
                 </div>
             </section>
@@ -120,6 +127,11 @@
             inputCalls.value = total
         }
 
+        const trafficSipRtpRender = (traffic) => {
+            console.log(traffic.sip);
+            console.log(traffic.rtp);
+        }
+
         ws.onmessage = function (event) {
             console.log(event.data);
             if (event.data instanceof Blob) {
@@ -150,6 +162,8 @@
                     totalChannelsFormater(jsonResponse.data.totalChannels)
                 } else if (jsonResponse.notificationType === "cacTrigger") {
                     inputcacThreshold.value = Number(inputcacThreshold.value) + Number(jsonResponse.data.data)
+                } else if (jsonResponse.notificationType === "hostTraffic") {
+                    trafficSipRtpRender(jsonResponse.data.hostTraffic)
                 }
 
                 const lastContent = metricsContainer.innerHTML;
@@ -169,7 +183,13 @@
             console.log('WebSocket Error ', error);
         };
     </script>
-    <script src="./d3.v3.min.js" charset="utf-8"></script>
+    <script src="./highcharts/code/highcharts.js" charset="utf-8"></script>
+    <script src="./highcharts/code/modules/series-label.js"></script>
+    <script src="./highcharts/code/modules/exporting.js"></script>
+    <script src="./highcharts/code/modules/export-data.js"></script>
+    <script src="./trafficRender.js" charset="utf-8"></script>
+
+    <script src="./d3/d3.v3.min.js" charset="utf-8"></script>
     <script src="./ryu.topology.js" charset="utf-8"></script>
 </html>
 
