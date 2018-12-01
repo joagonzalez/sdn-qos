@@ -4,10 +4,12 @@ from .config import logger
 from .cac.Application import Application
 from .front.Facade import FacadeWsService
 from .front.Client import Client
+from .networkTrafficRender.Render import NetworkTrafficRender
 
 # Setup application
 def run():
   frontClient = Client()
+  NetworkTrafficRender(frontClient)
   Cac = Application(frontClient)
   Cac.run()
 

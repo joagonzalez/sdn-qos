@@ -49,8 +49,10 @@ services:
       dockerfile: Dockerfile
     expose:
       - '8000'
+      - '9999'
     ports:
       - '8000:8000'
+      - '9999:9999'
     depends_on:
       - call_admission_control_frontend
       - asterisk
@@ -85,7 +87,7 @@ services:
     tty: true
     privileged: true
     depends_on:
-      - asterisk
+      - call_admission_control_backend
 networks:
   app_net:
     driver: bridge

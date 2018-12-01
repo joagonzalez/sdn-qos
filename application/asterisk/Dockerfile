@@ -18,4 +18,5 @@ RUN sed -i '/;enabled=yes/c\enabled=yes' /etc/asterisk/http.conf
 RUN sed -i '/bindaddr=127.0.0.1/c\bindaddr=0.0.0.0' /etc/asterisk/http.conf
 RUN sed -i '/;bindport=8088/c\bindport=8088' /etc/asterisk/http.conf
 
-CMD ["/usr/sbin/asterisk", "-cvvvv"]
+# CMD ["/usr/sbin/asterisk", "-cvvvv"]
+CMD ["/usr/sbin/asterisk", "-c"]

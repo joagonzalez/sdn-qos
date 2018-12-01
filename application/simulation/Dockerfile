@@ -3,15 +3,14 @@ FROM ubuntu:latest
 USER root
 WORKDIR /root
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    curl \
-    iproute2 \
-    iputils-ping \
-    nmap \
-    sip-tester \
-    wireshark \
-    tcpdump \
-    linphone-nogtk \
-    linphone 
+COPY ./wait-for-it.sh /root
+COPY simulation-setup.sh /
 
-ENTRYPOINT ["/bin/bash"]
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    sip-tester \
+    tcpdump \
+    netcat \
+ && chmod +x /simulation-setup.sh
+
+# ENTRYPOINT ["bash"]
+CMD ["/simulation-setup.sh"]
