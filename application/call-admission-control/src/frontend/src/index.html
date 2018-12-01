@@ -163,7 +163,7 @@
                 } else if (jsonResponse.notificationType === "cacTrigger") {
                     inputcacThreshold.value = Number(inputcacThreshold.value) + Number(jsonResponse.data.data)
                 } else if (jsonResponse.notificationType === "hostTraffic") {
-                    trafficSipRtpRender(jsonResponse.data.hostTraffic)
+                    // trafficSipRtpRender(jsonResponse.data.hostTraffic)
                 }
 
                 const lastContent = metricsContainer.innerHTML;

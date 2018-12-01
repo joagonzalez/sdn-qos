@@ -1,4 +1,4 @@
-Highcharts.chart('container', {
+Highcharts.chart('trafficReport', {
 
     title: {
         text: 'Solar Employment Growth by Sector, 2010-2016'
