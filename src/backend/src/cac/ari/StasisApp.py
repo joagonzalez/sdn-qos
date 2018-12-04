@@ -104,7 +104,7 @@ def stasis_start_cb(channel_obj, ev, localClient, frontClient, ryuApi):
 
         # Hang up the channel in 4 seconds
         if totalChannels >= CAC_THRESHOLD:
-            timer = threading.Timer(4, hangup_channel, [channel, frontClient])
+            timer = threading.Timer(0, hangup_channel, [channel, frontClient])
             channel_timers[channel.id] = timer
             timer.start()
  
