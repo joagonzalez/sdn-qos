@@ -75,6 +75,10 @@ sipp -d 10000 -s 1000 asterisk-ip -l 5 -mp 5606
 
 - check script: http://marcelog.github.io/articles/monitor_sip_trunks_success_calls.html
 
+
+## Descargar remote branch Git
+- git checkout --track remotes/origin/enhancement/cac-backend-refactor
+
 ## TODOS
 - poner las configuraciones en un config.settings file (OK)
 - armar logger file 
