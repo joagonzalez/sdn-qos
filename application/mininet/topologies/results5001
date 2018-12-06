@@ -1,0 +1,31 @@
+------------------------------------------------------------
+Server listening on UDP port 5001
+Receiving 1470 byte datagrams
+UDP buffer size:  208 KByte (default)
+------------------------------------------------------------
+[  3] local 10.0.0.1 port 5001 connected with 10.0.0.2 port 35966
+[ ID] Interval       Transfer     Bandwidth        Jitter   Lost/Total Datagrams
+[  3]  0.0- 1.0 sec  12.9 KBytes   106 Kbits/sec  44.323 ms  523/  532 (98%)
+[  3]  1.0- 2.0 sec  11.5 KBytes  94.1 Kbits/sec  70.702 ms    0/    8 (0%)
+[  3]  2.0- 3.0 sec  11.5 KBytes  94.1 Kbits/sec  86.424 ms    0/    8 (0%)
+[  3]  3.0- 4.0 sec  12.9 KBytes   106 Kbits/sec  96.657 ms    0/    9 (0%)
+[  3]  4.0- 5.0 sec  11.5 KBytes  94.1 Kbits/sec  101.934 ms    0/    8 (0%)
+[  3]  5.0- 6.0 sec  11.5 KBytes  94.1 Kbits/sec  105.043 ms    0/    8 (0%)
+[  3]  6.0- 7.0 sec  11.5 KBytes  94.1 Kbits/sec  107.181 ms    0/    8 (0%)
+[  3]  7.0- 8.0 sec  12.9 KBytes   106 Kbits/sec  108.382 ms    0/    9 (0%)
+[  3]  8.0- 9.0 sec  11.5 KBytes  94.1 Kbits/sec  108.938 ms    0/    8 (0%)
+[  3]  9.0-10.0 sec  11.5 KBytes  94.1 Kbits/sec  109.373 ms    0/    8 (0%)
+[  3] 10.0-11.0 sec  11.5 KBytes  94.1 Kbits/sec  109.427 ms    0/    8 (0%)
+[  3] 11.0-12.0 sec  12.9 KBytes   106 Kbits/sec  109.553 ms    0/    9 (0%)
+[  3] 12.0-13.0 sec  11.5 KBytes  94.1 Kbits/sec  109.629 ms    0/    8 (0%)
+[  3] 13.0-14.0 sec  11.5 KBytes  94.1 Kbits/sec  109.631 ms    0/    8 (0%)
+[  3] 14.0-15.0 sec  11.5 KBytes  94.1 Kbits/sec  109.668 ms    0/    8 (0%)
+[  3] 15.0-16.0 sec  12.9 KBytes   106 Kbits/sec  109.732 ms    0/    9 (0%)
+[  3] 16.0-17.0 sec  11.5 KBytes  94.1 Kbits/sec  109.707 ms    0/    8 (0%)
+[  3] 17.0-18.0 sec  11.5 KBytes  94.1 Kbits/sec  109.966 ms    0/    8 (0%)
+[  3] 18.0-19.0 sec  12.9 KBytes   106 Kbits/sec  109.805 ms    0/    9 (0%)
+[  3] 19.0-20.0 sec  11.5 KBytes  94.1 Kbits/sec  109.814 ms    0/    8 (0%)
+[  3] 20.0-21.0 sec  11.5 KBytes  94.1 Kbits/sec  109.739 ms    0/    8 (0%)
+[  3] 21.0-22.0 sec  11.5 KBytes  94.1 Kbits/sec  109.764 ms    0/    8 (0%)
+[  3] 22.0-23.0 sec  12.9 KBytes   106 Kbits/sec  109.709 ms    0/    9 (0%)
+[  3] 23.0-24.0 sec  11.5 KBytes  94.1 Kbits/sec  109.705 ms    0/    8 (0%)
