@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     sip-tester \
     tcpdump \
     netcat \
+    tshark \
  && chmod +x /simulation-setup.sh
 
 # ENTRYPOINT ["bash"]

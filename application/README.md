@@ -13,7 +13,8 @@ Adv address: other docker traffic
 $ docker swarm join-token manager/worker
 
 ## Docker useful commands
-docker run/stop -d/-it --name <name> <container-id>
+docker run/stop -d/-it --name <name> <container-id>  -p 8080:80
+docker run con --rm borra el container luego de stopearlo (ephemeral mode)
 docker ps 
 docker containers ls
 docker images
@@ -21,6 +22,16 @@ docker info
 docker version
 docker rm <container-id>
 docker rmi <image-name>
+docker rmi $(docker image ls | grep none | gawk '{ print $3 }')
+docker rm $(docker ls -aq)
+
+## Docker Networking commands
+docker network create -d <diver-name> <network-name>
+docker run/stop -d/-it --name <name> <container-id>  -p 8080:80 --netowrk <network-name>
+docker network ls
+docker network inspect <network-name>
+docker port <container-name>
+
 
 ## Initialize RYU Controller
 $ ryu.app.simple_switch_13 ryu.app.simple_switch_rest_13 ryu.app.rest_conf_switch
