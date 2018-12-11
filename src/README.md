@@ -13,7 +13,8 @@ Adv address: other docker traffic
 $ docker swarm join-token manager/worker
 
 ## Docker useful commands
-docker run/stop -d/-it --name <name> <container-id>
+docker run/stop -d/-it --name <name> <container-id>  -p 8080:80
+docker run con --rm borra el container luego de stopearlo (ephemeral mode)
 docker ps 
 docker containers ls
 docker images
@@ -21,6 +22,23 @@ docker info
 docker version
 docker rm <container-id>
 docker rmi <image-name>
+docker rmi $(docker image ls | grep none | gawk '{ print $3 }')
+docker rm $(docker ls -aq)
+
+## Docker Networking commands
+docker network create -d <diver-name> <network-name>
+docker run/stop -d/-it --name <name> -p 8080:80 --network <network-name> <container-id>
+docker network ls
+docker network inspect <network-name>
+docker port <container-name>
+docker network connect --ip 10.10.36.122 <network-name> <container-name>
+
+## Docker Volumes commands
+docker volume ls
+docker volume inspect <volume-name>
+docker volume create <volume-name>
+docker start/run --name <name>  -p 8080:80 --mount source:<volume-name>,target=/vol <container-id>
+
 
 ## Initialize RYU Controller
 $ ryu.app.simple_switch_13 ryu.app.simple_switch_rest_13 ryu.app.rest_conf_switch
@@ -70,6 +88,44 @@ cac/mocks$ npm start (localhost:8001)
 cac/frontend$ npm install
 cac/frontend$ npm start (localhost:3000)
 
+## Call simulation with sipp (https://www.voip-info.org/sipp/)
+sipp -d 10000 -s 1000 asterisk-ip -l 5 -mp 5606 
+
+- check script: http://marcelog.github.io/articles/monitor_sip_trunks_success_calls.html
+
+## Asterisk info
+show core channels
+asterisk -rvvvv
+sip set debug on
+core set debug 5
+https://blog.russellbryant.net/2015/10/15/bridging-asterisk-rtp-streams-with-ovs/
+https://www.youtube.com/watch?v=f5IwNoPrVSE
+https://github.com/asterisk/node-ari-client
+https://github.com/asterisk/ari-examples
+
+## Descargar remote branch Git
+- git checkout --track remotes/origin/enhancement/cac-backend-refactor
+
+#### Documentacion simulaciones por branch
+
+- Nombre simulacion: CAC Calls Containers sipp
+- Repositorio: sdn-qos
+- Branch: cac-be-with-gui-topology-call-simulation-and-graphic-traffic-ovs-over-mn
+- Video loom: CAC App v2 with sipp simulation and topology ryu module
+- Descripcion: Levantar docker-compose -f docker-compose.yml up
+
+- Nombre simulacion: QoS Real-Time with mininet and Ryu (DSCP+queues)
+- Repositorio: SDN-Call-Admission-Control
+- Branch: CAC_App_v1_refactor
+- Video loom: QoS Real-Time with mininet and Ryu (DSCP+queues)
+- Descripcion: Se ejecutan asterisk (vm), backend, frontend, ryu y mininet con la topologia establecida y luego la simulacion script sdn-qos-RealTimeQueues.py en folder mininet/ del repo
+
+- Nombre simulacion: CAC vs no-CAC scenario and sipp (new hangup method)
+- Repositorio: SDN-Call-Admission-Control
+- Branch: CAC_App_v1_refactor
+- Video loom: CAC vs no-CAC scenario and sipp
+- Descripcion: Se ejecutaran llamadas a una extension no expuesta por aplicacion Stasis (1000) y a otra expuesta por aplicacion Stasis(cac) (7000) y se compararan resultados para entender comportamiento de aplicacion CAC. Asterisk en VM y comando sipp -d 10000 -s 1000 192.168.56.101 -l 5 -mp 5606 con wireshark analizando rtp or sip. After refactor: def stasis_start_cb(channel_obj, ev, localClient, frontClient, ryuApi), Before Refactor: def outgoing_start_cb(channel_obj, ev):
+
 ## TODOS
 - poner las configuraciones en un config.settings file (OK)
 - armar logger file 
@@ -114,4 +170,5 @@ cac/frontend$ npm start (localhost:3000)
   - Reforzar SRP
   - Ver bien OpenClose
   - Ver interfaces y Modelos (Interface Seggregation)
-  - Ver bien que se inyecta y que se compone (Composition (dependencia externa), Composite (dependencia local))
+  - Ver bien que se inyecta y que se compone (Composition (dependencia externa), Composite (dependencia local)).  
+
