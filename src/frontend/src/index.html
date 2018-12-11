@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Cac Application - QoS</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="./ryu.topology.css">
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+            integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+            crossorigin="anonymous"
+        >
+    </head>
+    <!-- Latest compiled and minified CSS -->
+    <style type="text/css">
+        #metrics-report {
+            border: 1px solid #000;
+            padding: 5px 10px;
+            height: 300px;
+            width: 100%;
+            font-size: 12px;
+            font-family: Arial;
+            font-weight: normal;
+            font-style: italic;
+            display: block;
+            overflow-y: scroll;
+        }
+        #trafficReport {
+            min-width: 310px;
+            max-width: 800px;
+            height: 400px;
+            margin: 0 auto
+        }
+    </style>
+    <body>
+        <main id="application" class="container">
+            <section class="row concurrentCalls">
+                <div class="col-md-6">
+                    <table id="qos-status" class="table table-bordered stripped">
+                        <thead>
+                            <th>From</th>
+                            <th>To</th>
+                            <th>QoS</th>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-6">
+                    <div class="counters">
+                        <div class="counter col-md-4">
+                            <label>Calls</label>
+                            <input id="total-channel-calls" type="text" class="form-control" value="0" />
+                        </div>
+                        <div class="counter col-md-4">
+                            <label>Calls Threshold</label>
+                            <input id="cacThreshold" type="text" class="form-control" value="0" />
+                        </div>
+                        <div class="counter col-md-4">
+                            <label>Calls Dropped CAC</label>
+                            <input type="text" class="form-control" value="0" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="row logs">
+                <div class="col-md-6 ryu-controller-loggs">
+                    <div id="metrics-report"></div>
+                    <button id="getMetrics">Get Metrics</button>
+                    <button id="getPorts">Get Ports</button>
+                    <button id="setQoSRules">Set QoS Rules</button>
+                    <button id="setQoSQueue">Set QoS Queue</button>
+                </div>
+                <div class="col-md-12 charts">
+                    <h5>Charts</h5>
+                    <div class="col-md-6">
+                        <h5>Topology Viewer</h5>
+                        <div class="topologyViewer" />
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Chart</h5>
+                        <div id="highcharts" />
+                        <div id="trafficReport"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </body>
+    <script>
+        var ws = new WebSocket("ws://localhost:8000"); // cac-backend
+        const getMetricsButton = document.getElementById('getMetrics');
+        const getPortsButton = document.getElementById('getPorts');
+        const setQoSRulesButton = document.getElementById('setQoSRules');
+        const setQoSQueueButton = document.getElementById('setQoSQueue');
+
+        const metricsContainer = document.getElementById('metrics-report');
+        const qosStatusTable = document.getElementById('qos-status');
+        const inputCalls = document.getElementById('total-channel-calls');
+        const inputcacThreshold = document.getElementById('cacThreshold');
+
+        getMetricsButton.addEventListener('click', e => {
+            sendMessage( 'getMetrics' )
+        });
+        getPortsButton.addEventListener('click', e => {
+            sendMessage( 'getPorts' )
+        });
+        setQoSRulesButton.addEventListener('click', e => {
+            sendMessage( 'setQoSRules' )
+        });
+    
+        setQoSQueueButton.addEventListener('click', e => {
+            sendMessage( 'setQoSQueue' )
+        });
+
+        const newChannelFormatter = (newChannel) => {
+            const channelRow = qosStatusTable.insertRow(1);
+            const fromCell = channelRow.insertCell(0);
+            const toCell = channelRow.insertCell(1);
+            const QoSCell = channelRow.insertCell(2);
+            fromCell.innerHTML = newChannel.currentNewChannel[1][1];
+            toCell.innerHTML = newChannel.currentNewChannel[7][1].exten;
+            QoSCell.innerHTML = "";
+        }
+
+        const totalChannelsFormater = (total) => {
+            inputCalls.value = total
+        }
+
+        const trafficSipRtpRender = (traffic) => {
+            console.log(traffic.sip);
+            console.log(traffic.rtp);
+        }
+
+        ws.onmessage = function (event) {
+            console.log(event.data);
+            if (event.data instanceof Blob) {
+                reader = new FileReader();
+                reader.addEventListener('loadend', (e) => {
+                    const text = e.target.result;
+                    try {
+                        console.log('text', text);
+                        const jsonResponse = JSON.parse(text);
+                        console.log('text', jsonResponse);
+                        if (jsonResponse.notificationType === "newChannel") {
+                            newChannelFormatter(jstonResponse.data);
+                        }
+                    } finally {
+                        const lastContent = metricsContainer.innerHTML;
+                        metricsContainer.innerHTML = lastContent + text;
+                    }
+                });
+                reader.readAsText(event.data);
+            } else {
+                const text = (event.data !== "Ping") ? JSON.parse(event.data) : event.data;
+
+                const jsonResponse = text;
+                if (jsonResponse.notificationType === "newChannel") {
+                    newChannelFormatter(jsonResponse.data);
+                    totalChannelsFormater(jsonResponse.data.totalChannels)
+                } else if (jsonResponse.notificationType === "closeChannel") {
+                    totalChannelsFormater(jsonResponse.data.totalChannels)
+                } else if (jsonResponse.notificationType === "cacTrigger") {
+                    inputcacThreshold.value = Number(inputcacThreshold.value) + Number(jsonResponse.data.data)
+                } else if (jsonResponse.notificationType === "hostTraffic") {
+                    // trafficSipRtpRender(jsonResponse.data.hostTraffic)
+                }
+
+                const lastContent = metricsContainer.innerHTML;
+                metricsContainer.innerHTML = lastContent + event.data;
+            }
+        };
+
+        ws.onopen = function () {
+            sendMessage( 'Ping' )
+        };
+
+        sendMessage = function( command ) {
+            ws.send( command )
+        }
+
+        ws.onerror = function (error) {
+            console.log('WebSocket Error ', error);
+        };
+    </script>
+    <script src="./highcharts/code/highcharts.js" charset="utf-8"></script>
+    <script src="./highcharts/code/modules/series-label.js"></script>
+    <script src="./highcharts/code/modules/exporting.js"></script>
+    <script src="./highcharts/code/modules/export-data.js"></script>
+    <script src="./trafficRender.js" charset="utf-8"></script>
+
+    <script src="./d3/d3.v3.min.js" charset="utf-8"></script>
+    <script src="./ryu.topology.js" charset="utf-8"></script>
+</html>
+
+
