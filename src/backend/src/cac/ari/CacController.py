@@ -34,7 +34,6 @@ class CacController(BaseController):
     #print "### EVENT: "
     #print ev.get('args')[0]
     
-
     if ev.get('args')[0] == "inbound" :
         self.incomingChannels += 1
     print '### Incoming CHANNELS:'
@@ -74,7 +73,7 @@ class CacController(BaseController):
     #    print "%s: %s" % (key, value)
     
     channel.ring()
-    print 'llego hasta aca!'
+    #print 'llego hasta aca!'
     try:
         print "Dialing {}".format(args[1])
         outgoing = self.client.channels.originate(endpoint=args[1],
@@ -95,7 +94,9 @@ class CacController(BaseController):
         bridge.addChannel(channel=[channel.id, outgoing.id])
 
         #CacController.connectedChannels[ bridge.id ] = True
-        totalChannels = CacController.getTotalChannels()
+        self.incomingChannels += 1
+        #totalChannels = CacController.getTotalChannels()
+        totalChannels = self.incomingChannels
 
         channel.on_event('StasisEnd', lambda *args: self.safe_hangup(outgoing, bridge))
         outgoing.on_event('StasisEnd', lambda *args: self.safe_hangup(channel, bridge))
