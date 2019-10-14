@@ -2,7 +2,7 @@
 sdn-qos
 
 ## Ver videos (drive)
-Branches: Mergear finalment solo a una y comenzar a utilizar tags. Hoy en dia tenemos 2 principales y una tercera con feature experimental.
+Branches: Mergear a una rama teniendo master/develop y branches por feature y comenzar a utilizar tags. Hoy en dia tenemos 2 principales y una tercera con feature experimental.
 
 - cac-be-with-gui-topology-call-simulation-and-graphic-traffic-ovs-over-mn -- sipp simulation + cac + gui topology
 - CAC_App_v1_refactor -- real time qos scripts and wireshark i/o
