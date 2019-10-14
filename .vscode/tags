@@ -1,0 +1,723 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Adapter.py	../application/call-admission-control/src/backend/src/cac/ari/Adapter.py	1;"	kind:file	line:1
+ApiService	../application/call-admission-control/src/backend/src/cac/api/service.py	/^class ApiService:$/;"	kind:class	line:11
+ApiService	../application/mininet/topologies/api.py	/^class ApiService:$/;"	kind:class	line:13
+AppIterRange	../application/ryu/response.py	/^class AppIterRange(object):$/;"	kind:class	line:1447
+Application	../application/call-admission-control/src/backend/src/cac/Application.py	/^class Application(BaseApplication):$/;"	kind:class	line:6
+Application.py	../application/call-admission-control/src/backend/src/cac/Application.py	1;"	kind:file	line:1
+AriAdapter	../application/call-admission-control/src/backend/src/cac/ari/Adapter.py	/^class AriAdapter:$/;"	kind:class	line:3
+AriMockApi	../application/call-admission-control/src/mocks/ari/AriMockInterface.py	/^class AriMockApi(WebSocket):$/;"	kind:class	line:3
+AriMockInterface.py	../application/call-admission-control/src/mocks/ari/AriMockInterface.py	1;"	kind:file	line:1
+AriMockServer	../application/call-admission-control/src/mocks/ari/server.py	/^class AriMockServer:$/;"	kind:class	line:6
+AriTestCase	../application/call-admission-control/src/backend/libs/ari-py/ari_test/utils.py	/^class AriTestCase(unittest.TestCase):$/;"	kind:class	line:11
+BASE_URL	../application/call-admission-control/src/backend/libs/ari-py/ari_test/utils.py	/^    BASE_URL = "http:\/\/ari.py\/ari"$/;"	kind:variable	line:15
+BASE_URL	../application/call-admission-control/src/backend/libs/ari-py/ari_test/websocket_test.py	/^BASE_URL = "http:\/\/ari.py\/ari"$/;"	kind:variable	line:13
+BaseApplication	../application/call-admission-control/src/backend/src/cac/BaseApplication.py	/^class BaseApplication:$/;"	kind:class	line:7
+BaseApplication.py	../application/call-admission-control/src/backend/src/cac/BaseApplication.py	1;"	kind:file	line:1
+BaseController	../application/call-admission-control/src/backend/src/cac/ari/BaseController.py	/^class BaseController:$/;"	kind:class	line:8
+BaseController	../application/call-admission-control/src/backend/src/cac/ryu/BaseController.py	/^class BaseController:$/;"	kind:class	line:4
+BaseController.py	../application/call-admission-control/src/backend/src/cac/ari/BaseController.py	1;"	kind:file	line:1
+BaseController.py	../application/call-admission-control/src/backend/src/cac/ryu/BaseController.py	1;"	kind:file	line:1
+BaseObject	../application/call-admission-control/src/backend/libs/ari-py/ari/model.py	/^class BaseObject(object):$/;"	kind:class	line:110
+Bridge	../application/call-admission-control/src/backend/libs/ari-py/ari/model.py	/^class Bridge(BaseObject):$/;"	kind:class	line:206
+CAC	../documentation/architecture/modules/astersik/scripts/python-app-logica.py	/^class CAC {$/;"	kind:class	line:2
+CAC_THRESHOLD	../application/call-admission-control/src/backend/src/cac/ari/CacController.py	/^  CAC_THRESHOLD = 2$/;"	kind:variable	line:12
+CLASS_MAP	../application/call-admission-control/src/backend/libs/ari-py/ari/model.py	/^CLASS_MAP = {$/;"	kind:variable	line:374
+CacController	../application/call-admission-control/src/backend/src/cac/ari/CacController.py	/^class CacController(BaseController):$/;"	kind:class	line:10
+CacController.py	../application/call-admission-control/src/backend/src/cac/ari/CacController.py	1;"	kind:file	line:1
+Channel	../application/call-admission-control/src/backend/libs/ari-py/ari/model.py	/^class Channel(BaseObject):$/;"	kind:class	line:190
+Client	../application/call-admission-control/src/backend/libs/ari-py/ari/__init__.py	/^Client = client.Client$/;"	kind:variable	line:12
+Client	../application/call-admission-control/src/backend/libs/ari-py/ari/client.py	/^class Client(object):$/;"	kind:class	line:18
+Client	../application/call-admission-control/src/backend/src/front/Client.py	/^class Client:$/;"	kind:class	line:12
+Client.py	../application/call-admission-control/src/backend/src/front/Client.py	1;"	kind:file	line:1
+ClientTest	../application/call-admission-control/src/backend/libs/ari-py/ari_test/client_test.py	/^class ClientTest(AriTestCase):$/;"	kind:class	line:20
+Controller.py	../application/call-admission-control/src/backend/src/cac/ryu/Controller.py	1;"	kind:file	line:1
+DELETE	../application/call-admission-control/src/backend/libs/ari-py/ari_test/client_test.py	/^DELETE = httpretty.DELETE$/;"	kind:variable	line:16
+DELETE	../application/call-admission-control/src/backend/libs/ari-py/ari_test/websocket_test.py	/^DELETE = httpretty.DELETE$/;"	kind:variable	line:18
+DatacenterBasicTopo	../application/mininet/topologies/datacenterBasic.py	/^class DatacenterBasicTopo( Topo ):$/;"	kind:class	line:16
+DatacenterConfigurableTopo	../application/mininet/topologies/datacenterConfigurable.py	/^class DatacenterConfigurableTopo( Topo ):$/;"	kind:class	line:16
+DefaultObjectIdGenerator	../application/call-admission-control/src/backend/libs/ari-py/ari/model.py	/^class DefaultObjectIdGenerator(ObjectIdGenerator):$/;"	kind:class	line:92
+DeviceState	../application/call-admission-control/src/backend/libs/ari-py/ari/model.py	/^class DeviceState(BaseObject):$/;"	kind:class	line:297
+EmptyResponse	../application/ryu/response.py	/^class EmptyResponse(object):$/;"	kind:class	line:1503
+Endpoint	../application/call-admission-control/src/backend/libs/ari-py/ari/model.py	/^class Endpoint(BaseObject):$/;"	kind:class	line:282
+EndpointIdGenerator	../application/call-admission-control/src/backend/libs/ari-py/ari/model.py	/^class EndpointIdGenerator(ObjectIdGenerator):$/;"	kind:class	line:268
+EventUnsubscriber	../application/call-admission-control/src/backend/libs/ari-py/ari/client.py	/^        class EventUnsubscriber(object):$/;"	kind:class	line:140
+Facade.py	../application/call-admission-control/src/backend/src/front/Facade.py	1;"	kind:file	line:1
+FacadeWsService	../application/call-admission-control/src/backend/src/front/Facade.py	/^class FacadeWsService:$/;"	kind:class	line:8
+GET	../application/call-admission-control/src/backend/libs/ari-py/ari_test/client_test.py	/^GET = httpretty.GET$/;"	kind:variable	line:13
+GET	../application/call-admission-control/src/backend/libs/ari-py/ari_test/websocket_test.py	/^GET = httpretty.GET$/;"	kind:variable	line:15
+LinuxRouter	../application/mininet/topologies/salidarRouter_topo.py	/^class LinuxRouter( Node ):$/;"	kind:class	line:18
+LiveRecording	../application/call-admission-control/src/backend/libs/ari-py/ari/model.py	/^class LiveRecording(BaseObject):$/;"	kind:class	line:237
+Mailbox	../application/call-admission-control/src/backend/libs/ari-py/ari/model.py	/^class Mailbox(BaseObject):$/;"	kind:class	line:327
+MinimalTopo	../application/mininet/topologies/externalConnection.py	/^class MinimalTopo( Topo ):$/;"	kind:class	line:21
+MinimalTopo	../application/mininet/topologies/minimal.py	/^class MinimalTopo( Topo ):$/;"	kind:class	line:19
+MinimalTopo	../application/mininet/topologies/minimal_2.py	/^class MinimalTopo( Topo ):$/;"	kind:class	line:19
+Mininet	../application/mininet/topologies/net_test.py	/^class Mininet( object ):$/;"	kind:class	line:103
+MyTopo	../application/mininet/topologies/diffserv_topo.py	/^class MyTopo( Topo ):$/;"	kind:class	line:61
+MyTopo	../application/mininet/topologies/diffserv_topo2.py	/^class MyTopo( Topo ):$/;"	kind:class	line:93
+MyTopo	../application/mininet/topologies/salidarRouter_topo.py	/^class MyTopo( Topo ):$/;"	kind:class	line:31
+MyTopo	../application/mininet/topologies/sdn-qos-RealTimeQueues.py	/^class MyTopo( Topo ):$/;"	kind:class	line:112
+OFP_VERSIONS	../application/ryu/applications/qos_simple_switch_13_CAC.py	/^    OFP_VERSIONS = [ofproto_v1_3.OFP_VERSION]$/;"	kind:variable	line:27
+OFP_VERSIONS	../application/ryu/applications/simple_switch_13_CAC.py	/^    OFP_VERSIONS = [ofproto_v1_3.OFP_VERSION]$/;"	kind:variable	line:27
+OFP_VERSIONS	../documentation/architecture/modules/ryu/scripts/qos_simple_switch_13_CAC.py	/^    OFP_VERSIONS = [ofproto_v1_3.OFP_VERSION]$/;"	kind:variable	line:27
+OFP_VERSIONS	../documentation/architecture/modules/ryu/scripts/simple_switch_13_CAC.py	/^    OFP_VERSIONS = [ofproto_v1_3.OFP_VERSION]$/;"	kind:variable	line:27
+OFP_VERSIONS	../documentation/architecture/modules/ryu/scripts/simple_switch_13_IP_MAC.py	/^    OFP_VERSIONS = [ofproto_v1_3.OFP_VERSION]$/;"	kind:variable	line:27
+OFP_VERSIONS	../documentation/architecture/modules/ryu/scripts/simple_switch_13_old.py	/^    OFP_VERSIONS = [ofproto_v1_3.OFP_VERSION]$/;"	kind:variable	line:27
+OUTGOING_ENDPOINT	../application/call-admission-control/src/backend/libs/ari-py/examples/originate_example.py	/^OUTGOING_ENDPOINT = "SIP\/blink"$/;"	kind:variable	line:16
+ObjectIdGenerator	../application/call-admission-control/src/backend/libs/ari-py/ari/model.py	/^class ObjectIdGenerator(object):$/;"	kind:class	line:65
+POST	../application/call-admission-control/src/backend/libs/ari-py/ari_test/client_test.py	/^POST = httpretty.POST$/;"	kind:variable	line:15
+POST	../application/call-admission-control/src/backend/libs/ari-py/ari_test/websocket_test.py	/^POST = httpretty.POST$/;"	kind:variable	line:17
+PUT	../application/call-admission-control/src/backend/libs/ari-py/ari_test/client_test.py	/^PUT = httpretty.PUT$/;"	kind:variable	line:14
+PUT	../application/call-admission-control/src/backend/libs/ari-py/ari_test/websocket_test.py	/^PUT = httpretty.PUT$/;"	kind:variable	line:16
+Playback	../application/call-admission-control/src/backend/libs/ari-py/ari/model.py	/^class Playback(BaseObject):$/;"	kind:class	line:222
+Reporter.py	../application/call-admission-control/src/backend/src/trafficReporter/Reporter.py	1;"	kind:file	line:1
+Reporter.py	../tests/traffirReport/Reporter.py	1;"	kind:file	line:1
+Repository	../application/call-admission-control/src/backend/libs/ari-py/ari/model.py	/^class Repository(object):$/;"	kind:class	line:27
+Response	../application/ryu/response.py	/^class Response(object):$/;"	kind:class	line:60
+ResponseBodyFile	../application/ryu/response.py	/^class ResponseBodyFile(object):$/;"	kind:class	line:1405
+Run	../application/mininet/topologies/cac_simulation.py	/^def Run( network, cmd='\/usr\/sbin\/sshd', opts='-D',$/;"	kind:function	line:140
+RyuController	../application/call-admission-control/src/backend/src/cac/ryu/Controller.py	/^class RyuController(BaseController):$/;"	kind:class	line:5
+SimpleSwitch13	../documentation/architecture/modules/ryu/scripts/simple_switch_13_old.py	/^class SimpleSwitch13(app_manager.RyuApp):$/;"	kind:class	line:26
+SimpleSwitch13IpMac	../application/ryu/applications/qos_simple_switch_13_CAC.py	/^class SimpleSwitch13IpMac(app_manager.RyuApp):$/;"	kind:class	line:26
+SimpleSwitch13IpMac	../application/ryu/applications/simple_switch_13_CAC.py	/^class SimpleSwitch13IpMac(app_manager.RyuApp):$/;"	kind:class	line:26
+SimpleSwitch13IpMac	../documentation/architecture/modules/ryu/scripts/qos_simple_switch_13_CAC.py	/^class SimpleSwitch13IpMac(app_manager.RyuApp):$/;"	kind:class	line:26
+SimpleSwitch13IpMac	../documentation/architecture/modules/ryu/scripts/simple_switch_13_CAC.py	/^class SimpleSwitch13IpMac(app_manager.RyuApp):$/;"	kind:class	line:26
+SimpleSwitch13IpMac	../documentation/architecture/modules/ryu/scripts/simple_switch_13_IP_MAC.py	/^class SimpleSwitch13IpMac(app_manager.RyuApp):$/;"	kind:class	line:26
+SimpleSwitchController	../application/ryu/applications/qos_simple_switch_rest_13_CAC.py	/^class SimpleSwitchController(ControllerBase):$/;"	kind:class	line:78
+SimpleSwitchController	../documentation/architecture/modules/ryu/scripts/qos_simple_switch_rest_13_CAC.py	/^class SimpleSwitchController(ControllerBase):$/;"	kind:class	line:78
+SimpleSwitchController	../documentation/architecture/modules/ryu/scripts/simple_switch_rest_13_CAC.py	/^class SimpleSwitchController(ControllerBase):$/;"	kind:class	line:78
+SimpleSwitchController	../documentation/architecture/modules/ryu/scripts/simple_switch_rest_13_IP_MAC.py	/^class SimpleSwitchController(ControllerBase):$/;"	kind:class	line:78
+SimpleSwitchController	../documentation/architecture/modules/ryu/scripts/simple_switch_rest_13_old.py	/^class SimpleSwitchController(ControllerBase):$/;"	kind:class	line:77
+SimpleSwitchRest13	../documentation/architecture/modules/ryu/scripts/simple_switch_rest_13_old.py	/^class SimpleSwitchRest13(simple_switch_13.SimpleSwitch13):$/;"	kind:class	line:32
+SimpleSwitchRest13IpMac	../application/ryu/applications/qos_simple_switch_rest_13_CAC.py	/^class SimpleSwitchRest13IpMac(simple_switch_13_CAC.SimpleSwitch13IpMac):$/;"	kind:class	line:32
+SimpleSwitchRest13IpMac	../documentation/architecture/modules/ryu/scripts/qos_simple_switch_rest_13_CAC.py	/^class SimpleSwitchRest13IpMac(simple_switch_13_CAC.SimpleSwitch13IpMac):$/;"	kind:class	line:32
+SimpleSwitchRest13IpMac	../documentation/architecture/modules/ryu/scripts/simple_switch_rest_13_CAC.py	/^class SimpleSwitchRest13IpMac(simple_switch_13_CAC.SimpleSwitch13IpMac):$/;"	kind:class	line:32
+SimpleSwitchRest13IpMac	../documentation/architecture/modules/ryu/scripts/simple_switch_rest_13_IP_MAC.py	/^class SimpleSwitchRest13IpMac(simple_switch_13_IP_MAC.SimpleSwitch13IpMac):$/;"	kind:class	line:32
+Sound	../application/call-admission-control/src/backend/libs/ari-py/ari/model.py	/^class Sound(BaseObject):$/;"	kind:class	line:312
+StoredRecording	../application/call-admission-control/src/backend/libs/ari-py/ari/model.py	/^class StoredRecording(BaseObject):$/;"	kind:class	line:252
+TrafficReporter	../application/call-admission-control/src/backend/src/trafficReporter/Reporter.py	/^class TrafficReporter:$/;"	kind:class	line:6
+TrafficReporter	../tests/traffirReport/Reporter.py	/^class TrafficReporter:$/;"	kind:class	line:6
+TreeNet	../application/mininet/topologies/asterisk_mininet.py	/^def TreeNet( depth=1, fanout=2, **kwargs ):$/;"	kind:function	line:32
+TreeNet	../application/mininet/topologies/cac_simulation.py	/^def TreeNet( depth=1, fanout=2, **kwargs ):$/;"	kind:function	line:119
+TreeNet	../application/mininet/topologies/sshd-hostsExternalAccess.py	/^def TreeNet( depth=1, fanout=2, **kwargs ):$/;"	kind:function	line:28
+WebSocketStubClient	../application/call-admission-control/src/backend/libs/ari-py/ari_test/websocket_test.py	/^class WebSocketStubClient(SynchronousHttpClient):$/;"	kind:class	line:228
+WebSocketStubConnection	../application/call-admission-control/src/backend/libs/ari-py/ari_test/websocket_test.py	/^class WebSocketStubConnection(object):$/;"	kind:class	line:198
+WebSocketTest	../application/call-admission-control/src/backend/libs/ari-py/ari_test/websocket_test.py	/^class WebSocketTest(AriTestCase):$/;"	kind:class	line:22
+WsHandler	../application/call-admission-control/src/backend/src/front/WsHandler.py	/^class WsHandler(WebSocket):$/;"	kind:class	line:5
+WsHandler.py	../application/call-admission-control/src/backend/src/front/WsHandler.py	1;"	kind:file	line:1
+_CONTEXTS	../application/ryu/applications/qos_simple_switch_rest_13_CAC.py	/^    _CONTEXTS = {'wsgi': WSGIApplication}$/;"	kind:variable	line:34
+_CONTEXTS	../documentation/architecture/modules/ryu/scripts/qos_simple_switch_rest_13_CAC.py	/^    _CONTEXTS = {'wsgi': WSGIApplication}$/;"	kind:variable	line:34
+_CONTEXTS	../documentation/architecture/modules/ryu/scripts/simple_switch_rest_13_CAC.py	/^    _CONTEXTS = {'wsgi': WSGIApplication}$/;"	kind:variable	line:34
+_CONTEXTS	../documentation/architecture/modules/ryu/scripts/simple_switch_rest_13_IP_MAC.py	/^    _CONTEXTS = {'wsgi': WSGIApplication}$/;"	kind:variable	line:34
+_CONTEXTS	../documentation/architecture/modules/ryu/scripts/simple_switch_rest_13_old.py	/^    _CONTEXTS = {'wsgi': WSGIApplication}$/;"	kind:variable	line:34
+_OK_PARAM_RE	../application/ryu/response.py	/^_OK_PARAM_RE = re.compile(r'^[a-z0-9_.-]+$', re.I)$/;"	kind:variable	line:54
+_PARAM_RE	../application/ryu/response.py	/^_PARAM_RE = re.compile(r'([a-z0-9]+)=(?:"([^"]*)"|([a-z0-9_.-]*))', re.I)$/;"	kind:variable	line:53
+__all__	../application/ryu/response.py	/^__all__ = ['Response']$/;"	kind:variable	line:51
+__call__	../application/ryu/response.py	/^    def __call__(self, environ, start_response):$/;"	kind:member	line:1297
+__getattr__	../application/call-admission-control/src/backend/libs/ari-py/ari/client.py	/^    def __getattr__(self, item):$/;"	kind:member	line:48
+__getattr__	../application/call-admission-control/src/backend/libs/ari-py/ari/model.py	/^    def __getattr__(self, item):$/;"	kind:member	line:134
+__getattr__	../application/call-admission-control/src/backend/libs/ari-py/ari/model.py	/^    def __getattr__(self, item):$/;"	kind:member	line:50
+__init__	../application/call-admission-control/src/backend/libs/ari-py/ari/client.py	/^    def __init__(self, base_url, http_client):$/;"	kind:member	line:25
+__init__	../application/call-admission-control/src/backend/libs/ari-py/ari/model.py	/^    def __init__(self, client, bridge_json):$/;"	kind:member	line:216
+__init__	../application/call-admission-control/src/backend/libs/ari-py/ari/model.py	/^    def __init__(self, client, channel_json):$/;"	kind:member	line:200
+__init__	../application/call-admission-control/src/backend/libs/ari-py/ari/model.py	/^    def __init__(self, client, device_state_json):$/;"	kind:member	line:306
+__init__	../application/call-admission-control/src/backend/libs/ari-py/ari/model.py	/^    def __init__(self, client, endpoint_json):$/;"	kind:member	line:291
+__init__	../application/call-admission-control/src/backend/libs/ari-py/ari/model.py	/^    def __init__(self, client, mailbox_json):$/;"	kind:member	line:337
+__init__	../application/call-admission-control/src/backend/libs/ari-py/ari/model.py	/^    def __init__(self, client, name, resource):$/;"	kind:member	line:42
+__init__	../application/call-admission-control/src/backend/libs/ari-py/ari/model.py	/^    def __init__(self, client, playback_json):$/;"	kind:member	line:231
+__init__	../application/call-admission-control/src/backend/libs/ari-py/ari/model.py	/^    def __init__(self, client, recording_json):$/;"	kind:member	line:246
+__init__	../application/call-admission-control/src/backend/libs/ari-py/ari/model.py	/^    def __init__(self, client, recording_json):$/;"	kind:member	line:261
+__init__	../application/call-admission-control/src/backend/libs/ari-py/ari/model.py	/^    def __init__(self, client, resource, as_json, event_reg):$/;"	kind:member	line:124
+__init__	../application/call-admission-control/src/backend/libs/ari-py/ari/model.py	/^    def __init__(self, client, sound_json):$/;"	kind:member	line:322
+__init__	../application/call-admission-control/src/backend/libs/ari-py/ari/model.py	/^    def __init__(self, param_name, id_field='id'):$/;"	kind:member	line:99
+__init__	../application/call-admission-control/src/backend/libs/ari-py/ari_test/websocket_test.py	/^    def __init__(self, messages):$/;"	kind:member	line:204
+__init__	../application/call-admission-control/src/backend/libs/ari-py/ari_test/websocket_test.py	/^    def __init__(self, messages):$/;"	kind:member	line:235
+__init__	../application/call-admission-control/src/backend/src/cac/Application.py	/^  def __init__(self, frontClient):$/;"	kind:member	line:8
+__init__	../application/call-admission-control/src/backend/src/cac/BaseApplication.py	/^  def __init__(self, frontClient):$/;"	kind:member	line:9
+__init__	../application/call-admission-control/src/backend/src/cac/api/service.py	/^  def __init__(self, baseurl):$/;"	kind:member	line:12
+__init__	../application/call-admission-control/src/backend/src/cac/ari/BaseController.py	/^  def __init__(self, ryuApi, frontClient):$/;"	kind:member	line:9
+__init__	../application/call-admission-control/src/backend/src/cac/ari/CacController.py	/^  def __init__(self, ryuApi, frontClient):$/;"	kind:member	line:17
+__init__	../application/call-admission-control/src/backend/src/cac/ryu/BaseController.py	/^  def __init__(self):$/;"	kind:member	line:5
+__init__	../application/call-admission-control/src/backend/src/front/Client.py	/^  def __init__(self):$/;"	kind:member	line:13
+__init__	../application/call-admission-control/src/backend/src/front/Facade.py	/^  def __init__(self):$/;"	kind:member	line:9
+__init__	../application/call-admission-control/src/backend/src/trafficReporter/Reporter.py	/^  def __init__(self, frontClient):$/;"	kind:member	line:7
+__init__	../application/call-admission-control/src/mocks/ari/server.py	/^    def __init__(self):$/;"	kind:member	line:7
+__init__	../application/mininet/topologies/api.py	/^  def __init__(self, baseurl):$/;"	kind:member	line:14
+__init__	../application/mininet/topologies/net_test.py	/^    def __init__( self, topo=None, switch=OVSKernelSwitch, host=Host,$/;"	kind:member	line:106
+__init__	../application/ryu/applications/qos_simple_switch_13_CAC.py	/^    def __init__(self, *args, **kwargs):$/;"	kind:member	line:29
+__init__	../application/ryu/applications/qos_simple_switch_rest_13_CAC.py	/^    def __init__(self, *args, **kwargs):$/;"	kind:member	line:36
+__init__	../application/ryu/applications/qos_simple_switch_rest_13_CAC.py	/^    def __init__(self, req, link, data, **config):$/;"	kind:member	line:80
+__init__	../application/ryu/applications/simple_switch_13_CAC.py	/^    def __init__(self, *args, **kwargs):$/;"	kind:member	line:29
+__init__	../application/ryu/response.py	/^    def __init__(self, app_iter, start, stop):$/;"	kind:member	line:1452
+__init__	../application/ryu/response.py	/^    def __init__(self, app_iter=None):$/;"	kind:member	line:1511
+__init__	../application/ryu/response.py	/^    def __init__(self, body=None, status=None, headerlist=None, app_iter=None,$/;"	kind:member	line:167
+__init__	../application/ryu/response.py	/^    def __init__(self, response):$/;"	kind:member	line:1409
+__init__	../documentation/architecture/modules/ryu/scripts/qos_simple_switch_13_CAC.py	/^    def __init__(self, *args, **kwargs):$/;"	kind:member	line:29
+__init__	../documentation/architecture/modules/ryu/scripts/qos_simple_switch_rest_13_CAC.py	/^    def __init__(self, *args, **kwargs):$/;"	kind:member	line:36
+__init__	../documentation/architecture/modules/ryu/scripts/qos_simple_switch_rest_13_CAC.py	/^    def __init__(self, req, link, data, **config):$/;"	kind:member	line:80
+__init__	../documentation/architecture/modules/ryu/scripts/simple_switch_13_CAC.py	/^    def __init__(self, *args, **kwargs):$/;"	kind:member	line:29
+__init__	../documentation/architecture/modules/ryu/scripts/simple_switch_13_IP_MAC.py	/^    def __init__(self, *args, **kwargs):$/;"	kind:member	line:29
+__init__	../documentation/architecture/modules/ryu/scripts/simple_switch_13_old.py	/^    def __init__(self, *args, **kwargs):$/;"	kind:member	line:29
+__init__	../documentation/architecture/modules/ryu/scripts/simple_switch_rest_13_CAC.py	/^    def __init__(self, *args, **kwargs):$/;"	kind:member	line:36
+__init__	../documentation/architecture/modules/ryu/scripts/simple_switch_rest_13_CAC.py	/^    def __init__(self, req, link, data, **config):$/;"	kind:member	line:80
+__init__	../documentation/architecture/modules/ryu/scripts/simple_switch_rest_13_IP_MAC.py	/^    def __init__(self, *args, **kwargs):$/;"	kind:member	line:36
+__init__	../documentation/architecture/modules/ryu/scripts/simple_switch_rest_13_IP_MAC.py	/^    def __init__(self, req, link, data, **config):$/;"	kind:member	line:80
+__init__	../documentation/architecture/modules/ryu/scripts/simple_switch_rest_13_old.py	/^    def __init__(self, *args, **kwargs):$/;"	kind:member	line:36
+__init__	../documentation/architecture/modules/ryu/scripts/simple_switch_rest_13_old.py	/^    def __init__(self, req, link, data, **config):$/;"	kind:member	line:79
+__init__	../tests/traffirReport/Reporter.py	/^  def __init__(self):$/;"	kind:member	line:8
+__init__.py	../application/call-admission-control/src/backend/libs/ari-py/ari/__init__.py	1;"	kind:file	line:1
+__init__.py	../application/call-admission-control/src/backend/libs/ari-py/ari_test/__init__.py	1;"	kind:file	line:1
+__init__.py	../application/call-admission-control/src/backend/src/__init__.py	1;"	kind:file	line:1
+__init__.py	../application/call-admission-control/src/backend/src/cac/__init__.py	1;"	kind:file	line:1
+__init__.py	../application/call-admission-control/src/backend/src/cac/api/__init__.py	1;"	kind:file	line:1
+__init__.py	../application/call-admission-control/src/backend/src/cac/ari/__init__.py	1;"	kind:file	line:1
+__init__.py	../application/call-admission-control/src/backend/src/cac/ryu/__init__.py	1;"	kind:file	line:1
+__init__.py	../application/call-admission-control/src/backend/src/config/__init__.py	1;"	kind:file	line:1
+__init__.py	../application/call-admission-control/src/backend/src/front/__init__.py	1;"	kind:file	line:1
+__init__.py	../application/call-admission-control/src/backend/src/trafficReporter/__init__.py	1;"	kind:file	line:1
+__iter__	../application/ryu/response.py	/^    def __iter__(self):$/;"	kind:member	line:1461
+__iter__	../application/ryu/response.py	/^    def __iter__(self):$/;"	kind:member	line:1515
+__len__	../application/ryu/response.py	/^    def __len__(self):$/;"	kind:member	line:1518
+__next__	../application/ryu/response.py	/^    __next__ = next # py3$/;"	kind:variable	line:1497
+__next__	../application/ryu/response.py	/^    __next__ = next # py3$/;"	kind:variable	line:1524
+__repr__	../application/call-admission-control/src/backend/libs/ari-py/ari/model.py	/^    def __repr__(self):$/;"	kind:member	line:131
+__repr__	../application/call-admission-control/src/backend/libs/ari-py/ari/model.py	/^    def __repr__(self):$/;"	kind:member	line:47
+__repr__	../application/ryu/response.py	/^    def __repr__(self):$/;"	kind:member	line:1416
+__repr__	../application/ryu/response.py	/^    def __repr__(self):$/;"	kind:member	line:393
+__run	../application/call-admission-control/src/backend/libs/ari-py/ari/client.py	/^    def __run(self, ws):$/;"	kind:member	line:78
+__str__	../application/ryu/response.py	/^    def __str__(self, skip_body=False):$/;"	kind:member	line:397
+__version__	../application/call-admission-control/src/backend/src/__init__.py	/^__version__ = '0.1'$/;"	kind:variable	line:1
+_abs_headerlist	../application/ryu/response.py	/^    def _abs_headerlist(self, environ):$/;"	kind:member	line:1284
+_app_iter__del	../application/ryu/response.py	/^    def _app_iter__del(self):$/;"	kind:member	line:708
+_app_iter__get	../application/ryu/response.py	/^    def _app_iter__get(self):$/;"	kind:member	line:693
+_app_iter__set	../application/ryu/response.py	/^    def _app_iter__set(self, value):$/;"	kind:member	line:702
+_body__get	../application/ryu/response.py	/^    def _body__get(self):$/;"	kind:member	line:506
+_body__set	../application/ryu/response.py	/^    def _body__set(self, value=b''):$/;"	kind:member	line:542
+_body_file__del	../application/ryu/response.py	/^    def _body_file__del(self):$/;"	kind:member	line:661
+_body_file__get	../application/ryu/response.py	/^    def _body_file__get(self):$/;"	kind:member	line:650
+_body_file__set	../application/ryu/response.py	/^    def _body_file__set(self, file):$/;"	kind:member	line:658
+_cache_control__del	../application/ryu/response.py	/^    def _cache_control__del(self):$/;"	kind:member	line:1157
+_cache_control__get	../application/ryu/response.py	/^    def _cache_control__get(self):$/;"	kind:member	line:1123
+_cache_control__set	../application/ryu/response.py	/^    def _cache_control__set(self, value):$/;"	kind:member	line:1140
+_cache_control_obj	../application/ryu/response.py	/^    _cache_control_obj = None$/;"	kind:variable	line:1121
+_cache_expires	../application/ryu/response.py	/^    def _cache_expires(self, seconds=0, **kw):$/;"	kind:member	line:1176
+_callerData	../documentation/architecture/modules/astersik/scripts/python-app-logica.py	/^      _callerData = _asteriskApi.getData();$/;"	kind:variable	line:16
+_charset__del	../application/ryu/response.py	/^    def _charset__del(self):$/;"	kind:member	line:804
+_charset__get	../application/ryu/response.py	/^    def _charset__get(self):$/;"	kind:member	line:775
+_charset__set	../application/ryu/response.py	/^    def _charset__set(self, charset):$/;"	kind:member	line:790
+_content_type__del	../application/ryu/response.py	/^    def _content_type__del(self):$/;"	kind:member	line:889
+_content_type__get	../application/ryu/response.py	/^    def _content_type__get(self):$/;"	kind:member	line:821
+_content_type__set	../application/ryu/response.py	/^    def _content_type__set(self, value):$/;"	kind:member	line:848
+_content_type_has_charset	../application/ryu/response.py	/^def _content_type_has_charset(content_type):$/;"	kind:function	line:1539
+_content_type_params__del	../application/ryu/response.py	/^    def _content_type_params__del(self):$/;"	kind:member	line:929
+_content_type_params__get	../application/ryu/response.py	/^    def _content_type_params__get(self):$/;"	kind:member	line:899
+_content_type_params__set	../application/ryu/response.py	/^    def _content_type_params__set(self, value_dict):$/;"	kind:member	line:915
+_error_unicode_in_app_iter	../application/ryu/response.py	/^def _error_unicode_in_app_iter(app_iter, body):$/;"	kind:function	line:1604
+_etag_raw	../application/ryu/response.py	/^    _etag_raw = header_getter('ETag', '14.19')$/;"	kind:variable	line:743
+_gzip_header	../application/ryu/response.py	/^_gzip_header = b'\\x1f\\x8b\\x08\\x00\\x00\\x00\\x00\\x00\\x02\\xff'$/;"	kind:variable	line:56
+_has_body__get	../application/ryu/response.py	/^    def _has_body__get(self):$/;"	kind:member	line:585
+_headerlist__del	../application/ryu/response.py	/^    def _headerlist__del(self):$/;"	kind:member	line:480
+_headerlist__get	../application/ryu/response.py	/^    def _headerlist__get(self):$/;"	kind:member	line:466
+_headerlist__set	../application/ryu/response.py	/^    def _headerlist__set(self, value):$/;"	kind:member	line:472
+_headers__get	../application/ryu/response.py	/^    def _headers__get(self):$/;"	kind:member	line:486
+_headers__set	../application/ryu/response.py	/^    def _headers__set(self, value):$/;"	kind:member	line:494
+_is_xml	../application/ryu/response.py	/^def _is_xml(content_type):$/;"	kind:function	line:1526
+_json_body__del	../application/ryu/response.py	/^    def _json_body__del(self):$/;"	kind:member	line:580
+_json_body__get	../application/ryu/response.py	/^    def _json_body__get(self):$/;"	kind:member	line:562
+_json_body__set	../application/ryu/response.py	/^    def _json_body__set(self, value):$/;"	kind:member	line:577
+_listenRegex	../application/mininet/topologies/net_test.py	/^    _listenRegex = re.compile("LISTENING")$/;"	kind:variable	line:526
+_make_location_absolute	../application/ryu/response.py	/^    def _make_location_absolute(environ, value):$/;"	kind:member	line:1277
+_marker	../application/ryu/response.py	/^_marker = object()$/;"	kind:variable	line:58
+_packet_in_handler	../application/ryu/applications/qos_simple_switch_13_CAC.py	/^    def _packet_in_handler(self, ev):$/;"	kind:member	line:70
+_packet_in_handler	../application/ryu/applications/simple_switch_13_CAC.py	/^    def _packet_in_handler(self, ev):$/;"	kind:member	line:70
+_packet_in_handler	../documentation/architecture/modules/ryu/scripts/qos_simple_switch_13_CAC.py	/^    def _packet_in_handler(self, ev):$/;"	kind:member	line:70
+_packet_in_handler	../documentation/architecture/modules/ryu/scripts/simple_switch_13_CAC.py	/^    def _packet_in_handler(self, ev):$/;"	kind:member	line:70
+_packet_in_handler	../documentation/architecture/modules/ryu/scripts/simple_switch_13_IP_MAC.py	/^    def _packet_in_handler(self, ev):$/;"	kind:member	line:70
+_packet_in_handler	../documentation/architecture/modules/ryu/scripts/simple_switch_13_old.py	/^    def _packet_in_handler(self, ev):$/;"	kind:member	line:67
+_parseIperf	../application/mininet/topologies/net_test.py	/^    def _parseIperf( iperfOutput ):$/;"	kind:member	line:599
+_parsePing	../application/mininet/topologies/net_test.py	/^    def _parsePing( pingOutput ):$/;"	kind:member	line:448
+_parseTcpOutput	../application/mininet/topologies/net_test.py	/^    def _parseTcpOutput ( result ):$/;"	kind:member	line:506
+_request_uri	../application/ryu/response.py	/^def _request_uri(environ):$/;"	kind:function	line:1545
+_safe_methods	../application/ryu/response.py	/^    _safe_methods = ('GET', 'HEAD')$/;"	kind:variable	line:1312
+_skip_start	../application/ryu/response.py	/^    def _skip_start(self):$/;"	kind:member	line:1464
+_status__get	../application/ryu/response.py	/^    def _status__get(self):$/;"	kind:member	line:411
+_status__set	../application/ryu/response.py	/^    def _status__set(self, value):$/;"	kind:member	line:417
+_status_code__get	../application/ryu/response.py	/^    def _status_code__get(self):$/;"	kind:member	line:447
+_status_code__set	../application/ryu/response.py	/^    def _status_code__set(self, code):$/;"	kind:member	line:453
+_text__del	../application/ryu/response.py	/^    def _text__del(self):$/;"	kind:member	line:638
+_text__get	../application/ryu/response.py	/^    def _text__get(self):$/;"	kind:member	line:611
+_text__set	../application/ryu/response.py	/^    def _text__set(self, value):$/;"	kind:member	line:625
+_update_cache_control	../application/ryu/response.py	/^    def _update_cache_control(self, prop_dict):$/;"	kind:member	line:1160
+accept_ranges	../application/ryu/response.py	/^    accept_ranges = header_getter('Accept-Ranges', '14.5')$/;"	kind:variable	line:734
+addController	../application/mininet/topologies/net_test.py	/^    def addController( self, name='c0', controller=None, **kwargs ):$/;"	kind:member	line:208
+addHost	../application/mininet/topologies/net_test.py	/^    def addHost( self, name, mac=None, ip=None, prefix='h'):$/;"	kind:member	line:161
+addNode	../application/mininet/topologies/net_test.py	/^        def addNode( prefix, addMethod, nodeId ):$/;"	kind:function	line:300
+addRemoteSwitch	../application/mininet/topologies/net_test.py	/^    def addRemoteSwitch( self, name, remotePorts, dpid=None ):$/;"	kind:member	line:198
+addSwitch	../application/mininet/topologies/net_test.py	/^    def addSwitch( self, name, mac=None, ip=None, prefix='s', switchClass=None ):$/;"	kind:member	line:172
+add_flow	../application/ryu/applications/qos_simple_switch_13_CAC.py	/^    def add_flow(self, datapath, priority, match, actions, buffer_id=None):$/;"	kind:member	line:53
+add_flow	../application/ryu/applications/simple_switch_13_CAC.py	/^    def add_flow(self, datapath, priority, match, actions, buffer_id=None):$/;"	kind:member	line:53
+add_flow	../documentation/architecture/modules/ryu/scripts/qos_simple_switch_13_CAC.py	/^    def add_flow(self, datapath, priority, match, actions, buffer_id=None):$/;"	kind:member	line:53
+add_flow	../documentation/architecture/modules/ryu/scripts/simple_switch_13_CAC.py	/^    def add_flow(self, datapath, priority, match, actions, buffer_id=None):$/;"	kind:member	line:53
+add_flow	../documentation/architecture/modules/ryu/scripts/simple_switch_13_IP_MAC.py	/^    def add_flow(self, datapath, priority, match, actions, buffer_id=None):$/;"	kind:member	line:53
+add_flow	../documentation/architecture/modules/ryu/scripts/simple_switch_13_old.py	/^    def add_flow(self, datapath, priority, match, actions, buffer_id=None):$/;"	kind:member	line:51
+age	../application/ryu/response.py	/^    age = converter($/;"	kind:variable	line:755
+allow	../application/ryu/response.py	/^    allow = list_header('Allow', '14.7')$/;"	kind:variable	line:719
+answer_channel	../documentation/architecture/modules/astersik/scripts/channel_handler.py	/^    def answer_channel(channel):$/;"	kind:function	line:27
+api.py	../application/mininet/topologies/api.py	1;"	kind:file	line:1
+app_iter	../application/ryu/response.py	/^    app_iter = property(_app_iter__get, _app_iter__set, _app_iter__del,$/;"	kind:variable	line:712
+app_iter_range	../application/ryu/response.py	/^    def app_iter_range(self, start, stop):$/;"	kind:member	line:1383
+argvopts	../application/mininet/topologies/asterisk_mininet.py	/^    argvopts = ' '.join( sys.argv[ 1: ] ) if len( sys.argv ) > 1 else ($/;"	kind:variable	line:88
+argvopts	../application/mininet/topologies/cac_simulation.py	/^    argvopts = ' '.join( sys.argv[ 1: ] ) if len( sys.argv ) > 1 else ($/;"	kind:variable	line:225
+argvopts	../application/mininet/topologies/sshd-hostsExternalAccess.py	/^    argvopts = ' '.join( sys.argv[ 1: ] ) if len( sys.argv ) > 1 else ($/;"	kind:variable	line:80
+asterisk_mininet.py	../application/mininet/topologies/asterisk_mininet.py	1;"	kind:file	line:1
+attachHost	../application/mininet/topologies/net_test.py	/^    def attachHost( self, hostName, switchName ):$/;"	kind:member	line:677
+author	../application/call-admission-control/src/backend/libs/ari-py/setup.py	/^    author="Digium, Inc.",$/;"	kind:variable	line:18
+author_email	../application/call-admission-control/src/backend/libs/ari-py/setup.py	/^    author_email="dlee@digium.com",$/;"	kind:variable	line:19
+bind	../application/call-admission-control/src/backend/src/trafficReporter/Reporter.py	/^  def bind(self):$/;"	kind:member	line:24
+bind	../tests/traffirReport/Reporter.py	/^  def bind(self):$/;"	kind:member	line:25
+body	../application/ryu/response.py	/^    body = property(_body__get, _body__set, _body__set)$/;"	kind:variable	line:560
+body_file	../application/ryu/response.py	/^    body_file = property(_body_file__get, _body_file__set, _body_file__del,$/;"	kind:variable	line:664
+both_events	../application/call-admission-control/src/backend/libs/ari-py/ari_test/websocket_test.py	/^        def both_events(event):$/;"	kind:function	line:67
+bridge	../application/call-admission-control/src/backend/libs/ari-py/examples/bridge_example.py	/^    bridge = bridges[0]$/;"	kind:variable	line:24
+bridge	../application/call-admission-control/src/backend/libs/ari-py/examples/bridge_example.py	/^    bridge = client.bridges.create(type='holding')$/;"	kind:variable	line:27
+bridge-dial.py	../documentation/architecture/modules/ryu/scripts/bridge-dial.py	1;"	kind:file	line:1
+bridge_example.py	../application/call-admission-control/src/backend/libs/ari-py/examples/bridge_example.py	1;"	kind:file	line:1
+bridges	../application/call-admission-control/src/backend/libs/ari-py/examples/bridge_example.py	/^bridges = [b for b in client.bridges.list() if$/;"	kind:variable	line:21
+bridges	../application/call-admission-control/src/backend/libs/ari-py/examples/originate_example.py	/^bridges = [b for b in client.bridges.list()$/;"	kind:variable	line:23
+broadcast	../application/call-admission-control/src/backend/src/front/Client.py	/^  def broadcast(self, notificationType, data):$/;"	kind:member	line:39
+build	../application/mininet/topologies/datacenterBasic.py	/^    def build( self ):$/;"	kind:member	line:19
+build	../application/mininet/topologies/datacenterConfigurable.py	/^    def build( self, numRacks=4, numHostsPerRack=4 ):$/;"	kind:member	line:19
+build	../application/mininet/topologies/diffserv_topo.py	/^    def build( self, **opts ):$/;"	kind:member	line:64
+build	../application/mininet/topologies/diffserv_topo2.py	/^    def build( self, **opts ):$/;"	kind:member	line:96
+build	../application/mininet/topologies/externalConnection.py	/^    def build( self ):$/;"	kind:member	line:24
+build	../application/mininet/topologies/minimal.py	/^    def build( self ):$/;"	kind:member	line:22
+build	../application/mininet/topologies/minimal_2.py	/^    def build( self ):$/;"	kind:member	line:22
+build	../application/mininet/topologies/net_test.py	/^    def build( self ):$/;"	kind:member	line:337
+build	../application/mininet/topologies/salidarRouter_topo.py	/^    def build( self, **opts ):$/;"	kind:member	line:34
+build	../application/mininet/topologies/sdn-qos-RealTimeQueues.py	/^    def build( self, **opts ):$/;"	kind:member	line:115
+buildFromTopo	../application/mininet/topologies/net_test.py	/^    def buildFromTopo( self, topo ):$/;"	kind:member	line:295
+buildRack	../application/mininet/topologies/datacenterBasic.py	/^    def buildRack( self, loc ):$/;"	kind:member	line:28
+buildRack	../application/mininet/topologies/datacenterConfigurable.py	/^    def buildRack( self, loc, numHostsPerRack ):$/;"	kind:member	line:28
+build_url	../application/call-admission-control/src/backend/libs/ari-py/ari_test/utils.py	/^    def build_url(cls, *args):$/;"	kind:member	line:33
+cac_simulation.py	../application/mininet/topologies/cac_simulation.py	1;"	kind:file	line:1
+cache_control	../application/ryu/response.py	/^    cache_control = property($/;"	kind:variable	line:1168
+cache_expires	../application/ryu/response.py	/^    cache_expires = property(lambda self: self._cache_expires, _cache_expires)$/;"	kind:variable	line:1212
+cb	../application/call-admission-control/src/backend/libs/ari-py/ari_test/websocket_test.py	/^        def cb(channel, event):$/;"	kind:function	line:131
+cb	../application/call-admission-control/src/backend/libs/ari-py/ari_test/websocket_test.py	/^        def cb(channel, event):$/;"	kind:function	line:88
+cb	../application/call-admission-control/src/backend/libs/ari-py/ari_test/websocket_test.py	/^        def cb(channel, event, arg):$/;"	kind:function	line:155
+cb2	../application/call-admission-control/src/backend/libs/ari-py/ari_test/websocket_test.py	/^        def cb2(channel, event, arg1, arg2=None, arg3=None):$/;"	kind:function	line:161
+channel_bridge.py	../documentation/architecture/modules/astersik/scripts/channel_bridge.py	1;"	kind:file	line:1
+channel_handler.py	../documentation/architecture/modules/astersik/scripts/channel_handler.py	1;"	kind:file	line:1
+channel_monitoring.py	../documentation/architecture/modules/astersik/scripts/channel_monitoring.py	1;"	kind:file	line:1
+channel_state_change_cb	../documentation/architecture/modules/astersik/scripts/channel_handler.py	/^def channel_state_change_cb(channel, ev):$/;"	kind:function	line:56
+channel_timers	../application/call-admission-control/src/backend/src/cac/ari/CacController.py	/^  channel_timers = {}$/;"	kind:variable	line:11
+channel_timers	../documentation/architecture/modules/astersik/scripts/channel_bridge.py	/^channel_timers = {}$/;"	kind:variable	line:12
+channel_timers	../documentation/architecture/modules/astersik/scripts/channel_handler.py	/^channel_timers = {}$/;"	kind:variable	line:11
+charset	../application/ryu/response.py	/^    charset = property(_charset__get, _charset__set, _charset__del,$/;"	kind:variable	line:814
+classifiers	../application/call-admission-control/src/backend/libs/ari-py/setup.py	/^    classifiers=[$/;"	kind:variable	line:22
+cleanup_example.py	../application/call-admission-control/src/backend/libs/ari-py/examples/cleanup_example.py	1;"	kind:file	line:1
+client	../application/call-admission-control/src/backend/libs/ari-py/examples/bridge_example.py	/^client = ari.connect('http:\/\/localhost:8088\/', 'hey', 'peekaboo')$/;"	kind:variable	line:16
+client	../application/call-admission-control/src/backend/libs/ari-py/examples/cleanup_example.py	/^client = ari.connect('http:\/\/localhost:8088\/', 'hey', 'peekaboo')$/;"	kind:variable	line:17
+client	../application/call-admission-control/src/backend/libs/ari-py/examples/example.py	/^client = ari.connect('http:\/\/localhost:8088\/', 'hey', 'peekaboo')$/;"	kind:variable	line:16
+client	../application/call-admission-control/src/backend/libs/ari-py/examples/originate_example.py	/^client = ari.connect('http:\/\/localhost:8088\/', 'hey', 'peekaboo')$/;"	kind:variable	line:18
+client	../application/call-admission-control/src/backend/libs/ari-py/examples/playback_example.py	/^client = ari.connect('http:\/\/localhost:8088\/', 'hey', 'peekaboo')$/;"	kind:variable	line:16
+client	../documentation/architecture/modules/astersik/scripts/channel_bridge.py	/^client = ari.connect('http:\/\/10.10.10.109:8088', 'asterisk', 'asterisk')$/;"	kind:variable	line:10
+client	../documentation/architecture/modules/astersik/scripts/channel_handler.py	/^client = ari.connect('http:\/\/10.10.10.109:8088\/', 'asterisk', 'asterisk')$/;"	kind:variable	line:9
+client	../documentation/architecture/modules/astersik/scripts/channel_monitoring.py	/^client = ari.connect('http:\/\/10.10.10.109:8088\/', 'asterisk', 'asterisk')$/;"	kind:variable	line:7
+client	../documentation/architecture/modules/ryu/scripts/bridge-dial.py	/^client = ari.connect('http:\/\/192.168.56.101:8088', 'asterisk', 'asterisk')$/;"	kind:variable	line:9
+client.py	../application/call-admission-control/src/backend/libs/ari-py/ari/client.py	1;"	kind:file	line:1
+client_test.py	../application/call-admission-control/src/backend/libs/ari-py/ari_test/client_test.py	1;"	kind:file	line:1
+close	../application/call-admission-control/src/backend/libs/ari-py/ari/client.py	/^            def close(self):$/;"	kind:member	line:144
+close	../application/call-admission-control/src/backend/libs/ari-py/ari/client.py	/^    def close(self):$/;"	kind:member	line:59
+close	../application/call-admission-control/src/backend/libs/ari-py/ari_test/websocket_test.py	/^    def close(self):$/;"	kind:member	line:222
+close	../application/ryu/response.py	/^    def close(self):$/;"	kind:member	line:1431
+close	../application/ryu/response.py	/^    def close(self):$/;"	kind:member	line:1499
+closed	../application/ryu/response.py	/^    closed = False$/;"	kind:variable	line:1407
+commands	../application/call-admission-control/src/backend/src/front/WsHandler.py	/^commands = {}$/;"	kind:variable	line:4
+conditional_response_app	../application/ryu/response.py	/^    def conditional_response_app(self, environ, start_response):$/;"	kind:member	line:1314
+config	../application/call-admission-control/src/backend/src/config/settings.py	/^config = {$/;"	kind:variable	line:1
+config	../application/mininet/topologies/salidarRouter_topo.py	/^    def config( self, **params ):$/;"	kind:member	line:21
+configHosts	../application/mininet/topologies/net_test.py	/^    def configHosts( self ):$/;"	kind:member	line:283
+configLinkStatus	../application/mininet/topologies/net_test.py	/^    def configLinkStatus( self, src, dst, status ):$/;"	kind:member	line:655
+configureControlNetwork	../application/mininet/topologies/net_test.py	/^    def configureControlNetwork( self ):$/;"	kind:member	line:242
+configureRoutedControlNetwork	../application/mininet/topologies/net_test.py	/^    def configureRoutedControlNetwork( self, ip='192.168.123.1',$/;"	kind:member	line:249
+connect	../application/call-admission-control/src/backend/libs/ari-py/ari/__init__.py	/^def connect(base_url, username, password):$/;"	kind:function	line:15
+connect	../application/call-admission-control/src/backend/libs/ari-py/ari_test/websocket_test.py	/^def connect(base_url, messages):$/;"	kind:function	line:260
+connect	../application/call-admission-control/src/backend/src/cac/ari/Adapter.py	/^  def connect(host, username, password):$/;"	kind:member	line:5
+connect	../application/call-admission-control/src/backend/src/cac/ari/BaseController.py	/^  def connect(self):$/;"	kind:member	line:22
+connect	../application/call-admission-control/src/backend/src/front/Client.py	/^  def connect(self):$/;"	kind:member	line:17
+connectToRootNS	../application/mininet/topologies/asterisk_mininet.py	/^def connectToRootNS( network, switch, ip, routes ):$/;"	kind:function	line:37
+connectToRootNS	../application/mininet/topologies/cac_simulation.py	/^def connectToRootNS( network, switch, ip, routes ):$/;"	kind:function	line:124
+connectToRootNS	../application/mininet/topologies/sshd-hostsExternalAccess.py	/^def connectToRootNS( network, switch, ip, routes ):$/;"	kind:function	line:33
+connectedChannels	../application/call-admission-control/src/backend/src/cac/ari/CacController.py	/^  connectedChannels = {}$/;"	kind:variable	line:14
+content_disposition	../application/ryu/response.py	/^    content_disposition = header_getter('Content-Disposition', '19.5.1')$/;"	kind:variable	line:732
+content_encoding	../application/ryu/response.py	/^    content_encoding = header_getter('Content-Encoding', '14.11')$/;"	kind:variable	line:728
+content_language	../application/ryu/response.py	/^    content_language = list_header('Content-Language', '14.12')$/;"	kind:variable	line:729
+content_length	../application/ryu/response.py	/^    content_length = converter($/;"	kind:variable	line:724
+content_location	../application/ryu/response.py	/^    content_location = header_getter('Content-Location', '14.14')$/;"	kind:variable	line:730
+content_md5	../application/ryu/response.py	/^    content_md5 = header_getter('Content-MD5', '14.14')$/;"	kind:variable	line:731
+content_range	../application/ryu/response.py	/^    content_range = converter($/;"	kind:variable	line:735
+content_type	../application/ryu/response.py	/^    content_type = property(_content_type__get, _content_type__set,$/;"	kind:variable	line:892
+content_type_params	../application/ryu/response.py	/^    content_type_params = property($/;"	kind:variable	line:933
+copy	../application/ryu/response.py	/^    def copy(self):$/;"	kind:member	line:376
+currentBridge	../application/call-admission-control/src/backend/src/cac/ari/CacController.py	/^  currentBridge = None$/;"	kind:variable	line:15
+current_channels	../documentation/architecture/modules/astersik/scripts/channel_monitoring.py	/^current_channels = client.channels.list()$/;"	kind:variable	line:9
+datacenterBasic.py	../application/mininet/topologies/datacenterBasic.py	1;"	kind:file	line:1
+datacenterConfigurable.py	../application/mininet/topologies/datacenterConfigurable.py	1;"	kind:file	line:1
+date	../application/ryu/response.py	/^    date = date_header('Date', '14.18')$/;"	kind:variable	line:739
+decode_content	../application/ryu/response.py	/^    def decode_content(self):$/;"	kind:member	line:1238
+default_body_encoding	../application/ryu/response.py	/^    default_body_encoding = 'UTF-8'$/;"	kind:variable	line:154
+default_charset	../application/ryu/response.py	/^    default_charset = 'UTF-8'$/;"	kind:variable	line:151
+default_conditional_response	../application/ryu/response.py	/^    default_conditional_response = False$/;"	kind:variable	line:153
+default_content_type	../application/ryu/response.py	/^    default_content_type = 'text\/html'$/;"	kind:variable	line:150
+delete_cookie	../application/ryu/response.py	/^    def delete_cookie(self, name, path='\/', domain=None):$/;"	kind:member	line:1064
+description	../application/call-admission-control/src/backend/libs/ari-py/setup.py	/^    description="Library for accessing the Asterisk REST Interface",$/;"	kind:variable	line:15
+detachHost	../application/mininet/topologies/net_test.py	/^    def detachHost( self, hostName, switchName=None ):$/;"	kind:member	line:713
+diffserv_topo.py	../application/mininet/topologies/diffserv_topo.py	1;"	kind:file	line:1
+diffserv_topo2.py	../application/mininet/topologies/diffserv_topo2.py	1;"	kind:file	line:1
+disconnect	../application/call-admission-control/src/backend/src/front/Client.py	/^  def disconnect(self):$/;"	kind:member	line:46
+doGetPorts	../application/call-admission-control/src/backend/src/cac/ari/CacController.py	/^  def doGetPorts(self):$/;"	kind:member	line:27
+doSomething	../application/call-admission-control/src/backend/src/cac/ari/CacController.py	/^  def doSomething(self):$/;"	kind:member	line:22
+encode_content	../application/ryu/response.py	/^    def encode_content(self, encoding='gzip', lazy=False):$/;"	kind:member	line:1218
+encoding	../application/ryu/response.py	/^    encoding = property($/;"	kind:variable	line:1419
+enrich_operation	../application/call-admission-control/src/backend/libs/ari-py/ari/model.py	/^        def enrich_operation(**kwargs):$/;"	kind:function	line:145
+environ	../application/ryu/response.py	/^    environ = None$/;"	kind:variable	line:161
+etag	../application/ryu/response.py	/^    etag = converter($/;"	kind:variable	line:744
+etag_strong	../application/ryu/response.py	/^    def etag_strong(self):$/;"	kind:member	line:750
+example.py	../application/call-admission-control/src/backend/libs/ari-py/examples/example.py	1;"	kind:file	line:1
+expires	../application/ryu/response.py	/^    expires = date_header('Expires', '14.21')$/;"	kind:variable	line:740
+externalConnection.py	../application/mininet/topologies/externalConnection.py	1;"	kind:file	line:1
+extract_objects	../application/call-admission-control/src/backend/libs/ari-py/ari/client.py	/^        def extract_objects(event, *args, **kwargs):$/;"	kind:function	line:180
+filter_headers	../application/ryu/response.py	/^def filter_headers(hlist, remove_headers=('content-length', 'content-type')):$/;"	kind:function	line:1394
+flush	../application/ryu/response.py	/^    def flush(self):$/;"	kind:member	line:1434
+fn_filter	../application/call-admission-control/src/backend/libs/ari-py/ari/model.py	/^        def fn_filter(objects, event, *args, **kwargs):$/;"	kind:function	line:170
+from_file	../application/ryu/response.py	/^    def from_file(cls, fp):$/;"	kind:member	line:325
+get	../application/call-admission-control/src/backend/src/cac/api/service.py	/^  def get(self, endpoint=''):$/;"	kind:member	line:29
+get	../application/mininet/topologies/api.py	/^  def get(self, endpoint=''):$/;"	kind:member	line:30
+getMetrics	../application/call-admission-control/src/backend/src/cac/Application.py	/^  def getMetrics(self):$/;"	kind:member	line:11
+getPorts	../application/call-admission-control/src/backend/src/cac/Application.py	/^  def getPorts(self):$/;"	kind:member	line:15
+getTotalChannels	../application/call-admission-control/src/backend/src/cac/ari/CacController.py	/^  def getTotalChannels():$/;"	kind:member	line:110
+get_params	../application/call-admission-control/src/backend/libs/ari-py/ari/model.py	/^    def get_params(self, obj_json):$/;"	kind:member	line:103
+get_params	../application/call-admission-control/src/backend/libs/ari-py/ari/model.py	/^    def get_params(self, obj_json):$/;"	kind:member	line:272
+get_params	../application/call-admission-control/src/backend/libs/ari-py/ari/model.py	/^    def get_params(self, obj_json):$/;"	kind:member	line:70
+get_repo	../application/call-admission-control/src/backend/libs/ari-py/ari/client.py	/^    def get_repo(self, name):$/;"	kind:member	line:69
+gzip_app_iter	../application/ryu/response.py	/^def gzip_app_iter(app_iter):$/;"	kind:function	line:1580
+handleClose	../application/call-admission-control/src/backend/src/front/WsHandler.py	/^  def handleClose(self):$/;"	kind:member	line:27
+handleClose	../application/call-admission-control/src/mocks/ari/AriMockInterface.py	/^  def handleClose(self):$/;"	kind:member	line:11
+handleConnected	../application/call-admission-control/src/backend/src/front/WsHandler.py	/^  def handleConnected(self):$/;"	kind:member	line:24
+handleConnected	../application/call-admission-control/src/mocks/ari/AriMockInterface.py	/^  def handleConnected(self):$/;"	kind:member	line:8
+handleMessage	../application/call-admission-control/src/backend/src/front/WsHandler.py	/^  def handleMessage(self):$/;"	kind:member	line:11
+handleMessage	../application/call-admission-control/src/mocks/ari/AriMockInterface.py	/^  def handleMessage(self):$/;"	kind:member	line:4
+hangup_channel	../application/call-admission-control/src/backend/src/cac/ari/CacController.py	/^    def hangup_channel(channel):$/;"	kind:function	line:98
+hangup_channel	../documentation/architecture/modules/astersik/scripts/channel_bridge.py	/^    def hangup_channel(channel):$/;"	kind:function	line:88
+hangup_channel	../documentation/architecture/modules/astersik/scripts/channel_handler.py	/^    def hangup_channel(channel):$/;"	kind:function	line:38
+has_body	../application/ryu/response.py	/^    has_body = property(_has_body__get)$/;"	kind:variable	line:605
+headerlist	../application/ryu/response.py	/^    headerlist = property(_headerlist__get, _headerlist__set,$/;"	kind:variable	line:483
+headers	../application/ryu/response.py	/^    headers = property(_headers__get, _headers__set, doc=_headers__get.__doc__)$/;"	kind:variable	line:500
+holding_bridge	../application/call-admission-control/src/backend/libs/ari-py/examples/originate_example.py	/^    holding_bridge = bridges[0]$/;"	kind:variable	line:26
+holding_bridge	../application/call-admission-control/src/backend/libs/ari-py/examples/originate_example.py	/^    holding_bridge = client.bridges.create(type='holding')$/;"	kind:variable	line:29
+hostInternet.py	../application/mininet/topologies/hostInternet.py	1;"	kind:file	line:1
+id_as_str	../application/call-admission-control/src/backend/libs/ari-py/ari/model.py	/^    def id_as_str(self, obj_json):$/;"	kind:member	line:106
+id_as_str	../application/call-admission-control/src/backend/libs/ari-py/ari/model.py	/^    def id_as_str(self, obj_json):$/;"	kind:member	line:278
+id_as_str	../application/call-admission-control/src/backend/libs/ari-py/ari/model.py	/^    def id_as_str(self, obj_json):$/;"	kind:member	line:80
+id_generator	../application/call-admission-control/src/backend/libs/ari-py/ari/model.py	/^    id_generator = DefaultObjectIdGenerator('bridgeId')$/;"	kind:variable	line:214
+id_generator	../application/call-admission-control/src/backend/libs/ari-py/ari/model.py	/^    id_generator = DefaultObjectIdGenerator('channelId')$/;"	kind:variable	line:198
+id_generator	../application/call-admission-control/src/backend/libs/ari-py/ari/model.py	/^    id_generator = DefaultObjectIdGenerator('deviceName', id_field='name')$/;"	kind:variable	line:304
+id_generator	../application/call-admission-control/src/backend/libs/ari-py/ari/model.py	/^    id_generator = DefaultObjectIdGenerator('mailboxName', id_field='name')$/;"	kind:variable	line:335
+id_generator	../application/call-admission-control/src/backend/libs/ari-py/ari/model.py	/^    id_generator = DefaultObjectIdGenerator('playbackId')$/;"	kind:variable	line:229
+id_generator	../application/call-admission-control/src/backend/libs/ari-py/ari/model.py	/^    id_generator = DefaultObjectIdGenerator('recordingName', id_field='name')$/;"	kind:variable	line:244
+id_generator	../application/call-admission-control/src/backend/libs/ari-py/ari/model.py	/^    id_generator = DefaultObjectIdGenerator('recordingName', id_field='name')$/;"	kind:variable	line:259
+id_generator	../application/call-admission-control/src/backend/libs/ari-py/ari/model.py	/^    id_generator = DefaultObjectIdGenerator('soundId')$/;"	kind:variable	line:320
+id_generator	../application/call-admission-control/src/backend/libs/ari-py/ari/model.py	/^    id_generator = EndpointIdGenerator()$/;"	kind:variable	line:289
+id_generator	../application/call-admission-control/src/backend/libs/ari-py/ari/model.py	/^    id_generator = ObjectIdGenerator()$/;"	kind:variable	line:122
+init	../application/call-admission-control/src/backend/src/trafficReporter/Reporter.py	/^  def init(self):$/;"	kind:member	line:15
+init	../application/mininet/topologies/net_test.py	/^def init():$/;"	kind:function	line:752
+init	../tests/traffirReport/Reporter.py	/^  def init(self):$/;"	kind:member	line:16
+init.py	../application/asterisk/init.py	1;"	kind:file	line:1
+init.py	../application/call-admission-control/init.py	1;"	kind:file	line:1
+init.py	../application/ryu/init.py	1;"	kind:file	line:1
+initRequest	../application/call-admission-control/src/backend/src/cac/api/service.py	/^  def initRequest(self, endpoint=''):$/;"	kind:member	line:18
+initRequest	../application/mininet/topologies/api.py	/^  def initRequest(self, endpoint=''):$/;"	kind:member	line:20
+initStasisApplication	../application/call-admission-control/src/backend/src/cac/ari/BaseController.py	/^  def initStasisApplication(self):$/;"	kind:member	line:42
+install_requires	../application/call-admission-control/src/backend/libs/ari-py/setup.py	/^    install_requires=["swaggerpy"],$/;"	kind:variable	line:31
+interact	../application/mininet/topologies/net_test.py	/^    def interact( self ):$/;"	kind:member	line:741
+iperf	../application/mininet/topologies/net_test.py	/^    def iperf( self, hosts=None, l4Type='TCP', udpBw='10M' ):$/;"	kind:member	line:612
+iperfTest	../application/mininet/topologies/cac_simulation.py	/^def iperfTest(h1, h2):$/;"	kind:function	line:33
+iperfTest	../application/mininet/topologies/diffserv_topo2.py	/^def iperfTest(h1, h2):$/;"	kind:function	line:26
+iperfTest	../application/mininet/topologies/sdn-qos-RealTimeQueues.py	/^def iperfTest(h1, h2):$/;"	kind:function	line:26
+iter_close	../application/ryu/response.py	/^def iter_close(iter):$/;"	kind:function	line:1576
+iter_file	../application/ryu/response.py	/^def iter_file(file, block_size=1 << 18): # 256Kb$/;"	kind:function	line:1398
+last_modified	../application/ryu/response.py	/^    last_modified = date_header('Last-Modified', '14.29')$/;"	kind:variable	line:741
+license	../application/call-admission-control/src/backend/libs/ari-py/setup.py	/^    license="BSD 3-Clause License",$/;"	kind:variable	line:14
+list_ip_table	../application/ryu/applications/qos_simple_switch_rest_13_CAC.py	/^    def list_ip_table(self, req, **kwargs):$/;"	kind:member	line:86
+list_ip_table	../documentation/architecture/modules/ryu/scripts/qos_simple_switch_rest_13_CAC.py	/^    def list_ip_table(self, req, **kwargs):$/;"	kind:member	line:86
+list_ip_table	../documentation/architecture/modules/ryu/scripts/simple_switch_rest_13_CAC.py	/^    def list_ip_table(self, req, **kwargs):$/;"	kind:member	line:86
+list_ip_table	../documentation/architecture/modules/ryu/scripts/simple_switch_rest_13_IP_MAC.py	/^    def list_ip_table(self, req, **kwargs):$/;"	kind:member	line:86
+list_mac_table	../documentation/architecture/modules/ryu/scripts/simple_switch_rest_13_old.py	/^    def list_mac_table(self, req, **kwargs):$/;"	kind:member	line:85
+listen	../application/call-admission-control/src/backend/src/trafficReporter/Reporter.py	/^  def listen(self):$/;"	kind:member	line:38
+listen	../tests/traffirReport/Reporter.py	/^  def listen(self):$/;"	kind:member	line:43
+location	../application/ryu/response.py	/^    location = header_getter('Location', '14.30')$/;"	kind:variable	line:753
+log	../application/call-admission-control/src/backend/libs/ari-py/ari/client.py	/^log = logging.getLogger(__name__)$/;"	kind:variable	line:15
+log	../application/call-admission-control/src/backend/libs/ari-py/ari/model.py	/^log = logging.getLogger(__name__)$/;"	kind:variable	line:24
+logConfigFile	../application/call-admission-control/src/backend/src/config/logger.py	/^logConfigFile = path.join(path.dirname(path.abspath(__file__)), 'logger.ini')$/;"	kind:variable	line:5
+logger	../application/mininet/topologies/cac_simulation.py	/^logger = logging.getLogger( __name__ )$/;"	kind:variable	line:31
+logger	../application/mininet/topologies/diffserv_topo2.py	/^logger = logging.getLogger( __name__ )$/;"	kind:variable	line:24
+logger	../application/mininet/topologies/sdn-qos-RealTimeQueues.py	/^logger = logging.getLogger( __name__ )$/;"	kind:variable	line:24
+logger.py	../application/call-admission-control/src/backend/src/config/logger.py	1;"	kind:file	line:1
+long_description	../application/call-admission-control/src/backend/libs/ari-py/setup.py	/^    long_description=open(os.path.join(os.path.dirname(__file__),$/;"	kind:variable	line:16
+main	../application/simulation/ticker.py	/^def main():$/;"	kind:function	line:39
+main	../tests/single-thread-ticker.py	/^def main():$/;"	kind:function	line:38
+main	../tests/ticker.py	/^def main():$/;"	kind:function	line:39
+md5_etag	../application/ryu/response.py	/^    def md5_etag(self, body=None, set_content_md5=False):$/;"	kind:member	line:1257
+merge_cookies	../application/ryu/response.py	/^    def merge_cookies(self, resp):$/;"	kind:member	line:1094
+metrics	../documentation/architecture/modules/astersik/scripts/python-app-logica.py	/^      metrics = _controllerApi.getMetrics();$/;"	kind:variable	line:26
+minimal.py	../application/mininet/topologies/minimal.py	1;"	kind:file	line:1
+minimal_2.py	../application/mininet/topologies/minimal_2.py	1;"	kind:file	line:1
+mock	../application/call-admission-control/src/mocks/ari/server.py	/^mock = AriMockServer()$/;"	kind:variable	line:19
+mode	../application/ryu/response.py	/^    mode = 'wb'$/;"	kind:variable	line:1406
+model.py	../application/call-admission-control/src/backend/libs/ari-py/ari/model.py	1;"	kind:file	line:1
+monitor	../application/mininet/topologies/net_test.py	/^    def monitor( self, hosts=None, timeoutms=-1 ):$/;"	kind:member	line:423
+myNetwork	../application/mininet/topologies/hostInternet.py	/^def myNetwork():$/;"	kind:function	line:11
+name	../application/call-admission-control/src/backend/libs/ari-py/setup.py	/^    name="ari",$/;"	kind:variable	line:12
+nat.py	../application/mininet/topologies/nat.py	1;"	kind:file	line:1
+nat_RemoteController.py	../application/mininet/topologies/nat_RemoteController.py	1;"	kind:file	line:1
+net	../application/mininet/topologies/asterisk_mininet.py	/^    net = TreeNet( depth=1, fanout=4 )$/;"	kind:variable	line:85
+net	../application/mininet/topologies/cac_simulation.py	/^    net = TreeNet( depth=1, fanout=4 )$/;"	kind:variable	line:222
+net	../application/mininet/topologies/nat.py	/^    net = TreeNet( depth=1, fanout=4 )$/;"	kind:variable	line:15
+net	../application/mininet/topologies/nat_RemoteController.py	/^    net = Mininet( topo=topo, controller=RemoteController )$/;"	kind:variable	line:19
+net	../application/mininet/topologies/sshd-hostsExternalAccess.py	/^    net = TreeNet( depth=1, fanout=4 )$/;"	kind:variable	line:77
+net_test.py	../application/mininet/topologies/net_test.py	1;"	kind:file	line:1
+next	../application/ryu/response.py	/^    def next(self):$/;"	kind:member	line:1481
+next	../application/ryu/response.py	/^    def next(self):$/;"	kind:member	line:1521
+noop	../application/call-admission-control/src/backend/libs/ari-py/ari_test/websocket_test.py	/^    def noop(self, *args, **kwargs):$/;"	kind:member	line:194
+onStartCallback	../application/call-admission-control/src/backend/src/cac/ari/CacController.py	/^  def onStartCallback(self, channel_obj, ev):$/;"	kind:member	line:31
+on_bridge_event	../application/call-admission-control/src/backend/libs/ari-py/ari/client.py	/^    def on_bridge_event(self, event_type, fn, *args, **kwargs):$/;"	kind:member	line:216
+on_channel_event	../application/call-admission-control/src/backend/libs/ari-py/ari/client.py	/^    def on_channel_event(self, event_type, fn, *args, **kwargs):$/;"	kind:member	line:204
+on_close	../application/call-admission-control/src/backend/src/front/Client.py	/^  def on_close(self):$/;"	kind:member	line:33
+on_device_state_event	../application/call-admission-control/src/backend/libs/ari-py/ari/client.py	/^    def on_device_state_event(self, event_type, fn, *args, **kwargs):$/;"	kind:member	line:276
+on_dtmf	../application/call-admission-control/src/backend/libs/ari-py/examples/cleanup_example.py	/^    def on_dtmf(channel, event):$/;"	kind:function	line:32
+on_dtmf	../application/call-admission-control/src/backend/libs/ari-py/examples/example.py	/^def on_dtmf(channel, event):$/;"	kind:function	line:19
+on_dtmf	../application/call-admission-control/src/backend/libs/ari-py/examples/playback_example.py	/^    def on_dtmf(channel, event):$/;"	kind:function	line:30
+on_endpoint_event	../application/call-admission-control/src/backend/libs/ari-py/ari/client.py	/^    def on_endpoint_event(self, event_type, fn, *args, **kwargs):$/;"	kind:member	line:264
+on_enter	../application/call-admission-control/src/backend/libs/ari-py/examples/bridge_example.py	/^def on_enter(bridge, ev):$/;"	kind:function	line:31
+on_error	../application/call-admission-control/src/backend/src/front/Client.py	/^  def on_error(self, error):$/;"	kind:member	line:30
+on_event	../application/call-admission-control/src/backend/libs/ari-py/ari/client.py	/^    def on_event(self, event_type, event_cb, *args, **kwargs):$/;"	kind:member	line:123
+on_event	../application/call-admission-control/src/backend/libs/ari-py/ari/model.py	/^    def on_event(self, event_type, fn, *args, **kwargs):$/;"	kind:member	line:159
+on_live_recording_event	../application/call-admission-control/src/backend/libs/ari-py/ari/client.py	/^    def on_live_recording_event(self, event_type, fn, *args, **kwargs):$/;"	kind:member	line:240
+on_message	../application/call-admission-control/src/backend/src/front/Client.py	/^  def on_message(self, message):$/;"	kind:member	line:26
+on_object_event	../application/call-admission-control/src/backend/libs/ari-py/ari/client.py	/^    def on_object_event(self, event_type, event_cb, factory_fn, model_id,$/;"	kind:member	line:152
+on_open	../application/call-admission-control/src/backend/src/front/Client.py	/^  def on_open(self):$/;"	kind:member	line:36
+on_playback_event	../application/call-admission-control/src/backend/libs/ari-py/ari/client.py	/^    def on_playback_event(self, event_type, fn, *args, **kwargs):$/;"	kind:member	line:228
+on_sound_event	../application/call-admission-control/src/backend/libs/ari-py/ari/client.py	/^    def on_sound_event(self, event_type, fn, *args, **kwargs):$/;"	kind:member	line:288
+on_start	../application/call-admission-control/src/backend/libs/ari-py/examples/cleanup_example.py	/^def on_start(channel, event):$/;"	kind:function	line:21
+on_start	../application/call-admission-control/src/backend/libs/ari-py/examples/example.py	/^def on_start(channel, event):$/;"	kind:function	line:38
+on_start	../application/call-admission-control/src/backend/libs/ari-py/examples/originate_example.py	/^def on_start(incoming, event):$/;"	kind:function	line:46
+on_start	../application/call-admission-control/src/backend/libs/ari-py/examples/playback_example.py	/^def on_start(channel, event):$/;"	kind:function	line:19
+on_stored_recording_event	../application/call-admission-control/src/backend/libs/ari-py/ari/client.py	/^    def on_stored_recording_event(self, event_type, fn, *args, **kwargs):$/;"	kind:member	line:252
+only_once	../application/call-admission-control/src/backend/libs/ari-py/ari_test/websocket_test.py	/^        def only_once(channel, event):$/;"	kind:function	line:107
+only_once	../application/call-admission-control/src/backend/libs/ari-py/ari_test/websocket_test.py	/^        def only_once(event):$/;"	kind:function	line:62
+originate_example.py	../application/call-admission-control/src/backend/libs/ari-py/examples/originate_example.py	1;"	kind:file	line:1
+outgoing_on_start	../application/call-admission-control/src/backend/libs/ari-py/examples/originate_example.py	/^    def outgoing_on_start(channel, event):$/;"	kind:function	line:76
+outgoing_start_cb	../application/call-admission-control/src/backend/src/cac/ari/CacController.py	/^    def outgoing_start_cb(channel_obj, ev):$/;"	kind:function	line:67
+outgoing_start_cb	../documentation/architecture/modules/astersik/scripts/channel_bridge.py	/^    def outgoing_start_cb(channel_obj, ev):$/;"	kind:function	line:73
+outgoing_start_cb	../documentation/architecture/modules/ryu/scripts/bridge-dial.py	/^    def outgoing_start_cb(channel_obj, ev):$/;"	kind:function	line:67
+packages	../application/call-admission-control/src/backend/libs/ari-py/setup.py	/^    packages=["ari"],$/;"	kind:variable	line:21
+perform	../application/call-admission-control/src/backend/src/cac/api/service.py	/^  def perform(self):$/;"	kind:member	line:24
+perform	../application/mininet/topologies/api.py	/^  def perform(self):$/;"	kind:member	line:25
+ping	../application/mininet/topologies/net_test.py	/^    def ping( self, hosts=None, numPerPing=1 ):$/;"	kind:member	line:462
+pingAll	../application/mininet/topologies/net_test.py	/^    def pingAll( self, numPerPing=1):$/;"	kind:member	line:493
+pingPair	../application/mininet/topologies/net_test.py	/^    def pingPair( self ):$/;"	kind:member	line:499
+pingTest	../application/mininet/topologies/cac_simulation.py	/^def pingTest(net):$/;"	kind:function	line:54
+pingTest	../application/mininet/topologies/diffserv_topo2.py	/^def pingTest(net):$/;"	kind:function	line:46
+pingTest	../application/mininet/topologies/sdn-qos-RealTimeQueues.py	/^def pingTest(net):$/;"	kind:function	line:47
+playback_example.py	../application/call-admission-control/src/backend/libs/ari-py/examples/playback_example.py	1;"	kind:file	line:1
+post	../application/call-admission-control/src/backend/src/cac/api/service.py	/^  def post(self, endpoint='', data={}):$/;"	kind:member	line:33
+post	../application/mininet/topologies/api.py	/^  def post(self, endpoint='', data={}):$/;"	kind:member	line:34
+pragma	../application/ryu/response.py	/^    pragma = header_getter('Pragma', '14.32')$/;"	kind:variable	line:754
+promote	../application/call-admission-control/src/backend/libs/ari-py/ari/model.py	/^def promote(client, resp, operation_json):$/;"	kind:function	line:342
+put	../application/mininet/topologies/api.py	/^  def put(self, endpoint='', data={}):$/;"	kind:member	line:43
+put_mac_table	../application/ryu/applications/qos_simple_switch_rest_13_CAC.py	/^    def put_mac_table(self, req, **kwargs):$/;"	kind:member	line:116
+put_mac_table	../documentation/architecture/modules/ryu/scripts/qos_simple_switch_rest_13_CAC.py	/^    def put_mac_table(self, req, **kwargs):$/;"	kind:member	line:116
+put_mac_table	../documentation/architecture/modules/ryu/scripts/simple_switch_rest_13_CAC.py	/^    def put_mac_table(self, req, **kwargs):$/;"	kind:member	line:109
+put_mac_table	../documentation/architecture/modules/ryu/scripts/simple_switch_rest_13_IP_MAC.py	/^    def put_mac_table(self, req, **kwargs):$/;"	kind:member	line:108
+put_mac_table	../documentation/architecture/modules/ryu/scripts/simple_switch_rest_13_old.py	/^    def put_mac_table(self, req, **kwargs):$/;"	kind:member	line:99
+python-app-logica.py	../documentation/architecture/modules/astersik/scripts/python-app-logica.py	1;"	kind:file	line:1
+qosSetup	../application/mininet/topologies/cac_simulation.py	/^def qosSetup(test):$/;"	kind:function	line:58
+qosSetup	../application/mininet/topologies/diffserv_topo.py	/^def qosSetup():$/;"	kind:function	line:23
+qosSetup	../application/mininet/topologies/diffserv_topo2.py	/^def qosSetup():$/;"	kind:function	line:50
+qosSetup	../application/mininet/topologies/sdn-qos-RealTimeQueues.py	/^def qosSetup(test):$/;"	kind:function	line:51
+qos_simple_switch_13_CAC.py	../application/ryu/applications/qos_simple_switch_13_CAC.py	1;"	kind:file	line:1
+qos_simple_switch_13_CAC.py	../documentation/architecture/modules/ryu/scripts/qos_simple_switch_13_CAC.py	1;"	kind:file	line:1
+qos_simple_switch_rest_13_CAC.py	../application/ryu/applications/qos_simple_switch_rest_13_CAC.py	1;"	kind:file	line:1
+qos_simple_switch_rest_13_CAC.py	../documentation/architecture/modules/ryu/scripts/qos_simple_switch_rest_13_CAC.py	1;"	kind:file	line:1
+queryForGetNodes	../application/call-admission-control/src/backend/src/cac/ryu/Controller.py	/^  def queryForGetNodes(self):$/;"	kind:member	line:6
+queryForGetPorts	../application/call-admission-control/src/backend/src/cac/ryu/Controller.py	/^  def queryForGetPorts(self):$/;"	kind:member	line:18
+raise_exceptions	../application/call-admission-control/src/backend/libs/ari-py/ari_test/websocket_test.py	/^def raise_exceptions(ex):$/;"	kind:function	line:252
+record_event	../application/call-admission-control/src/backend/libs/ari-py/ari_test/websocket_test.py	/^    def record_event(self, event):$/;"	kind:member	line:27
+recv	../application/call-admission-control/src/backend/libs/ari-py/ari_test/websocket_test.py	/^    def recv(self):$/;"	kind:member	line:208
+register_command	../application/call-admission-control/src/backend/src/front/Facade.py	/^  def register_command(self, command, name=''):$/;"	kind:member	line:12
+register_command	../application/call-admission-control/src/backend/src/front/WsHandler.py	/^  def register_command(command, name=''):$/;"	kind:member	line:8
+repl_app	../application/ryu/response.py	/^            def repl_app(environ, start_response):$/;"	kind:function	line:1110
+repl_start_response	../application/ryu/response.py	/^                def repl_start_response(status, headers, exc_info=None):$/;"	kind:function	line:1111
+request	../application/ryu/response.py	/^    request = None$/;"	kind:variable	line:160
+response.py	../application/ryu/response.py	1;"	kind:file	line:1
+retry_after	../application/ryu/response.py	/^    retry_after = converter($/;"	kind:variable	line:759
+run	../application/call-admission-control/src/backend/libs/ari-py/ari/client.py	/^    def run(self, apps):$/;"	kind:member	line:104
+run	../application/call-admission-control/src/backend/libs/ari-py/examples/cleanup_example.py	/^def run():$/;"	kind:function	line:62
+run	../application/call-admission-control/src/backend/src/__init__.py	/^def run():$/;"	kind:function	line:10
+run	../application/call-admission-control/src/backend/src/cac/BaseApplication.py	/^  def run(self):$/;"	kind:member	line:20
+run	../application/call-admission-control/src/backend/src/cac/ari/BaseController.py	/^  def run(self):$/;"	kind:member	line:34
+run	../application/call-admission-control/src/backend/src/front/Facade.py	/^  def run(self, Client):$/;"	kind:member	line:15
+run	../application/mininet/topologies/diffserv_topo.py	/^def run():$/;"	kind:function	line:79
+run	../application/mininet/topologies/diffserv_topo2.py	/^def run():$/;"	kind:function	line:111
+run	../application/mininet/topologies/net_test.py	/^    def run( self, test, *args, **kwargs ):$/;"	kind:member	line:415
+run	../application/mininet/topologies/salidarRouter_topo.py	/^def run():$/;"	kind:function	line:52
+run	../application/mininet/topologies/sdn-qos-RealTimeQueues.py	/^def run():$/;"	kind:function	line:130
+run.py	../application/call-admission-control/src/backend/run.py	1;"	kind:file	line:1
+runAsterisk	../application/mininet/topologies/asterisk_mininet.py	/^def runAsterisk( action,network ):$/;"	kind:function	line:22
+runMinimalTopo	../application/mininet/topologies/externalConnection.py	/^def runMinimalTopo():$/;"	kind:function	line:38
+runMinimalTopo	../application/mininet/topologies/minimal.py	/^def runMinimalTopo():$/;"	kind:function	line:36
+runMinimalTopo	../application/mininet/topologies/minimal_2.py	/^def runMinimalTopo():$/;"	kind:function	line:36
+safe_bridge_destroy	../documentation/architecture/modules/astersik/scripts/channel_bridge.py	/^def safe_bridge_destroy(bridge):$/;"	kind:function	line:24
+safe_bridge_destroy	../documentation/architecture/modules/ryu/scripts/bridge-dial.py	/^def safe_bridge_destroy(bridge):$/;"	kind:function	line:22
+safe_hangup	../application/call-admission-control/src/backend/libs/ari-py/examples/originate_example.py	/^def safe_hangup(channel):$/;"	kind:function	line:33
+safe_hangup	../application/call-admission-control/src/backend/src/cac/ari/CacController.py	/^  def safe_hangup(self, channel, bridge):$/;"	kind:member	line:120
+safe_hangup	../documentation/architecture/modules/astersik/scripts/channel_bridge.py	/^def safe_hangup(channel):$/;"	kind:function	line:14
+safe_hangup	../documentation/architecture/modules/ryu/scripts/bridge-dial.py	/^def safe_hangup(channel):$/;"	kind:function	line:12
+salidarRouter_topo.py	../application/mininet/topologies/salidarRouter_topo.py	1;"	kind:file	line:1
+sdn-qos-RealTimeQueues.py	../application/mininet/topologies/sdn-qos-RealTimeQueues.py	1;"	kind:file	line:1
+send_close	../application/call-admission-control/src/backend/libs/ari-py/ari_test/websocket_test.py	/^    def send_close(self):$/;"	kind:member	line:217
+serve	../application/call-admission-control/src/backend/libs/ari-py/ari_test/utils.py	/^    def serve(self, method, *args, **kwargs):$/;"	kind:member	line:56
+serve_api	../application/call-admission-control/src/backend/libs/ari-py/ari_test/utils.py	/^    def serve_api(self):$/;"	kind:member	line:47
+server	../application/ryu/response.py	/^    server = header_getter('Server', '14.38')$/;"	kind:variable	line:763
+server.py	../application/call-admission-control/src/mocks/ari/server.py	1;"	kind:file	line:1
+service.py	../application/call-admission-control/src/backend/src/cac/api/service.py	1;"	kind:file	line:1
+setMacs	../application/mininet/topologies/net_test.py	/^    def setMacs( self ):$/;"	kind:member	line:369
+setUp	../application/call-admission-control/src/backend/libs/ari-py/ari_test/client_test.py	/^    def setUp(self):$/;"	kind:member	line:147
+setUp	../application/call-admission-control/src/backend/libs/ari-py/ari_test/utils.py	/^    def setUp(self):$/;"	kind:member	line:17
+setUp	../application/call-admission-control/src/backend/libs/ari-py/ari_test/websocket_test.py	/^    def setUp(self):$/;"	kind:member	line:23
+set_cookie	../application/ryu/response.py	/^    def set_cookie(self, name, value='', max_age=None,$/;"	kind:member	line:944
+set_mac_to_port	../application/ryu/applications/qos_simple_switch_rest_13_CAC.py	/^    def set_mac_to_port(self, dpid, entry):$/;"	kind:member	line:51
+set_mac_to_port	../documentation/architecture/modules/ryu/scripts/qos_simple_switch_rest_13_CAC.py	/^    def set_mac_to_port(self, dpid, entry):$/;"	kind:member	line:51
+set_mac_to_port	../documentation/architecture/modules/ryu/scripts/simple_switch_rest_13_CAC.py	/^    def set_mac_to_port(self, dpid, entry):$/;"	kind:member	line:51
+set_mac_to_port	../documentation/architecture/modules/ryu/scripts/simple_switch_rest_13_IP_MAC.py	/^    def set_mac_to_port(self, dpid, entry):$/;"	kind:member	line:51
+set_mac_to_port	../documentation/architecture/modules/ryu/scripts/simple_switch_rest_13_old.py	/^    def set_mac_to_port(self, dpid, entry):$/;"	kind:member	line:50
+settings.py	../application/call-admission-control/src/backend/src/config/settings.py	1;"	kind:file	line:1
+setup.py	../application/call-admission-control/src/backend/libs/ari-py/setup.py	1;"	kind:file	line:1
+simple_switch_13_CAC.py	../application/ryu/applications/simple_switch_13_CAC.py	1;"	kind:file	line:1
+simple_switch_13_CAC.py	../documentation/architecture/modules/ryu/scripts/simple_switch_13_CAC.py	1;"	kind:file	line:1
+simple_switch_13_IP_MAC.py	../documentation/architecture/modules/ryu/scripts/simple_switch_13_IP_MAC.py	1;"	kind:file	line:1
+simple_switch_13_old.py	../documentation/architecture/modules/ryu/scripts/simple_switch_13_old.py	1;"	kind:file	line:1
+simple_switch_instance_name	../application/ryu/applications/qos_simple_switch_rest_13_CAC.py	/^simple_switch_instance_name = 'simple_switch_api_app'$/;"	kind:variable	line:28
+simple_switch_instance_name	../documentation/architecture/modules/ryu/scripts/qos_simple_switch_rest_13_CAC.py	/^simple_switch_instance_name = 'simple_switch_api_app'$/;"	kind:variable	line:28
+simple_switch_instance_name	../documentation/architecture/modules/ryu/scripts/simple_switch_rest_13_CAC.py	/^simple_switch_instance_name = 'simple_switch_api_app'$/;"	kind:variable	line:28
+simple_switch_instance_name	../documentation/architecture/modules/ryu/scripts/simple_switch_rest_13_IP_MAC.py	/^simple_switch_instance_name = 'simple_switch_api_app'$/;"	kind:variable	line:28
+simple_switch_instance_name	../documentation/architecture/modules/ryu/scripts/simple_switch_rest_13_old.py	/^simple_switch_instance_name = 'simple_switch_api_app'$/;"	kind:variable	line:28
+simple_switch_rest_13_CAC.py	../documentation/architecture/modules/ryu/scripts/simple_switch_rest_13_CAC.py	1;"	kind:file	line:1
+simple_switch_rest_13_IP_MAC.py	../documentation/architecture/modules/ryu/scripts/simple_switch_rest_13_IP_MAC.py	1;"	kind:file	line:1
+simple_switch_rest_13_old.py	../documentation/architecture/modules/ryu/scripts/simple_switch_rest_13_old.py	1;"	kind:file	line:1
+single-thread-ticker.py	../tests/single-thread-ticker.py	1;"	kind:file	line:1
+sshd	../application/mininet/topologies/asterisk_mininet.py	/^def sshd( network, cmd='\/usr\/sbin\/sshd', opts='-D',$/;"	kind:function	line:53
+sshd	../application/mininet/topologies/sshd-hostsExternalAccess.py	/^def sshd( network, cmd='\/usr\/sbin\/sshd', opts='-D',$/;"	kind:function	line:49
+sshd-hostsExternalAccess.py	../application/mininet/topologies/sshd-hostsExternalAccess.py	1;"	kind:file	line:1
+start	../application/call-admission-control/src/mocks/ari/server.py	/^    def start(self):$/;"	kind:member	line:16
+start	../application/mininet/topologies/net_test.py	/^    def start( self ):$/;"	kind:member	line:382
+startServer	../application/call-admission-control/src/backend/src/front/Facade.py	/^  def startServer(self):$/;"	kind:member	line:24
+startTerms	../application/mininet/topologies/net_test.py	/^    def startTerms( self ):$/;"	kind:member	line:354
+stasis_end_cb	../documentation/architecture/modules/astersik/scripts/channel_handler.py	/^def stasis_end_cb(channel, ev):$/;"	kind:function	line:13
+stasis_end_cb	../documentation/architecture/modules/astersik/scripts/channel_monitoring.py	/^def stasis_end_cb(channel, ev):$/;"	kind:function	line:26
+stasis_start_cb	../application/call-admission-control/src/backend/libs/ari-py/examples/bridge_example.py	/^def stasis_start_cb(channel, ev):$/;"	kind:function	line:48
+stasis_start_cb	../documentation/architecture/modules/astersik/scripts/channel_bridge.py	/^def stasis_start_cb(channel_obj, ev):$/;"	kind:function	line:33
+stasis_start_cb	../documentation/architecture/modules/astersik/scripts/channel_handler.py	/^def stasis_start_cb(channel_obj, ev):$/;"	kind:function	line:24
+stasis_start_cb	../documentation/architecture/modules/astersik/scripts/channel_monitoring.py	/^def stasis_start_cb(channel_obj, ev):$/;"	kind:function	line:17
+stasis_start_cb	../documentation/architecture/modules/ryu/scripts/bridge-dial.py	/^def stasis_start_cb(channel_obj, ev):$/;"	kind:function	line:31
+staticArp	../application/mininet/topologies/net_test.py	/^    def staticArp( self ):$/;"	kind:member	line:375
+status	../application/ryu/response.py	/^    status = property(_status__get, _status__set, doc=_status__get.__doc__)$/;"	kind:variable	line:445
+stop	../application/mininet/topologies/net_test.py	/^    def stop( self ):$/;"	kind:member	line:395
+stopXterms	../application/mininet/topologies/net_test.py	/^    def stopXterms( self ):$/;"	kind:member	line:362
+subscribe	../application/call-admission-control/src/backend/src/cac/ari/BaseController.py	/^  def subscribe(self, onStartCallback):$/;"	kind:member	line:16
+switch_features_handler	../application/ryu/applications/qos_simple_switch_13_CAC.py	/^    def switch_features_handler(self, ev):$/;"	kind:member	line:35
+switch_features_handler	../application/ryu/applications/qos_simple_switch_rest_13_CAC.py	/^    def switch_features_handler(self, ev):$/;"	kind:member	line:44
+switch_features_handler	../application/ryu/applications/simple_switch_13_CAC.py	/^    def switch_features_handler(self, ev):$/;"	kind:member	line:35
+switch_features_handler	../documentation/architecture/modules/ryu/scripts/qos_simple_switch_13_CAC.py	/^    def switch_features_handler(self, ev):$/;"	kind:member	line:35
+switch_features_handler	../documentation/architecture/modules/ryu/scripts/qos_simple_switch_rest_13_CAC.py	/^    def switch_features_handler(self, ev):$/;"	kind:member	line:44
+switch_features_handler	../documentation/architecture/modules/ryu/scripts/simple_switch_13_CAC.py	/^    def switch_features_handler(self, ev):$/;"	kind:member	line:35
+switch_features_handler	../documentation/architecture/modules/ryu/scripts/simple_switch_13_IP_MAC.py	/^    def switch_features_handler(self, ev):$/;"	kind:member	line:35
+switch_features_handler	../documentation/architecture/modules/ryu/scripts/simple_switch_13_old.py	/^    def switch_features_handler(self, ev):$/;"	kind:member	line:34
+switch_features_handler	../documentation/architecture/modules/ryu/scripts/simple_switch_rest_13_CAC.py	/^    def switch_features_handler(self, ev):$/;"	kind:member	line:44
+switch_features_handler	../documentation/architecture/modules/ryu/scripts/simple_switch_rest_13_IP_MAC.py	/^    def switch_features_handler(self, ev):$/;"	kind:member	line:44
+switch_features_handler	../documentation/architecture/modules/ryu/scripts/simple_switch_rest_13_old.py	/^    def switch_features_handler(self, ev):$/;"	kind:member	line:44
+sync	../application/call-admission-control/src/backend/libs/ari-py/examples/cleanup_example.py	/^sync = thread.allocate_lock()$/;"	kind:variable	line:59
+tcptest	../application/mininet/topologies/net_test.py	/^    def tcptest( self, hosts=None, timeout=2 ):$/;"	kind:member	line:527
+tearDown	../application/call-admission-control/src/backend/libs/ari-py/ari_test/utils.py	/^    def tearDown(self):$/;"	kind:member	line:25
+tell	../application/ryu/response.py	/^    def tell(self):$/;"	kind:member	line:1437
+terminate	../application/mininet/topologies/salidarRouter_topo.py	/^    def terminate( self ):$/;"	kind:member	line:26
+test_arbitrary_callback_arguments	../application/call-admission-control/src/backend/libs/ari-py/ari_test/websocket_test.py	/^    def test_arbitrary_callback_arguments(self):$/;"	kind:member	line:143
+test_bad_event_type	../application/call-admission-control/src/backend/libs/ari-py/ari_test/websocket_test.py	/^    def test_bad_event_type(self):$/;"	kind:member	line:176
+test_bad_object_method	../application/call-admission-control/src/backend/libs/ari-py/ari_test/client_test.py	/^    def test_bad_object_method(self):$/;"	kind:member	line:67
+test_bad_object_type	../application/call-admission-control/src/backend/libs/ari-py/ari_test/websocket_test.py	/^    def test_bad_object_type(self):$/;"	kind:member	line:185
+test_bad_param	../application/call-admission-control/src/backend/libs/ari-py/ari_test/client_test.py	/^    def test_bad_param(self):$/;"	kind:member	line:78
+test_bad_repo_method	../application/call-admission-control/src/backend/libs/ari-py/ari_test/client_test.py	/^    def test_bad_repo_method(self):$/;"	kind:member	line:60
+test_bad_resource	../application/call-admission-control/src/backend/libs/ari-py/ari_test/client_test.py	/^    def test_bad_resource(self):$/;"	kind:member	line:53
+test_bad_response	../application/call-admission-control/src/backend/libs/ari-py/ari_test/client_test.py	/^    def test_bad_response(self):$/;"	kind:member	line:85
+test_channel_on_event	../application/call-admission-control/src/backend/libs/ari-py/ari_test/websocket_test.py	/^    def test_channel_on_event(self):$/;"	kind:member	line:119
+test_device_state	../application/call-admission-control/src/backend/libs/ari-py/ari_test/client_test.py	/^    def test_device_state(self):$/;"	kind:member	line:138
+test_docs	../application/call-admission-control/src/backend/libs/ari-py/ari_test/client_test.py	/^    def test_docs(self):$/;"	kind:member	line:21
+test_empty	../application/call-admission-control/src/backend/libs/ari-py/ari_test/websocket_test.py	/^    def test_empty(self):$/;"	kind:member	line:30
+test_empty_listing	../application/call-admission-control/src/backend/libs/ari-py/ari_test/client_test.py	/^    def test_empty_listing(self):$/;"	kind:member	line:29
+test_endpoints	../application/call-admission-control/src/backend/libs/ari-py/ari_test/client_test.py	/^    def test_endpoints(self):$/;"	kind:member	line:96
+test_live_recording	../application/call-admission-control/src/backend/libs/ari-py/ari_test/client_test.py	/^    def test_live_recording(self):$/;"	kind:member	line:108
+test_mailboxes	../application/call-admission-control/src/backend/libs/ari-py/ari_test/client_test.py	/^    def test_mailboxes(self):$/;"	kind:member	line:126
+test_on_channel	../application/call-admission-control/src/backend/libs/ari-py/ari_test/websocket_test.py	/^    def test_on_channel(self):$/;"	kind:member	line:81
+test_on_channel_unsubscribe	../application/call-admission-control/src/backend/libs/ari-py/ari_test/websocket_test.py	/^    def test_on_channel_unsubscribe(self):$/;"	kind:member	line:100
+test_one_listing	../application/call-admission-control/src/backend/libs/ari-py/ari_test/client_test.py	/^    def test_one_listing(self):$/;"	kind:member	line:34
+test_play	../application/call-admission-control/src/backend/libs/ari-py/ari_test/client_test.py	/^    def test_play(self):$/;"	kind:member	line:42
+test_series	../application/call-admission-control/src/backend/libs/ari-py/ari_test/websocket_test.py	/^    def test_series(self):$/;"	kind:member	line:36
+test_stored_recording	../application/call-admission-control/src/backend/libs/ari-py/ari_test/client_test.py	/^    def test_stored_recording(self):$/;"	kind:member	line:116
+test_unsubscribe	../application/call-admission-control/src/backend/libs/ari-py/ari_test/websocket_test.py	/^    def test_unsubscribe(self):$/;"	kind:member	line:54
+tests_require	../application/call-admission-control/src/backend/libs/ari-py/setup.py	/^    tests_require=["coverage", "httpretty", "nose", "tissue"],$/;"	kind:variable	line:30
+text	../application/ryu/response.py	/^    text = property(_text__get, _text__set, _text__del, doc=_text__get.__doc__)$/;"	kind:variable	line:641
+thr	../application/call-admission-control/src/backend/libs/ari-py/examples/cleanup_example.py	/^thr = thread.start_new_thread(run, ())$/;"	kind:variable	line:70
+ticker.py	../application/simulation/ticker.py	1;"	kind:file	line:1
+ticker.py	../tests/ticker.py	1;"	kind:file	line:1
+timeTicker	../application/simulation/ticker.py	/^def timeTicker(callback, timeFinish):$/;"	kind:function	line:31
+timeTicker	../tests/single-thread-ticker.py	/^def timeTicker(callback, timeFinish):$/;"	kind:function	line:30
+timeTicker	../tests/ticker.py	/^def timeTicker(callback, timeFinish):$/;"	kind:function	line:31
+timeTrafficEmulationCallback	../application/simulation/ticker.py	/^def timeTrafficEmulationCallback(time):$/;"	kind:function	line:22
+timeTrafficEmulationCallback	../tests/single-thread-ticker.py	/^def timeTrafficEmulationCallback(time):$/;"	kind:function	line:21
+timeTrafficEmulationCallback	../tests/ticker.py	/^def timeTrafficEmulationCallback(time):$/;"	kind:function	line:22
+timeTrafficEmulationMap	../application/simulation/ticker.py	/^timeTrafficEmulationMap = {$/;"	kind:variable	line:10
+timeTrafficEmulationMap	../tests/single-thread-ticker.py	/^timeTrafficEmulationMap = {$/;"	kind:variable	line:9
+timeTrafficEmulationMap	../tests/ticker.py	/^timeTrafficEmulationMap = {$/;"	kind:variable	line:10
+topo	../application/mininet/topologies/nat_RemoteController.py	/^    topo = TreeTopo( depth=1, fanout=4,  )$/;"	kind:variable	line:17
+topos	../application/mininet/topologies/datacenterBasic.py	/^topos = {$/;"	kind:variable	line:42
+topos	../application/mininet/topologies/datacenterConfigurable.py	/^topos = {$/;"	kind:variable	line:42
+topos	../application/mininet/topologies/externalConnection.py	/^topos = {$/;"	kind:variable	line:100
+topos	../application/mininet/topologies/minimal.py	/^topos = {$/;"	kind:variable	line:75
+topos	../application/mininet/topologies/minimal_2.py	/^topos = {$/;"	kind:variable	line:75
+total_channels	../application/call-admission-control/src/backend/src/cac/ari/CacController.py	/^  total_channels = 0$/;"	kind:variable	line:13
+trafficEmulatorHandler	../application/simulation/ticker.py	/^def trafficEmulatorHandler(params):$/;"	kind:function	line:5
+trafficEmulatorHandler	../tests/single-thread-ticker.py	/^def trafficEmulatorHandler(params):$/;"	kind:function	line:4
+trafficEmulatorHandler	../tests/ticker.py	/^def trafficEmulatorHandler(params):$/;"	kind:function	line:5
+trafficReporterClient	../tests/traffirReport/Reporter.py	/^trafficReporterClient = TrafficReporter()$/;"	kind:variable	line:69
+unicode_errors	../application/ryu/response.py	/^    unicode_errors = 'strict'$/;"	kind:variable	line:152
+unset_cookie	../application/ryu/response.py	/^    def unset_cookie(self, name, strict=True):$/;"	kind:member	line:1074
+url	../application/call-admission-control/src/backend/libs/ari-py/setup.py	/^    url="https:\/\/github.com\/asterisk\/asterisk_rest_libraries",$/;"	kind:variable	line:20
+url	../application/ryu/applications/qos_simple_switch_rest_13_CAC.py	/^url = '\/simpleswitch\/iptoporttable\/{dpid}'$/;"	kind:variable	line:29
+url	../documentation/architecture/modules/ryu/scripts/qos_simple_switch_rest_13_CAC.py	/^url = '\/simpleswitch\/iptoporttable\/{dpid}'$/;"	kind:variable	line:29
+url	../documentation/architecture/modules/ryu/scripts/simple_switch_rest_13_CAC.py	/^url = '\/simpleswitch\/iptoporttable\/{dpid}'$/;"	kind:variable	line:29
+url	../documentation/architecture/modules/ryu/scripts/simple_switch_rest_13_IP_MAC.py	/^url = '\/simpleswitch\/iptoporttable\/{dpid}'$/;"	kind:variable	line:29
+url	../documentation/architecture/modules/ryu/scripts/simple_switch_rest_13_old.py	/^url = '\/simpleswitch\/mactable\/{dpid}'$/;"	kind:variable	line:29
+utils.py	../application/call-admission-control/src/backend/libs/ari-py/ari_test/utils.py	1;"	kind:file	line:1
+vary	../application/ryu/response.py	/^    vary = list_header('Vary', '14.44')$/;"	kind:variable	line:722
+version	../application/call-admission-control/src/backend/libs/ari-py/setup.py	/^    version="0.1.3",$/;"	kind:variable	line:13
+websocket_test.py	../application/call-admission-control/src/backend/libs/ari-py/ari_test/websocket_test.py	1;"	kind:file	line:1
+write	../application/ryu/response.py	/^    def write(self, text):$/;"	kind:member	line:667
+writelines	../application/ryu/response.py	/^    def writelines(self, seq):$/;"	kind:member	line:1424
+ws_connect	../application/call-admission-control/src/backend/libs/ari-py/ari_test/websocket_test.py	/^    def ws_connect(self, url, params=None):$/;"	kind:member	line:239
+www_authenticate	../application/ryu/response.py	/^    www_authenticate = converter($/;"	kind:variable	line:766

@@ -6,7 +6,7 @@
 # Sends TCPDUMP output from network eth0 interface and sends to cac_backend to port 9999 with netcat
 # a este tcpdump hay que hacerle algo con sed | awk para filtrar la info necesaria
 #tcpdump -i eth0 | nc 172.18.0.13 9999 &
-tshark -i any -Y "rtp or sip" >> dump | tail -f dump | nc 172.18.0.13 9999 &
+tshark -i any -Y "sip or rtp" -T fields -e frame.time -e _ws.col.Protocol | awk '{ print $4, $6 }' | nc 172.18.0.13 9999 &
 # Correr en background para que continue ejecutando a sip sino se queda buferendo en el proceso principal
 # Esta es la red que hay que escuchaR? me parece que es la de mininet, no?
 
