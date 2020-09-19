@@ -1,17 +1,20 @@
-FROM ubuntu:latest 
+FROM ubuntu:16.04 
 
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
+    apt-get install -y --no-install-recommends --fix-missing \
     python-setuptools \
     python-pip \
     python-eventlet \
     python-lxml \
+    gcc python-dev libffi-dev \
+    libssl-dev libxml2-dev \
+    libxslt1-dev zlib1g-dev \
     wget \
     unzip && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
-    echo "Download https://github.com/osrg/ryu/archive/master.zip and install" && \
-    wget -O /opt/ryu.zip "http://github.com/osrg/ryu/archive/master.zip" --no-check-certificate && \
+    echo "Clone https://github.com/faucetsdn/ryu/archive/master.zip and install" && \
+    wget -O /opt/ryu.zip "https://github.com/faucetsdn/ryu/archive/master.zip" --no-check-certificate && \
     unzip -q /opt/ryu.zip -d /opt && \
     mv /opt/ryu-master /opt/ryu && \
     rm /opt/ryu.zip && \

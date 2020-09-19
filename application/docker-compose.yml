@@ -1,7 +1,7 @@
 version: '3'
 services:
   ryu:
-    image: ryu-controller
+    image: joagonzalez/ryu-controller:1.0.0
     build:
       context: ryu/
       dockerfile: Dockerfile
@@ -16,8 +16,9 @@ services:
     networks:
       app_net:
         ipv4_address: 172.18.0.10
+
   asterisk:
-    image: asterisk-ari
+    image: joagonzalez/asterisk-ari:1.0.0
     build:
       context: asterisk/
       dockerfile: Dockerfile
@@ -30,8 +31,9 @@ services:
     networks:
       app_net:
         ipv4_address: 172.18.0.11
+
   call_admission_control_frontend:
-    image: cac-frontend
+    image: joagonzalez/cac-frontend:1.0.0
     build:
       context: call-admission-control/src/frontend/
       dockerfile: Dockerfile
@@ -42,8 +44,9 @@ services:
     networks:
       app_net:
         ipv4_address: 172.18.0.12
+
   call_admission_control_backend:
-    image: cac-backend
+    image: joagonzalez/cac-backend:1.0.0
     build:
       context: call-admission-control/src/backend/
       dockerfile: Dockerfile
@@ -60,8 +63,9 @@ services:
     networks:
       app_net:
         ipv4_address: 172.18.0.13
+
   mininet:
-    image: cac-mininet
+    image: joagonzalez/cac-mininet:1.0.0
     ports:
       - '6632:6632'
     expose:
@@ -76,8 +80,9 @@ services:
     privileged: true
     depends_on:
       - ryu
+
   simulation:
-    image: cac-simulation-caller
+    image: joagonzalez/cac-simulation-caller:1.0.0
     networks:
       app_net:
         ipv4_address: 172.18.0.15
@@ -90,6 +95,7 @@ services:
       - asterisk
       - ryu
       - call_admission_control_backend
+      
 networks:
   app_net:
     driver: bridge
