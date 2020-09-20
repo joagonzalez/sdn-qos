@@ -78,11 +78,6 @@
                         <h5>Topology Viewer</h5>
                         <div class="topologyViewer" />
                     </div>
-                    <div class="col-md-6">
-                        <h5>Chart</h5>
-                        <div id="highcharts" />
-                        <div id="trafficReport"></div>
-                    </div>
                 </div>
             </section>
         </main>
@@ -183,11 +178,11 @@
             console.log('WebSocket Error ', error);
         };
     </script>
-    <script src="./highcharts/code/highcharts.js" charset="utf-8"></script>
+    {% comment %} <script src="./highcharts/code/highcharts.js" charset="utf-8"></script>
     <script src="./highcharts/code/modules/series-label.js"></script>
     <script src="./highcharts/code/modules/exporting.js"></script>
     <script src="./highcharts/code/modules/export-data.js"></script>
-    <script src="./trafficRender.js" charset="utf-8"></script>
+    <script src="./trafficRender.js" charset="utf-8"></script> {% endcomment %}
 
     <script src="./d3/d3.v3.min.js" charset="utf-8"></script>
     <script src="./ryu.topology.js" charset="utf-8"></script>

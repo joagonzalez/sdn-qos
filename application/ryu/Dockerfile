@@ -11,7 +11,10 @@ RUN apt-get update && \
     libxslt1-dev zlib1g-dev \
     wget \
     unzip && \
+    # fix error: https://stackoverflow.com/questions/40184788/protocol-not-found-socket-getprotobyname
+    apt-get -o Dpkg::Options::="--force-confmiss" install --reinstall netbase -y && \
     apt-get clean && \
+    pip install --upgrade pip && \
     rm -rf /var/lib/apt/lists/* && \
     echo "Clone https://github.com/faucetsdn/ryu/archive/master.zip and install" && \
     wget -O /opt/ryu.zip "https://github.com/faucetsdn/ryu/archive/master.zip" --no-check-certificate && \

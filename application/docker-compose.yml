@@ -31,6 +31,10 @@ services:
     networks:
       app_net:
         ipv4_address: 172.18.0.11
+    volumes:
+      - ./asterisk/conf/sip.conf:/etc/asterisk/sip.conf
+      - ./asterisk/conf/extensions.conf:/etc/asterisk/extensions.conf
+      - ./asterisk/conf/ari.conf:/etc/asterisk/ari.conf
 
   call_admission_control_frontend:
     image: joagonzalez/cac-frontend:1.0.0
@@ -44,6 +48,8 @@ services:
     networks:
       app_net:
         ipv4_address: 172.18.0.12
+    volumes:
+      - ./call-admission-control/src/frontend/src/index.html:/app/src/index.html
 
   call_admission_control_backend:
     image: joagonzalez/cac-backend:1.0.0
