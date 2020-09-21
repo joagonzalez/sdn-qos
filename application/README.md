@@ -74,7 +74,14 @@ cac/frontend$ npm start (localhost:3000)
 sipp -d 10000 -s 1000 asterisk-ip -l 5 -mp 5606 
 
 - check script: http://marcelog.github.io/articles/monitor_sip_trunks_success_calls.html
+- buena doc para informe final: http://sipp.sourceforge.net/doc/reference.html#Getting+SIPp
 
+-l : max number of simultaneous calls
+-d : duration in milliseconds
+-s : username of request uri
+-mp: media port for rtp traffic
+-r : call rate (N concurrent calls)
+-rp: rate period (-r 7 -rp 2000 7 concurrent calls every 2 seconds)
 
 ## Descargar remote branch Git
 - git checkout --track remotes/origin/enhancement/cac-backend-refactor
