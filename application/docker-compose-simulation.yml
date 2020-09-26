@@ -17,6 +17,25 @@ services:
       app_net:
         ipv4_address: 172.18.0.10
 
+  asterisk:
+    image: joagonzalez/asterisk-ari:1.0.0
+    build:
+      context: asterisk/
+      dockerfile: Dockerfile
+    expose:
+      - '8088'
+    ports:
+      - '8088:8088'
+    depends_on:
+      - ryu
+    networks:
+      app_net:
+        ipv4_address: 172.18.0.11
+    volumes:
+      - ./asterisk/conf/sip.conf:/etc/asterisk/sip.conf
+      - ./asterisk/conf/extensions.conf:/etc/asterisk/extensions.conf
+      - ./asterisk/conf/ari.conf:/etc/asterisk/ari.conf
+
   call_admission_control_frontend:
     image: joagonzalez/cac-frontend:1.0.0
     build:
@@ -51,56 +70,37 @@ services:
       app_net:
         ipv4_address: 172.18.0.13
 
-  # asterisk:
-  #   image: joagonzalez/asterisk-ari:1.0.0
-  #   build:
-  #     context: asterisk/
-  #     dockerfile: Dockerfile
-  #   expose:
-  #     - '8088'
-  #   ports:
-  #     - '8088:8088'
-  #   depends_on:
-  #     - ryu
-  #   networks:
-  #     app_net:
-  #       ipv4_address: 172.18.0.11
-  #   volumes:
-  #     - ./asterisk/conf/sip.conf:/etc/asterisk/sip.conf
-  #     - ./asterisk/conf/extensions.conf:/etc/asterisk/extensions.conf
-  #     - ./asterisk/conf/ari.conf:/etc/asterisk/ari.conf
+  mininet:
+    image: joagonzalez/cac-mininet:1.0.0
+    ports:
+      - '6632:6632'
+    expose:
+      - '6632'
+    networks:
+      app_net:
+        ipv4_address: 172.18.0.14
+    build:
+      context: mininet/
+      dockerfile: Dockerfile
+    tty: true
+    privileged: true
+    depends_on:
+      - ryu
 
-  # mininet:
-  #   image: joagonzalez/cac-mininet:1.0.0
-  #   ports:
-  #     - '6632:6632'
-  #   expose:
-  #     - '6632'
-  #   networks:
-  #     app_net:
-  #       ipv4_address: 172.18.0.14
-  #   build:
-  #     context: mininet/
-  #     dockerfile: Dockerfile
-  #   tty: true
-  #   privileged: true
-  #   depends_on:
-  #     - ryu
-
-  # simulation:
-  #   image: joagonzalez/cac-simulation-caller:1.0.0
-  #   networks:
-  #     app_net:
-  #       ipv4_address: 172.18.0.15
-  #   build:
-  #     context: simulation/
-  #     dockerfile: Dockerfile
-  #   tty: true
-  #   privileged: true
-  #   depends_on:
-  #     - asterisk
-  #     - ryu
-  #     - call_admission_control_backend
+  simulation:
+    image: joagonzalez/cac-simulation-caller:1.0.0
+    networks:
+      app_net:
+        ipv4_address: 172.18.0.15
+    build:
+      context: simulation/
+      dockerfile: Dockerfile
+    tty: true
+    privileged: true
+    depends_on:
+      - asterisk
+      - ryu
+      - call_admission_control_backend
       
 networks:
   app_net:

@@ -1,5 +1,42 @@
-# sdn-qos
-sdn-qos
+# Real-time QoS and Call admission Control in SDN networks
+![Python](https://img.shields.io/badge/qos-v1.0.0-orange)
+![Python](https://img.shields.io/badge/cac-v1.0.0-orange)
+![Python](https://img.shields.io/badge/OpenFlow-v1.3-orange)
+![Python](https://img.shields.io/badge/ryuframework-4.34-blue)
+![Python](https://img.shields.io/badge/python-v2.7-blue)
+![Python](https://img.shields.io/badge/python-v3.6-blue)
+![Python](https://img.shields.io/badge/platform-linux--64%7Cwin--64-lightgrey)
+
+Implementation of quality of service and call admission control features within sdn networks. This implementation use Ryu Framework (https://ryu-sdn.org/) to develop controller applications based on OpenFlow v1.3. Features are integrated to an Asterisk service through ARI API via websockets. Application behaviour is exposed via a basic Front End service developed with node.js.
+
+Applicationa architecture is shown in the figure below.
+
+![architecture](documentation/architecture/diagrams/Real-TimeQoSandCACoverSDN-12.png)
+
+
+**Table of contents**
+
+- [Requirements](#requirements)
+- [Getting Started](#gettingstarted)
+- [Development](#development)
+  - [Archivo de configuración](#archivo-de-configuración)
+  - [Clases](#clases)
+  - [Registración del servicio](#registración-del-servicio)
+  - [Flask API](#flask-api)
+    - [Blueprints](#blueprints)
+    - [Namespaces](#namespaces)
+  - [Celery workers](#celery-workers)
+  - [Celery tasks](#celery-tasks)
+  - [RabbitMQ](#rabbitmq)
+  - [Powershell scripts](#powershell-scripts)
+- [Deployment](#deployment)
+  - [Building](#building)
+  - [Docker deployment](#docker-container-dployment)
+  - [docker-compose deployment](#docker-compose-deployment)
+- [Examples](#examples)
+- [references](#references)
+
+
 
 ## Ver videos (drive)
 Branches: Mergear a una rama teniendo master/develop y branches por feature y comenzar a utilizar tags. Hoy en dia tenemos 2 principales y una tercera con feature experimental.
