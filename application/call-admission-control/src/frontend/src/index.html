@@ -14,6 +14,37 @@
     </head>
     <!-- Latest compiled and minified CSS -->
     <style type="text/css">
+        .header { 
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 70px;
+        }
+
+        .counter.col-md-4,
+        .concurrentComunication {
+            padding: 0;
+            margin: 0;
+        }
+
+
+        .counters,
+        .actions {
+            padding-left: 0;
+        }
+
+        .counter.col-md-4 {
+            padding-right: 5px;
+        }
+
+        .counter.col-md-4 label {
+            font-size: 12px;
+        }
+
+        .title {
+            font-weight: bold;
+            font-size: 17px;
+        }
+
         #metrics-report {
             border: 1px solid #000;
             padding: 5px 10px;
@@ -34,53 +65,60 @@
         }
     </style>
     <body>
-        <main id="application" class="container">
-            <section class="row concurrentCalls">
-                <div class="col-md-6">
-                    <table id="qos-status" class="table table-bordered stripped">
-                        <thead>
-                            <th>From</th>
-                            <th>To</th>
-                            <th>QoS</th>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="col-md-6">
-                    <div class="counters">
-                        <div class="counter col-md-4">
-                            <label>Calls</label>
-                            <input id="total-channel-calls" type="text" class="form-control" value="0" />
-                        </div>
-                        <div class="counter col-md-4">
-                            <label>Calls Dropped by CAC</label>
-                            <input id="cacThreshold" type="text" class="form-control" value="0" />
-                        </div>
-                        <div class="counter col-md-4">
-                            <label>Calls Threshold</label>
-                            <input type="text" class="form-control" value="2" />
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="row logs">
-                <div class="col-md-6 ryu-controller-loggs">
-                    <div id="metrics-report"></div>
-                    <button id="toggleCac">Toggle CAC</button>
-                    <button id="toggleQos">Toggle QoS</button>
-                    <button id="getTopologyLinks">Get Topology Links</button>
-                    <button id="getTopologySwitches">Get Topology Switches</button>
-                </div>
+        <div>
+            <div class="header">
+                <img src="./unsam_logo.jpg" style="width: 20%" />
+                <h1 style="width: 100%; margin-left: 100px">Mecanismos de calidad de servicio</h1>
+            </div>
+            <div style="clear: both" class="container">
                 <div class="col-md-12 charts">
-                    <h5>Charts</h5>
-                    <div class="col-md-6">
-                        <h5>Topology Viewer</h5>
+                    <section class="col-md-6 concurrentComunication">
+                        <h5 class="title">Comunicaciones Concurrentes</h5>
+                        <div class="col-md-12 counters">
+                            <div class="counter col-md-4">
+                                <label>Llamadas Concurrentes</label>
+                                <input id="total-channel-calls" type="text" class="form-control" value="0" />
+                            </div>
+                            <div class="counter col-md-4">
+                                <label>Llamadas Finalizadas (CAC)</label>
+                                <input id="cacThreshold" type="text" class="form-control" value="0" />
+                            </div>
+                            <div class="counter col-md-4">
+                                <label>Umbral CAC</label>
+                                <input type="text" class="form-control" value="2" />
+                            </div>
+                        </div>
+                        <div class="col-md-12 actions" style="margin: 20px 0;">
+                            <button class="btn btn-secondary" id="toggleCac">Toggle CAC</button>
+                            <button class="btn btn-secondary" id="toggleQos">Toggle QoS</button>
+                            <button class="btn btn-secondary" id="getTopologyLinks">Get Topology Links</button>
+                            <button class="btn btn-secondary" id="getTopologySwitches">Get Topology Switches</button>
+                        </div>
+                    </section>
+                    <section class="col-md-6 topologyVisualizer">
+                        <h5 class="title">Visualizador de Topologia</h5>
                         <div class="topologyViewer" />
+                    </section>
+                </div>
+                <div class="col-md-12">
+                    <div style="padding-left: 0;" class="col-md-6">
+                        <table id="qos-status" class="table table-bordered stripped">
+                            <thead>
+                                <th>From</th>
+                                <th>To</th>
+                                <th>QoS</th>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-6">
+                        <h5 class="title">Logs</h5>
+                        <div id="metrics-report" />
                     </div>
                 </div>
-            </section>
-        </main>
+            </div>
+        </div>
     </body>
     <script>
         var ws = new WebSocket("ws://172.18.0.13:8000"); // cac-backend
@@ -179,12 +217,6 @@
             console.log('WebSocket Error ', error);
         };
     </script>
-    {% comment %} <script src="./highcharts/code/highcharts.js" charset="utf-8"></script>
-    <script src="./highcharts/code/modules/series-label.js"></script>
-    <script src="./highcharts/code/modules/exporting.js"></script>
-    <script src="./highcharts/code/modules/export-data.js"></script>
-    <script src="./trafficRender.js" charset="utf-8"></script> {% endcomment %}
-
     <script src="./d3/d3.v3.min.js" charset="utf-8"></script>
     <script src="./ryu.topology.js" charset="utf-8"></script>
 </html>
