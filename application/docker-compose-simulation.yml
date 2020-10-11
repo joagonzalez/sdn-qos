@@ -50,6 +50,8 @@ services:
         ipv4_address: 172.18.0.12
     volumes:
       - ./call-admission-control/src/frontend/src/index.html:/app/src/index.html
+      - ./call-admission-control/src/frontend/src/public/ryu.topology.js:/app/src/public/ryu.topology.js
+      - ./call-admission-control/src/frontend/src/public/unsam_logo.jpg:/app/src/public/unsam_logo.jpg
 
   call_admission_control_backend:
     image: joagonzalez/cac-backend:1.0.0

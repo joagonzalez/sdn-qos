@@ -1,3 +1,11 @@
+'''
+Documentation:
+    - https://osrg.github.io/ryu-book/en/html/rest_qos.html
+    - https://osrg.github.io/ryu-book/en/html/rest_qos.html#rest-api-list
+    - https://ryu.readthedocs.io/en/latest/app/ofctl_rest.html#get-queues-stats
+
+'''
+
 import requests
 import json
 import logging
@@ -16,6 +24,7 @@ class RyuController():
     QOS_QUEUES = '/qos/queue/' # <dpid>    
     TOPOLOGY_SWITCHES = '/v1.0/topology/switches'
     TOPOLOGY_LINKS = '/v1.0/topology/links'
+    MEDIA_PORT = '5606'
 
     def __init__(self, host, port, ovsdbConfiguration=None):
         self.switches = []
@@ -83,7 +92,7 @@ class RyuController():
         logging.info(result)
         return result
 
-    def configureQoSRule(self, switches, switch, rule):
+    def configureQoSRule(self, switch, port, rule):
         pass
 
     def getQoSRule(self, switch):
@@ -117,8 +126,18 @@ if __name__ == '__main__':
     for switch in topology['switches']:
         for port in switch['ports']:
             logging.info('configure queue for switch {}, port {}: '.format(switch['dpid'], port['name']))
-            queues = [{"max_rate": "300000"}, {"max_rate": "100000"}, {"min_rate": "50000"}]
+            queues = [
+                        {"max_rate": "300000"},
+                        {"max_rate": "100000"},
+                        {"min_rate": "50000"}
+                    ]
+            rules = [
+                        {"match": {"ip_dscp": "26"}, "actions":{"queue": "0"}},
+                        {"match": {"ip_dscp": "10"}, "actions":{"queue": "1"}},
+                        {"match": {"ip_dscp": "12"}, "actions":{"queue": "2"}}
+                    ]
             ryuService.configureQoSQueue(switch['dpid'], port['name'], queues)
+            ryuService.configureQoSRule(switch['dpid'], port['name'], rules)
     # get queues
     logging.info('get queues')
     for switch in topology['switches']:

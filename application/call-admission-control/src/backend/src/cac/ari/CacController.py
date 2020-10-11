@@ -26,13 +26,20 @@ class CacController(BaseController):
     Get topology open flow switches
     '''
     response = self.ryuApi.getTopologySwitches()
-    return response
+    
+    self.frontClient.broadcast("getTopologySwitches", {
+            "topologySwitches": response,
+        })
 
   def getTopologyLinks(self):
     '''
     Get topology links
     '''
-    return self.ryuApi.getTopologyLinks()
+    response = self.ryuApi.getTopologyLinks()
+    
+    self.frontClient.broadcast("getTopologyLinks", {
+            "topologyLinks": response,
+        })
 
   def onStartCallback(self, channel_obj, ev):
     ''' Handler for StasisStart '''
@@ -88,11 +95,6 @@ class CacController(BaseController):
         self.frontClient.broadcast("newChannel", {
             "currentNewChannel": channel.json.items(),
             "totalChannels": totalChannels
-        })
-
-        response = self.ryuApi.queryForGetPorts()
-        self.frontClient.broadcast("queryForGetPorts", {
-          "queryForGetPorts": response
         })
 
         if self.cacEnable:

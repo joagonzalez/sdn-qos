@@ -97,11 +97,11 @@
                     </section>
                     <section class="col-md-6 topologyVisualizer">
                         <h5 class="title">Visualizador de Topologia</h5>
-                        <div class="topologyViewer" />
+                        <div class="topologyViewer" id="topologyViewer" />
                     </section>
                 </div>
                 <div class="col-md-12">
-                    <div style="padding-left: 0;" class="col-md-6">
+                    <div style="padding-left: 0; max-height: 400px; overflow-y: scroll" class="col-md-6">
                         <table id="qos-status" class="table table-bordered stripped">
                             <thead>
                                 <th>From</th>
@@ -151,6 +151,7 @@
             const fromCell = channelRow.insertCell(0);
             const toCell = channelRow.insertCell(1);
             const QoSCell = channelRow.insertCell(2);
+            channelRow.setAttribute('id', newChannel.currentNewChannel[1][1].split("-")[1]);
             fromCell.innerHTML = newChannel.currentNewChannel[1][1];
             toCell.innerHTML = newChannel.currentNewChannel[7][1].exten;
             QoSCell.innerHTML = "";
@@ -161,20 +162,20 @@
         }
 
         const trafficSipRtpRender = (traffic) => {
-            console.log(traffic.sip);
-            console.log(traffic.rtp);
+            // console.log(traffic.sip);
+            // console.log(traffic.rtp);
         }
 
         ws.onmessage = function (event) {
-            console.log(event.data);
+            // console.log(event.data);
             if (event.data instanceof Blob) {
                 reader = new FileReader();
                 reader.addEventListener('loadend', (e) => {
                     const text = e.target.result;
                     try {
-                        console.log('text', text);
+                        // console.log('text', text);
                         const jsonResponse = JSON.parse(text);
-                        console.log('text', jsonResponse);
+                        // console.log('text', jsonResponse);
                         if (jsonResponse.notificationType === "newChannel") {
                             newChannelFormatter(jstonResponse.data);
                         }
@@ -186,21 +187,26 @@
                 reader.readAsText(event.data);
             } else {
                 const text = (event.data !== "Ping") ? JSON.parse(event.data) : event.data;
-
+                let lastContent = metricsContainer.innerHTML;
                 const jsonResponse = text;
                 if (jsonResponse.notificationType === "newChannel") {
                     newChannelFormatter(jsonResponse.data);
                     totalChannelsFormater(jsonResponse.data.totalChannels)
                 } else if (jsonResponse.notificationType === "closeChannel") {
                     totalChannelsFormater(jsonResponse.data.totalChannels)
-                    console.log(jsonResponse.data) // ver channel id
+                    document.getElementById(jsonResponse.data.channelId.split('-')[1].split(';')[0]).remove()
+                    // console.log(jsonResponse.data) // ver channel id
                 } else if (jsonResponse.notificationType === "cacTrigger") {
                     inputcacThreshold.value = Number(inputcacThreshold.value) + Number(jsonResponse.data.data)
                 } else if (jsonResponse.notificationType === "hostTraffic") {
                     // trafficSipRtpRender(jsonResponse.data.hostTraffic)
+                } else if (jsonResponse.notificationType === "getTopologyLinks") {
+                    console.log(jsonResponse.data)
+                    // metricsContainer.innerHTML = lastContent + text;
+                } else if (jsonResponse.notificationType === "getTopologySwitches") {
+                    console.log(jsonResponse.data)
+                    // metricsContainer.innerHTML = lastContent + text;
                 }
-
-                const lastContent = metricsContainer.innerHTML;
                 metricsContainer.innerHTML = lastContent + event.data;
             }
         };

@@ -4,8 +4,8 @@ var CONF = {
         height: 40
     },
     force: {
-        width: 960,
-        height: 500,
+        width: 600,
+        height: 400,
         dist: 200,
         charge: -600
     }
@@ -33,11 +33,11 @@ var elem = {
         .charge(CONF.force.charge)
         .linkDistance(CONF.force.dist)
         .on("tick", _tick),
-    svg: d3.select("body").append("svg")
+    svg: d3.select("#topologyViewer").append("svg")
         .attr("id", "topology")
         .attr("width", CONF.force.width)
         .attr("height", CONF.force.height),
-    console: d3.select("body").append("div")
+    console: d3.select("#topologyViewer").append("div")
         .attr("id", "console")
         .attr("width", CONF.force.width)
 };
