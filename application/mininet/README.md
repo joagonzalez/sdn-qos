@@ -6,7 +6,7 @@
 ![Python](https://img.shields.io/badge/platform-linux--64%7Cwin--64-lightgrey)
 
 # Mininet 
-Service that enable a fast way to test network scenarios with ryu and custom sdn application. Not neccesary when application is used in production environments.
+Service that enables a fast way to test network scenarios with ryu and custom sdn application. Not neccesary when application is used in production environments.
 
 ## Real Time QoS
 Script *sdn-qos-RealTimeQueues.py* implement an automated test where packet prioritization could be achieve using ryu controller with mininet and ovs.

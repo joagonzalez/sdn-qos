@@ -28,11 +28,15 @@ class RyuController():
 
     def connectOVSDB(self, ip, port, protocol, switch):
         data = protocol + ':' + ip + ':' + port
-        # logging.info(data)
-        response = requests.put(self.api + self.OVSDB + switch + '/ovsdb_addr', json=data)
+        url = self.api + self.OVSDB + switch + '/ovsdb_addr'
+
+        logging.info(data)
+        logging.info(url)
+
+        response = requests.put(url, json=data)
         return response.status_code
 
-    def discoverSwtiches(self):
+    def getTopologySwitches(self):
         response = requests.get(self.api + self.TOPOLOGY_SWITCHES)
         self.switches = response.json()
         # logging.info(self.switches)
@@ -41,7 +45,7 @@ class RyuController():
     def getSwitches(self):
         return self.switches
 
-    def discoverLinks(self):
+    def getTopologyLinks(self):
         response = requests.get(self.api + self.TOPOLOGY_LINKS)
         self.links = response.json()
         # logging.info(self.links)
@@ -51,8 +55,8 @@ class RyuController():
         return self.links
 
     def buildTopology(self):
-        self.topology['switches'] = self.discoverSwtiches()
-        self.topology['links'] = self.discoverLinks()
+        self.topology['switches'] = self.getTopologySwitches()
+        self.topology['links'] = self.getTopologyLinks()
     
     def getTopology(self):
         return self.topology
@@ -82,6 +86,9 @@ class RyuController():
     def configureQoSRule(self, switches, switch, rule):
         pass
 
+    def getQoSRule(self, switch):
+        pass
+
     def deleteQoS(self):
         pass
 
@@ -97,9 +104,9 @@ if __name__ == '__main__':
     
     ryuService = RyuController('http://127.0.0.1', '8080', ovsdbConfiguration=ovsdbConfig)
     logging.info('switches')
-    ryuService.discoverSwtiches()
+    ryuService.getTopologySwitches()
     logging.info('links')
-    ryuService.discoverLinks()
+    ryuService.getTopologyLinks()
     ryuService.getLinks()
     logging.info('topology')
     ryuService.buildTopology()

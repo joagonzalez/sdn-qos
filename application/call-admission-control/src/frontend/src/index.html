@@ -54,12 +54,12 @@
                             <input id="total-channel-calls" type="text" class="form-control" value="0" />
                         </div>
                         <div class="counter col-md-4">
-                            <label>Calls Threshold</label>
+                            <label>Calls Dropped by CAC</label>
                             <input id="cacThreshold" type="text" class="form-control" value="0" />
                         </div>
                         <div class="counter col-md-4">
-                            <label>Calls Dropped CAC</label>
-                            <input type="text" class="form-control" value="0" />
+                            <label>Calls Threshold</label>
+                            <input type="text" class="form-control" value="2" />
                         </div>
                     </div>
                 </div>
@@ -67,10 +67,10 @@
             <section class="row logs">
                 <div class="col-md-6 ryu-controller-loggs">
                     <div id="metrics-report"></div>
-                    <button id="getMetrics">Get Metrics</button>
-                    <button id="getPorts">Get Ports</button>
-                    <button id="setQoSRules">Set QoS Rules</button>
-                    <button id="setQoSQueue">Set QoS Queue</button>
+                    <button id="toggleCac">Toggle CAC</button>
+                    <button id="toggleQos">Toggle QoS</button>
+                    <button id="getTopologyLinks">Get Topology Links</button>
+                    <button id="getTopologySwitches">Get Topology Switches</button>
                 </div>
                 <div class="col-md-12 charts">
                     <h5>Charts</h5>
@@ -84,28 +84,28 @@
     </body>
     <script>
         var ws = new WebSocket("ws://172.18.0.13:8000"); // cac-backend
-        const getMetricsButton = document.getElementById('getMetrics');
-        const getPortsButton = document.getElementById('getPorts');
-        const setQoSRulesButton = document.getElementById('setQoSRules');
-        const setQoSQueueButton = document.getElementById('setQoSQueue');
+        const toggleCacButton = document.getElementById('toggleCac');
+        const toggleQosButton = document.getElementById('toggleQos');
+        const getTopologyLinks = document.getElementById('getTopologyLinks');
+        const getTopologySwitches = document.getElementById('getTopologySwitches');
 
         const metricsContainer = document.getElementById('metrics-report');
         const qosStatusTable = document.getElementById('qos-status');
         const inputCalls = document.getElementById('total-channel-calls');
         const inputcacThreshold = document.getElementById('cacThreshold');
 
-        getMetricsButton.addEventListener('click', e => {
-            sendMessage( 'getMetrics' )
+        toggleCacButton.addEventListener('click', e => {
+            sendMessage( 'toggleCac' )
         });
-        getPortsButton.addEventListener('click', e => {
-            sendMessage( 'getPorts' )
+        toggleQosButton.addEventListener('click', e => {
+            sendMessage( 'toggleQos' )
         });
-        setQoSRulesButton.addEventListener('click', e => {
-            sendMessage( 'setQoSRules' )
+        getTopologyLinks.addEventListener('click', e => {
+            sendMessage( 'getTopologyLinks' )
         });
     
-        setQoSQueueButton.addEventListener('click', e => {
-            sendMessage( 'setQoSQueue' )
+        getTopologySwitches.addEventListener('click', e => {
+            sendMessage( 'getTopologySwitches' )
         });
 
         const newChannelFormatter = (newChannel) => {
@@ -155,6 +155,7 @@
                     totalChannelsFormater(jsonResponse.data.totalChannels)
                 } else if (jsonResponse.notificationType === "closeChannel") {
                     totalChannelsFormater(jsonResponse.data.totalChannels)
+                    console.log(jsonResponse.data) // ver channel id
                 } else if (jsonResponse.notificationType === "cacTrigger") {
                     inputcacThreshold.value = Number(inputcacThreshold.value) + Number(jsonResponse.data.data)
                 } else if (jsonResponse.notificationType === "hostTraffic") {

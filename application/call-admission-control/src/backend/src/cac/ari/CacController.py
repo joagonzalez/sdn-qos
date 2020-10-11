@@ -13,20 +13,26 @@ class CacController(BaseController):
   total_channels = 0
   connectedChannels = {}
   currentBridge = None
+  cacEnable = True
+  qosEnable = True
 
   def __init__(self, ryuApi, frontClient):
     ''' Stasis Program '''
     BaseController.__init__(self, ryuApi, frontClient)
     self.subscribe(self.onStartCallback)
 
-  def doSomething(self):
-    ''' esto deberia moverse al Facade que expone el metodo '''
-    response = self.ryuApi.queryForGetNodes()
+  def getTopologySwitches(self):
+    '''
+    Get topology open flow switches
+    '''
+    response = self.ryuApi.getTopologySwitches()
     return response
 
-  def doGetPorts(self):
-    ''' esto deberia moverse al Facade que expone el metodo '''
-    return self.ryuApi.queryForGetPorts()
+  def getTopologyLinks(self):
+    '''
+    Get topology links
+    '''
+    return self.ryuApi.getTopologyLinks()
 
   def onStartCallback(self, channel_obj, ev):
     ''' Handler for StasisStart '''
@@ -89,11 +95,12 @@ class CacController(BaseController):
           "queryForGetPorts": response
         })
 
-        # Hang up the channel in 4 seconds
-        if totalChannels >= self.CAC_THRESHOLD:
-            timer = threading.Timer(4, hangup_channel, [channel])
-            self.channel_timers[channel.id] = timer
-            timer.start()
+        if self.cacEnable:
+            # Hang up the channel in 4 seconds
+            if totalChannels >= self.CAC_THRESHOLD:
+                timer = threading.Timer(4, hangup_channel, [channel])
+                self.channel_timers[channel.id] = timer
+                timer.start()
  
     def hangup_channel(channel):
         """Callback that will actually hangup the channel"""
@@ -125,7 +132,8 @@ class CacController(BaseController):
         bridge.destroy()
 
         self.frontClient.broadcast("closeChannel", {
-            "totalChannels": self.getTotalChannels()
+            "totalChannels": self.getTotalChannels(),
+            "channelId": channel.json.get('name')
         })
 
         print "Hung up {}".format(channel.json.get('name'))

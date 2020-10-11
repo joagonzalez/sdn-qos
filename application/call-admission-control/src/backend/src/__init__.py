@@ -15,6 +15,8 @@ def run():
 
   if Cac.listen:
     FacadeApp = FacadeWsService()
-    FacadeApp.register_command(Cac.getMetrics, 'getMetrics')
-    FacadeApp.register_command(Cac.getPorts, 'getPorts')
+    FacadeApp.register_command(Cac.toggleCac, 'toggleCac')
+    FacadeApp.register_command(Cac.toggleQos, 'toggleQos')
+    FacadeApp.register_command(Cac.getTopologyLinks, 'getTopologyLinks')
+    FacadeApp.register_command(Cac.getTopologySwitches, 'getTopologySwitches')
     FacadeApp.run(frontClient)
