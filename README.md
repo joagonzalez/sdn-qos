@@ -7,9 +7,9 @@
 ![Python](https://img.shields.io/badge/python-v3.6-blue)
 ![Python](https://img.shields.io/badge/platform-linux--64%7Cwin--64-lightgrey)
 
-Implementation of quality of service and call admission control features within sdn networks. This implementation use Ryu Framework (https://ryu-sdn.org/) to develop controller applications based on OpenFlow v1.3. Features are integrated to an Asterisk service through ARI API via websockets. Application behaviour is exposed via a basic Front End service developed with node.js.
+Implementation of quality of service and call admission control features within sdn network. This implementation use Ryu Framework (https://ryu-sdn.org/) to develop controller applications based on OpenFlow v1.3. Features are integrated with an Asterisk service through ARI API via websockets+rest. Application behaviour is exposed via a basic Front End service developed with node.js.
 
-Applicationa architecture is shown in the figure below.
+Application architecture is shown in the figure below.
 
 ![architecture](documentation/architecture/diagrams/Real-TimeQoSandCACoverSDN-12.png)
 
@@ -18,48 +18,155 @@ Applicationa architecture is shown in the figure below.
 
 - [Requirements](#requirements)
 - [Getting Started](#gettingstarted)
-- [Development](#development)
-  - [Archivo de configuración](#archivo-de-configuración)
-  - [Clases](#clases)
-  - [Registración del servicio](#registración-del-servicio)
-  - [Flask API](#flask-api)
-    - [Blueprints](#blueprints)
-    - [Namespaces](#namespaces)
-  - [Celery workers](#celery-workers)
-  - [Celery tasks](#celery-tasks)
-  - [RabbitMQ](#rabbitmq)
-  - [Powershell scripts](#powershell-scripts)
 - [Deployment](#deployment)
   - [Building](#building)
   - [Docker deployment](#docker-container-dployment)
   - [docker-compose deployment](#docker-compose-deployment)
 - [Examples](#examples)
-- [references](#references)
+- [References](#references)
 
+## Requirements
+Some of the requirements to run this project simulations and stack are:
 
+- Ryu Framework
+- Mininet
+- GNS3
+- OpenVirtualSwitch (aka: OVS)
+- Docker
+- Docker-compose
+- Python3
 
-## Ver videos (drive)
-Branches: Mergear a una rama teniendo master/develop y branches por feature y comenzar a utilizar tags. Hoy en dia tenemos 2 principales y una tercera con feature experimental.
+## Getting Started
+Clone repository
 
-- cac-be-with-gui-topology-call-simulation-and-graphic-traffic-ovs-over-mn -- sipp simulation + cac + gui topology
-- CAC_App_v1_refactor -- real time qos scripts and wireshark i/o
-- cac-traffic-reporter-graph -- traffic reporter class que broadcastea con tshark/tcpdump data de simulator al backend y luego al frontend
+```bash
+$ git clone git@github.com:joagonzalez/sdn-qos.git
+$ mkproject sdn-qos
+$ workon sdn-qos
+$ pip install -r requirements.txt within each python service
+```
+
+Directory structure of application
 
 ```
-git config --global alias.co checkout
-git config --global alias.br branch
-git config --global alias.ci commit
-git config --global alias.st status
+.
+├── application
+│   ├── asterisk
+│   │   └── conf
+│   ├── call-admission-control
+│   │   └── src
+│   │       ├── backend
+│   │       │   ├── libs
+│   │       │   └── src
+│   │       ├── frontend
+│   │       │   └── src
+│   │       └── mocks
+│   │           ├── ari
+│   │           └── ryu
+│   ├── conf
+│   │   ├── ari.conf
+│   │   ├── extensions.conf
+│   │   └── sip.conf
+│   ├── mininet
+│   │   └── topologies
+│   ├── ryu
+│   │   └── applications
+│   └── simulation
+└── documentation
+    ├── architecture
+    │   ├── diagrams
+    │   │   └── Paper diagrams
+    │   └── modules
+    │       ├── astersik
+    │       │   ├── conf
+    │       │   └── scripts
+    │       └── ryu
+    │           ├── api
+    │           └── scripts
+    └── mockups
+
+34 directories
 ```
 
+## Development
+
+## Deployment
+
+### Building
+```bash
+# for each service
+docker build -t <service> .
 ```
-# Show git branch name
-force_color_prompt=yes
-color_prompt=yes
-parse_git_branch() {
- git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+
+### Containers deployment
+```bash
+# for each service
+docker service create --network sdn-qos --publish <PORT-EXT:PORT-INT> --name <SERVICE> 
+```
+
+## Simulations
+**Run application simulation**
+```bash
+cd application
+docker-compose -f docker-compose-simulation.yml up -d
+docker ps
+open http://localhost:3000
+```
+
+**Run sdn-qos simulation**
+Script *sdn-qos-RealTimeQueues.py* implements an automated test where packet prioritization could be achieve using ryu controller with mininet and ovs.
+
+Run locally installed Ryu framework
+```
+workon ryu
+python3 ./bin/ryu-manager --observe-links ryu.app.rest_topology ryu.app.ws_topology ryu.app.ofctl_rest ryu.app.qos_simple_switch_13_CAC ryu.app.qos_simple_switch_rest_13_CAC ryu.app.rest_conf_switch ryu.app.rest_qos ryu.app.gui_topology.gui_topology
+```
+
+Run mininet script
+```bash
+cd application/mininet
+sudo python2.7 sdn-qos-RealTimeQueues.py 
+```
+
+
+
+**Run application with external infrastructure** 
+
+External components (Asterisk, OVS, SIP Clients) are not included within docker-compose.yml.
+
+```bash
+cd application
+docker-compose -f docker-compose.yml up -d
+docker ps
+open http://localhost:3000
+```
+
+Then, you will have to update configuration file in application/call-admission-control/src/backend/src/config/settings.py. Specifically, asterisk data.
+
+```json
+config = {
+  "ari": {
+    "host": "http://asterisk:8088/",
+    "username": "asterisk",
+    "password": "asterisk",
+  },
+  "ryu": {
+    "baseurl": "http://ryu:8080",
+  },
+  "frontService": {
+    "host": "call_admission_control_backend",
+    "listen": 8000
+  },
+  "client": {
+    "baseurl": "ws://call_admission_control_backend:8000",
+  }
 }
-if [ "$color_prompt" = yes ]; then
- PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;31m\]$(parse_git_branch)\[\033[00m\]\$ '
-else
 ```
+
+## References
+- http://mininet.org/
+- https://ryu-sdn.org/
+- https://github.com/faucetsdn/ryu
+- https://www.opennetworking.org/
+- https://iperf.fr/
+
