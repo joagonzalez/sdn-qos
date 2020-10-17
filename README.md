@@ -111,7 +111,8 @@ docker ps
 open http://localhost:3000
 ```
 
-**Run sdn-qos simulation**
+**Run QoS simulation**
+
 Script *sdn-qos-RealTimeQueues.py* implements an automated test where packet prioritization could be achieve using ryu controller with mininet and ovs.
 
 Run locally installed Ryu framework
