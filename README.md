@@ -88,8 +88,6 @@ Directory structure of application
 34 directories
 ```
 
-## Development
-
 ## Deployment
 
 ### Building
