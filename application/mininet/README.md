@@ -13,7 +13,7 @@ Script *sdn-qos-RealTimeQueues.py* implement an automated test where packet prio
 
 **Mininet**
 ```bash
-sudo python2.7 sdn-qos-RealTimeQueues.py 
+sudo python2.7 sdn-simulation.py 
 ```
 
 **Ryu**
