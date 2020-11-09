@@ -98,9 +98,9 @@ class CacController(BaseController):
         })
 
         if self.cacEnable:
-            # Hang up the channel in 4 seconds
+            # Hang up the channel in 0 seconds
             if totalChannels >= self.CAC_THRESHOLD:
-                timer = threading.Timer(4, hangup_channel, [channel])
+                timer = threading.Timer(0, hangup_channel, [channel])
                 self.channel_timers[channel.id] = timer
                 timer.start()
  

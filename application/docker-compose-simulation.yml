@@ -54,7 +54,7 @@ services:
       - ./call-admission-control/src/frontend/src/public/unsam_logo.jpg:/app/src/public/unsam_logo.jpg
 
   call_admission_control_backend:
-    image: joagonzalez/cac-backend:1.0.0
+    image: joagonzalez/cac-backend:1.0.1
     build:
       context: call-admission-control/src/backend/
       dockerfile: Dockerfile
