@@ -10,6 +10,6 @@
 # Esta es la red que hay que escuchaR? me parece que es la de mininet, no?
 
 # Simulator
-sipp -d 10000 -s 7000 172.18.0.11 -l 5 -mp 5606
+sipp -d 20000 -s 7000 172.18.0.11 -l 3 -mp 5606
 
 # Ahora pasa algo con el sipp que tira error y no se conecta en el asterisk cuando queire hacer la llamada obviamente

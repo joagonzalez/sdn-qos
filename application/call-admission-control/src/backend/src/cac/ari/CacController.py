@@ -1,3 +1,4 @@
+import os
 import sys
 import logging
 import ari
@@ -7,10 +8,18 @@ import threading
 from ...config.settings import config
 from .BaseController import BaseController
 
+CAC_VERSION = 'v1'
+
+var = os.getenv('CAC_VERSION')
+
+if var != None:
+    CAC_VERSION = var
+
 class CacController(BaseController):
   channel_timers = {}
   CAC_THRESHOLD = 2
   total_channels = 0
+  incomingChannels = 0
   connectedChannels = {}
   currentBridge = None
   cacEnable = True
@@ -44,6 +53,31 @@ class CacController(BaseController):
   def onStartCallback(self, channel_obj, ev):
     ''' Handler for StasisStart '''
     channel = channel_obj.get('channel')
+    
+    def hangup_channel(channel):
+        """Callback that will actually hangup the channel"""
+ 
+        print "Hanging up channel {} - CAC_VERSION {}".format(channel.json.get('name'), CAC_VERSION)
+        channel.hangup()
+        self.frontClient.broadcast("cacTrigger", {
+            "data": 1
+        })
+    
+    if self.cacEnable and CAC_VERSION == 'v2':
+      if ev.get('args')[0] == "inbound":
+        self.incomingChannels += 1
+      
+      print '### Incoming CHANNELS:'
+      print self.incomingChannels
+
+      if self.incomingChannels >= self.CAC_THRESHOLD:
+        print "Error: {} Call rejection by CAC mechanism!"
+        print "Hanging up channel {} - CAC_VERSION {}".format(channel.json.get('name'), CAC_VERSION)
+        hangup_channel(channel)
+        # channel.hangup()
+        self.incomingChannels -= 1
+        return 
+
     channel_name = channel.json.get('name')
     args = ev.get('args')
  
@@ -81,37 +115,34 @@ class CacController(BaseController):
         """StasisStart handler for our dialed channel"""   
         print "{} answered; bridging with {}".format(outgoing.json.get('name'),
                                                      channel.json.get('name'))
+        
+        print "Printeamos si cacEnable: {}".format(self.cacEnable)
         channel.answer()
  
         bridge = self.client.bridges.create(type='mixing')
         bridge.addChannel(channel=[channel.id, outgoing.id])
 
-        CacController.connectedChannels[ bridge.id ] = True
-        totalChannels = CacController.getTotalChannels()
+        if CAC_VERSION == 'v1':
+          CacController.connectedChannels[ bridge.id ] = True
+          totalChannels = CacController.getTotalChannels()
+        else:
+          self.incomingChannels += 1
+          totalChannels = self.incomingChannels
 
         channel.on_event('StasisEnd', lambda *args: self.safe_hangup(outgoing, bridge))
         outgoing.on_event('StasisEnd', lambda *args: self.safe_hangup(channel, bridge))
 
         self.frontClient.broadcast("newChannel", {
-            "currentNewChannel": channel.json.items(),
-            "totalChannels": totalChannels
+          "currentNewChannel": channel.json.items(),
+          "totalChannels": totalChannels
         })
 
-        if self.cacEnable:
+        if CacController.cacEnable and CAC_VERSION == 'v1':
             # Hang up the channel in 0 seconds
-            if totalChannels >= self.CAC_THRESHOLD:
+            if totalChannels > self.CAC_THRESHOLD:
                 timer = threading.Timer(0, hangup_channel, [channel])
                 self.channel_timers[channel.id] = timer
                 timer.start()
- 
-    def hangup_channel(channel):
-        """Callback that will actually hangup the channel"""
- 
-        print "Hanging up channel %s" % channel.json.get('name')
-        channel.hangup()
-        self.frontClient.broadcast("cacTrigger", {
-            "data": 1
-        })
 
     outgoing.on_event('StasisStart', outgoing_start_cb)
 
@@ -130,11 +161,16 @@ class CacController(BaseController):
     """Safely hang up the specified channel"""
     try:
         self.connectedChannels[ bridge.id ] = False
+        if CAC_VERSION == 'v2':
+          self.incomingChannels -= 1
+          totalChannels = self.incomingChannels
+        else:
+          totalChannels = self.getTotalChannels()
         channel.hangup()
         bridge.destroy()
 
         self.frontClient.broadcast("closeChannel", {
-            "totalChannels": self.getTotalChannels(),
+            "totalChannels": totalChannels,
             "channelId": channel.json.get('name')
         })
 

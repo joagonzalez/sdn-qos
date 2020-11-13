@@ -54,7 +54,7 @@ services:
       - ./call-admission-control/src/frontend/src/public/unsam_logo.jpg:/app/src/public/unsam_logo.jpg
 
   call_admission_control_backend:
-    image: joagonzalez/cac-backend:1.0.1
+    image: joagonzalez/cac-backend:1.0.2
     build:
       context: call-admission-control/src/backend/
       dockerfile: Dockerfile
@@ -71,6 +71,8 @@ services:
     networks:
       app_net:
         ipv4_address: 172.18.0.13
+    environment: 
+      CAC_VERSION: v2 #v2
 
   mininet:
     image: joagonzalez/cac-mininet:1.0.0
@@ -90,7 +92,7 @@ services:
       - ryu
 
   simulation:
-    image: joagonzalez/cac-simulation-caller:1.0.0
+    image: joagonzalez/cac-simulation-caller:1.0.1
     networks:
       app_net:
         ipv4_address: 172.18.0.15
