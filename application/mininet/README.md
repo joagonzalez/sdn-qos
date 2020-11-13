@@ -1,11 +1,10 @@
-# newcos-polling
+# Mininet 
 ![Python](https://img.shields.io/badge/mininet-v2.1.1-orange)
 ![Python](https://img.shields.io/badge/ryuframework-4.34-blue)
 ![Python](https://img.shields.io/badge/python-v2.7-blue)
 ![Python](https://img.shields.io/badge/python-v3.6-blue)
 ![Python](https://img.shields.io/badge/platform-linux--64%7Cwin--64-lightgrey)
 
-# Mininet 
 Service that enables a fast way to test network scenarios with ryu and custom sdn application. Not neccesary when application is used in production environments.
 
 ## Real Time QoS
