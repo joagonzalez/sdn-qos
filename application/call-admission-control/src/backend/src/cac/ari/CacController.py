@@ -1,3 +1,4 @@
+import os
 import sys
 import logging
 import ari
@@ -7,10 +8,18 @@ import threading
 from ...config.settings import config
 from .BaseController import BaseController
 
+CAC_VERSION = 'v1'
+
+var = os.getenv('CAC_VERSION')
+
+if var != None:
+    CAC_VERSION = var
+
 class CacController(BaseController):
   channel_timers = {}
   CAC_THRESHOLD = 2
   total_channels = 0
+  incomingChannels = 0
   connectedChannels = {}
   currentBridge = None
   cacEnable = True
@@ -44,6 +53,31 @@ class CacController(BaseController):
   def onStartCallback(self, channel_obj, ev):
     ''' Handler for StasisStart '''
     channel = channel_obj.get('channel')
+
+    if CAC_VERSION == 'v2':
+      if ev.get('args')[0] == "inbound" :
+          self.incomingChannels += 1
+      print '### Incoming CHANNELS:'
+      print self.incomingChannels
+      print "CAC Enable: {}".format(self.cacEnable)
+      if self.incomingChannels > self.CAC_THRESHOLD and self.cacEnable:
+          print "Error: {} Call rejection by CAC mechanism!"
+          print "CAC Version: {}".format(CAC_VERSION)
+          
+          channel.hangup()
+          self.incomingChannels -= 1
+
+          self.frontClient.broadcast("cacTrigger", {
+            "data": 1
+          })
+          
+          self.frontClient.broadcast("closeChannel", {
+              "totalChannels": self.incomingChannels,
+              "channelId": channel.json.get('name')
+          })
+
+          return 
+    
     channel_name = channel.json.get('name')
     args = ev.get('args')
  
@@ -62,8 +96,8 @@ class CacController(BaseController):
  
     print "{} entered our application".format(channel_name)
 
-    for key, value in channel.json.items():
-        print "%s: %s" % (key, value)
+    # for key, value in channel.json.items():
+    #     print "%s: %s" % (key, value)
 
     channel.ring()
  
@@ -86,8 +120,12 @@ class CacController(BaseController):
         bridge = self.client.bridges.create(type='mixing')
         bridge.addChannel(channel=[channel.id, outgoing.id])
 
-        CacController.connectedChannels[ bridge.id ] = True
-        totalChannels = CacController.getTotalChannels()
+        if CAC_VERSION == 'v1':
+          CacController.connectedChannels[ bridge.id ] = True
+          totalChannels = CacController.getTotalChannels()
+        else:
+          self.incomingChannels += 1
+          totalChannels = self.incomingChannels
 
         channel.on_event('StasisEnd', lambda *args: self.safe_hangup(outgoing, bridge))
         outgoing.on_event('StasisEnd', lambda *args: self.safe_hangup(channel, bridge))
@@ -97,9 +135,10 @@ class CacController(BaseController):
             "totalChannels": totalChannels
         })
 
-        if self.cacEnable:
+        if self.cacEnable and CAC_VERSION == 'v1':
             # Hang up the channel in 0 seconds
-            if totalChannels >= self.CAC_THRESHOLD:
+            if totalChannels > self.CAC_THRESHOLD:
+                print "CAC Version: {}".format(CAC_VERSION)
                 timer = threading.Timer(0, hangup_channel, [channel])
                 self.channel_timers[channel.id] = timer
                 timer.start()
@@ -129,12 +168,18 @@ class CacController(BaseController):
   def safe_hangup(self, channel, bridge):
     """Safely hang up the specified channel"""
     try:
-        self.connectedChannels[ bridge.id ] = False
+        if CAC_VERSION == 'v1':
+          self.connectedChannels[ bridge.id ] = False
+          totalChannels = self.getTotalChannels()
+        else:
+          self.incomingChannels -= 1
+          totalChannels = self.incomingChannels
+
         channel.hangup()
         bridge.destroy()
 
         self.frontClient.broadcast("closeChannel", {
-            "totalChannels": self.getTotalChannels(),
+            "totalChannels": totalChannels,
             "channelId": channel.json.get('name')
         })
 
