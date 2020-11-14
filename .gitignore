@@ -1,6 +1,9 @@
 node_modules/
 results500*
 
+# VSCODE conf files
+.vscode/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
