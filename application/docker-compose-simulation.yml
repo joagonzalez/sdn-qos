@@ -72,7 +72,7 @@ services:
       app_net:
         ipv4_address: 172.18.0.13
     environment: 
-      CAC_VERSION: v1 #v2
+      CAC_VERSION: v2 #v1
 
   mininet:
     image: joagonzalez/cac-mininet:1.0.0
@@ -92,7 +92,7 @@ services:
       - ryu
 
   simulation:
-    image: joagonzalez/cac-simulation-caller:1.0.1
+    image: joagonzalez/cac-simulation-caller:1.0.2
     networks:
       app_net:
         ipv4_address: 172.18.0.15
@@ -105,6 +105,8 @@ services:
       - asterisk
       - ryu
       - call_admission_control_backend
+    environment: 
+      SIMULATION: v2 #v2
       
 networks:
   app_net:
