@@ -70,11 +70,6 @@ class CacController(BaseController):
           self.frontClient.broadcast("cacTrigger", {
             "data": 1
           })
-          
-          self.frontClient.broadcast("closeChannel", {
-              "totalChannels": self.incomingChannels,
-              "channelId": channel.json.get('name')
-          })
 
           return 
     
@@ -124,11 +119,15 @@ class CacController(BaseController):
           CacController.connectedChannels[ bridge.id ] = True
           totalChannels = CacController.getTotalChannels()
         else:
-          self.incomingChannels += 1
+          # self.incomingChannels += 1
           totalChannels = self.incomingChannels
 
-        channel.on_event('StasisEnd', lambda *args: self.safe_hangup(outgoing, bridge))
-        outgoing.on_event('StasisEnd', lambda *args: self.safe_hangup(channel, bridge))
+        channel.on_event('StasisEnd', lambda *args: self.safe_hangup(outgoing, bridge, channel.json.items()))
+
+        if CAC_VERSION == 'v1':
+          outgoing.on_event('StasisEnd', lambda *args: self.safe_hangup(channel, bridge, channel.json.items()))
+        else:
+          outgoing.on_event('StasisEnd', lambda *args: self.safe_hangup_outgoing(channel, bridge))
 
         self.frontClient.broadcast("newChannel", {
             "currentNewChannel": channel.json.items(),
@@ -165,7 +164,7 @@ class CacController(BaseController):
     totalChannels = localChannels
     return totalChannels
 
-  def safe_hangup(self, channel, bridge):
+  def safe_hangup(self, channel, bridge, channelId):
     """Safely hang up the specified channel"""
     try:
         if CAC_VERSION == 'v1':
@@ -180,10 +179,21 @@ class CacController(BaseController):
 
         self.frontClient.broadcast("closeChannel", {
             "totalChannels": totalChannels,
-            "channelId": channel.json.get('name')
+            "channelId": channelId
         })
 
         print "Hung up {}".format(channel.json.get('name'))
+    except requests.HTTPError as e:
+        if e.response.status_code != requests.codes.not_found:
+            raise e
+
+  def safe_hangup_outgoing(self, channel, bridge):
+    """Safely hang up the specified channel fro CAC v2 refactor"""
+    try: 
+      channel.hangup()
+      bridge.destroy()
+
+      print "Hung up {}".format(channel.json.get('name'))
     except requests.HTTPError as e:
         if e.response.status_code != requests.codes.not_found:
             raise e
