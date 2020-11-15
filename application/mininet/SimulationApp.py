@@ -10,7 +10,7 @@ class Simulation:
     QOS_RULES = '/qos/rules/'
     QOS_QUEUES = '/qos/queues/'
     OVSDB_CONF = '/v1.0/conf/switches/'
-    OVSDB_SERVER = "tcp:127.0.0.1:6632"
+    OVSDB_SERVER = "tcp:172.18.0.10:6632"
 
     def __init__(self, controllerIp, controllerPort):
         self.controllerUrl = self.controller_query(controllerIp, controllerPort)
