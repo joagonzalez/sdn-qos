@@ -7,8 +7,12 @@ import threading
 
 from ...config.settings import config
 from .BaseController import BaseController
+from ..qos.service import Simulation
+
 
 CAC_VERSION = 'v1'
+CONTROLLER_IP = '172.18.0.10'
+CONTROLLER_API_PORT = '8080'
 
 var = os.getenv('CAC_VERSION')
 
@@ -23,12 +27,14 @@ class CacController(BaseController):
   connectedChannels = {}
   currentBridge = None
   cacEnable = True
-  qosEnable = True
+  qosEnable = False
+  qosStatus = 'disabled'
 
   def __init__(self, ryuApi, frontClient):
     ''' Stasis Program '''
     BaseController.__init__(self, ryuApi, frontClient)
     self.subscribe(self.onStartCallback)
+    self.qos = Simulation(CONTROLLER_IP, CONTROLLER_API_PORT)
 
   def getTopologySwitches(self):
     '''
@@ -50,9 +56,26 @@ class CacController(BaseController):
             "topologyLinks": response,
         })
 
+  def deployQos(self):
+    '''
+    Depending on self.qosEnable status 
+    this function will deploy QoS configuration
+    '''
+    if self.qosEnable and self.qosStatus == 'disabled':
+      print "*** Configuramos DSCP tags..."
+      self.qos.dscp_mark(1) 
+      self.qos.dscp_mark(2)    
+      print "*** Configuramos QOS queues..."
+      self.qos.qosSetup(1, 1) 
+      self.qos.qosSetup(1, 2)
+
+      self.qosStatus == 'configured'
+
   def onStartCallback(self, channel_obj, ev):
     ''' Handler for StasisStart '''
     channel = channel_obj.get('channel')
+
+    self.deployQos()
 
     if CAC_VERSION == 'v2':
       if ev.get('args')[0] == "inbound" :

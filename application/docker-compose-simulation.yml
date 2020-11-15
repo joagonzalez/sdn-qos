@@ -54,7 +54,8 @@ services:
       - ./call-admission-control/src/frontend/src/public/unsam_logo.jpg:/app/src/public/unsam_logo.jpg
 
   call_admission_control_backend:
-    image: joagonzalez/cac-backend:1.0.2
+    #image: joagonzalez/cac-backend:1.0.2
+    image: joagonzalez/cac-backend:1.0.3-qos
     build:
       context: call-admission-control/src/backend/
       dockerfile: Dockerfile
@@ -72,10 +73,10 @@ services:
       app_net:
         ipv4_address: 172.18.0.13
     environment: 
-      CAC_VERSION: v2 #v1
+      CAC_VERSION: v2 # CAC algorithm version [v1, v2]
 
   mininet:
-    image: joagonzalez/cac-mininet:1.0.0
+    image: joagonzalez/cac-mininet:1.0.1
     ports:
       - '6632:6632'
     expose:
@@ -106,7 +107,8 @@ services:
       - ryu
       - call_admission_control_backend
     environment: 
-      SIMULATION: v2 #v2
+      SIMULATION: v1 # Simulation pattern [v1, v2]
+      TIME: 15 # Time before sipp begins with calls
       
 networks:
   app_net:

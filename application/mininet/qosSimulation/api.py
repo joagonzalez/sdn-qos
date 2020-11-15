@@ -1,12 +1,18 @@
-import pycurl
 import json
-from StringIO import StringIO
+import pycurl
+try:
+    from StringIO import StringIO ## for Python 2
+except ImportError:
+    from io import StringIO ## for Python 3
+# from StringIO import StringIO
+
 try:
     # python 3
     from urllib.parse import urlencode
 except ImportError:
     # python 2
     from urllib import urlencode
+
 
 class ApiService:
   def __init__(self, baseurl):
@@ -18,14 +24,13 @@ class ApiService:
   def initRequest(self, endpoint=''):
     self.request = self.http.Curl()
     self.request.setopt(self.http.URL, self.base_url + endpoint)
-    self.response.truncate(0)
     self.request.setopt(self.http.WRITEFUNCTION, self.response.write)
 
   def perform(self):
     self.request.perform()
     self.request.close()
     return self.response.getvalue()
-  
+
   def get(self, endpoint=''):
     self.initRequest(endpoint)
     return self.perform()
@@ -38,7 +43,7 @@ class ApiService:
     self.request.setopt(self.http.POSTFIELDS, data)
     self.request.setopt(self.http.VERBOSE, True)
     return self.perform()
-
+    
   def put(self, endpoint='', data={}):
     data = json.dumps(data)
     self.initRequest(endpoint)

@@ -17,7 +17,7 @@ from mininet.link import Intf
 CONTROLLER_IP = '0.0.0.0'
 CONTROLLER_API_PORT = '8080'
 CONTROLLER_PORT = 6633
-SIMULATION_TIME = 5
+SIMULATION_TIME = 20
 
 def run():
     topo = MyTopo()
