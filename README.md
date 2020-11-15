@@ -111,9 +111,32 @@ docker ps
 open http://localhost:3000
 ```
 
+Some environment variables can be configured in order to modify simulation behavior.
+
+backend: we can choose which cac algorithm to use
+```
+    environment: 
+      CAC_VERSION: v2 # CAC algorithm version [v1, v2]
+```
+
+The first simulation patterns belongs to the first non optimal algorithm. The second one is the v2 algorithm with optimal resource usage.
+
+![cac-algorithms](documentation/architecture/diagrams/cac-algorithms.png)
+
+simulation: we can chosse how much time before sipp begins with calls, therefore enough time is given in order to access frontend web gui and having a correct call counting from the begining. On the other hand, we can choose which simulation patter to run [v1, v2], check simulation-setup.sh script for more information.
+
+```    
+environment: 
+      SIMULATION: v1 # Simulation pattern [v1, v2]
+      TIME: 15 # Time before sipp begins with calls
+```
+
 **Run QoS simulation**
 
 Script *sdn-qos-RealTimeQueues.py* implements an automated test where packet prioritization could be achieve using ryu controller with mininet and ovs.
+
+![cac-algorithms](documentation/architecture/diagrams/simulacion-qos-2.png)
+
 
 Run locally installed Ryu framework
 ```
@@ -127,7 +150,9 @@ cd application/mininet
 sudo python2.7 sdn-qos-RealTimeQueues.py 
 ```
 
+Results
 
+![qos](documentation/architecture/diagrams/simulacion-qos.png)
 
 **Run application with external infrastructure** 
 
